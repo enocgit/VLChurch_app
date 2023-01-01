@@ -1,0 +1,72 @@
+{% extends 'homepage/base.html' %}
+{% block title %}
+    Upcoming Programmes
+{% endblock %}
+{% block active %}
+<li class="nav-item">
+    <a class="nav-link" href="{% url 'homepage:homepage' %}" aria-current="page">Home</a>
+</li>
+<li class="nav-item">
+    <a class="nav-link" href="#">About</a>
+</li>
+<li class="nav-item">
+    <a class="nav-link" href="#">Contact</a>
+</li>
+{% endblock %}
+{% block content %}
+    <section class="programme mh-100">
+        <div class="container d-flex flex-column align-items-baseline mt-5">
+            <div class="">
+                <h1 class="h1 prog-heading text-sm-center animate__animated animate__fadeInDown" 
+                    style="font-family: Alegreya Sans SC, sans-serif;">Fundraising
+                </h1>
+            </div>
+            <div class="d-flex mt-5 flex-column flex-md-row justify-content-between">
+                <div class="animate__animated animate__fadeInLeft">
+                    <img src="../../../static/images/icon _calendar_.svg" alt="" height="" width="">
+                    <!-- <i class="bi bi-phone" style="font-size: 4rem; color: white"></i> -->
+                </div>
+                <div class="ms-5">
+                    <h3 class="mt-4" style="font-family: Akaya Kanadaka, script; color: burlywood;">3rd April, 2022</h3>
+                </div>
+            </div>
+            <div class="d-flex mt-5 flex-column flex-sm-row justify-content-between">
+                <div class="animate__animated animate__fadeInLeft">
+                    <img src="../../../static/images/🦆 icon _alarm_.svg" alt="" height="" width="">
+                    <!-- <i class="bi bi-phone" style="font-size: 4rem; color: white"></i> -->
+                </div>
+                <div class="ms-5">
+                    <h3 class="mt-4" style="font-family: Akaya Kanadaka, script; color: burlywood">9:00a.m</h3>
+                </div>
+            </div>
+            <div class="d-flex mt-5 flex-column flex-sm-row justify-content-between">
+                <div class="animate__animated animate__fadeInLeft">
+                    <img src="../../../static/images/🦆 icon _pin alt_.svg" alt="" height="" width="">
+                    <!-- <i class="bi bi-phone" style="font-size: 4rem; color: white"></i> -->
+                </div>
+                <div class="ms-5">
+                    <h3 class="mt-4" style="font-family: Akaya Kanadaka, script; color: burlywood">Victorious Living Church Int, Kasoa</h3>
+                </div>
+            </div>
+            <div class=" mt-5">
+                <div class="">
+                    <h1 class="mt-4" style="font-family: Akaya Kanadaka, script; color: white;">Guests</h1>
+                </div>
+            </div>
+            <div class="row row-cols-1 row-cols-md-3 mt-2 gx-5 gap-sm-5 pb-5 w-100">
+                <div class="col">
+                    <img class="img-fluid rounded-circle guest-img" src="https://www.placebear.com/100/100" height="150rem" width="150rem">
+                    <p class="pt-2" style="color: white;">Hannah Acheampong</p>
+                </div>
+                <div class="col">
+                    <img class="img-fluid rounded-circle guest-img" src="https://www.placebear.com/200/200" height="150rem" width="150rem">
+                    <p class="pt-2" style="color: white;">Hannah Acheampong</p>
+                </div>
+                <div class="col">
+                    <img class="img-fluid rounded-circle guest-img" src="https://www.placebear.com/150/150" height="150rem" width="150rem">
+                    <p class="pt-2" style="color: white;">Hannah Acheampong</p>
+                </div>
+            </div>
+        </div>
+    </section>
+{% endblock %}

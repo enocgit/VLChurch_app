@@ -1,0 +1,76 @@
+{%  load static %}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"/>
+    <link rel="stylesheet" href="{% static 'bootstrap/dist/css/bootstrap.min.css' %}" type="text/css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.3.0/font/bootstrap-icons.css">
+    
+    <link rel="stylesheet" href="{% static 'stylesheet/style.css' %}" type="text/css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=ABeeZee" />
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Alegreya+Sans+SC" />
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Akaya+Kanadaka" />
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Actor" />
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Advent Pro" />
+    
+   <!-- <link rel="stylesheet" href="{% static 'bootstrap/font/bootstrap-icons.css' %}"> -->
+    <script src="{% static 'bootstrap/dist/js/bootstrap.bundle.min.js' %}"></script>
+    <script src="{% static 'bootstrap-icons/dist/js/bootstrap.min.js' %}"></script>
+    <script src="{% static 'javascript/jquery-3.6.3.min.js' %}"></script>
+    <script src="{% static 'javascript/main.js' %}" async></script>
+    <!-- <script src="https://cdn.jsdelivr.net/npm/jquery@3.6.0/dist/jquery.min.js" integrity="sha384-J0oG+zTk1GWr/A7V+jI6J/yVuWh2Q3zqVuIj+Uz7JxNx6s1+jCKPOm+W8yv9J9j+" crossorigin="anonymous"></script> -->
+    <title>{% block title %}Victorious Living Church International{% endblock %}</title>
+</head>
+<body>
+    <nav class="shadow navbar navbar-expand-md navbar-dark navbar-main fixed-top">
+        <div class="container">
+          <a class="navbar-brand" href="#">Victorious Living Church</a>
+          <button class="navbar-toggler d-lg-none" type="button" data-bs-toggle="collapse" data-bs-target="#collapsibleNavId" aria-controls="collapsibleNavId" aria-expanded="false" aria-label="Toggle navigation">
+              <span class="navbar-toggler-icon"></span>
+          </button>
+          <div class="collapse navbar-collapse" id="collapsibleNavId">
+              <ul class="navbar-nav me-auto mt-2 mt-lg-0 nav-items ms-sm-5">
+                {% block active %}
+                    
+                <li class="nav-item">
+                    <a class="nav-link active" href="{% url 'homepage:homepage' %}" aria-current="page">Home</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#">About</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#">Contact</a>
+                </li>
+                {% endblock %}
+                <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle" href="#" id="dropdownId" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">More</a>
+                      <div class="dropdown-menu" aria-labelledby="dropdownId">
+                          <a class="dropdown-item" href="{% url 'sunday_services:service-list' %}">Sunday Service</a>
+                          <a class="dropdown-item" href="/#leaders">Leaders</a>
+                          <a class="dropdown-item" href="{% url 'fellowships:fellowships-list' %}">Fellowship Groups</a>
+                          <a class="dropdown-item" href="{% url 'programmes:programmes-list' %}">Upcoming programmes</a>
+                          <a class="dropdown-item" href="#">Quizzes</a>
+                      </div>
+                  </li>
+              </ul>
+              <form class="d-flex my-2 my-lg-0">
+                  <input class="form-control me-sm-2 form-search" type="text" placeholder="Search">
+                  <button class="btn my-2 my-sm-0 btn-search" type="submit">Search</button>
+              </form>
+          </div>
+    </div>
+  </nav>
+    {% block content %}
+        
+    {% endblock %}
+
+    <footer class="p-5 text-center main-footer">
+        Copyright &copy; 2022 Victorious Living Church International
+    </footer>
+
+</body>
+</html>
