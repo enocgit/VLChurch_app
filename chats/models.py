@@ -1,5 +1,6 @@
 from django.db import models
 from members.models import Member
+from django.contrib.auth import get_user_model
 
 
 # winner
@@ -28,3 +29,22 @@ class CarouselImg(models.Model):
 
     def __str__(self):
         return f'{self.image}'
+    
+    
+# chat
+class Chat(models.Model):
+    name = models.CharField(max_length=60 )
+    datetime = models.DateField(auto_now=False, auto_now_add=False)
+    
+    def __str__(self):
+        return self.name
+    
+# comment
+class Comment(models.Model):
+    message = models.TextField(default='')
+    user = models.ForeignKey(get_user_model(), verbose_name='member', on_delete=models.CASCADE)
+    datetime = models.DateTimeField(auto_now=False, auto_now_add=False)
+    chat = models.ForeignKey('Chat', on_delete=models.CASCADE, null=True, blank=True)
+    
+    def __str__(self):
+       return self.message

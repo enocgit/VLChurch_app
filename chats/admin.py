@@ -5,3 +5,5 @@ from chat.models import *
 admin.site.register(Quiz)
 admin.site.register(Winner)
 admin.site.register(CarouselImg)
+admin.site.register(Chat)
+admin.site.register(Comment)
