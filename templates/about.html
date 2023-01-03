@@ -1,0 +1,44 @@
+{% extends 'homepage/base.html' %}
+{% block title %}
+    About us
+{% endblock %}
+{% block active %}
+    <li class="nav-item">
+        <a class="nav-link" href="{% url 'homepage:homepage' %}" aria-current="page">Home</a>
+    </li>
+    <li class="nav-item">
+        <a class="nav-link active" href="{% url 'homepage:about' %}">About</a>
+    </li>
+    <li class="nav-item">
+        <a class="nav-link" href="{% url 'homepage:contact' %}">Contact</a>
+    </li>
+{% endblock %}
+{% block content %}
+    <section id="about">
+        <div class="banner">
+
+        </div>
+        <div class="d-flex align-items-center justify-content-evenly mission mt-5 position-relative">
+            <div class="">
+                <h1 class="h1">mission</h1>
+                <p class="mt-4">Lorem ipsum dolor sit amet consectetur adipisicing elit. Veniam nostrum illo fuga modi ea aspernatur harum dolor adipisci, mollitia id beatae autem ad necessitatibus, aut labore fugiat iste dignissimos nam.</p>
+            </div>
+            <div class="pic">
+                <div class="inside-pic">
+
+                </div>
+            </div>
+        </div>
+        <div class="d-flex align-items-center justify-content-evenly vision position-relative">
+            <div class="pic">
+                <div class="inside-pic">
+                    
+                </div>
+            </div>
+            <div class="">
+                <h1>vision</h1>
+                <p class="mt-4">Lorem ipsum dolor sit amet consectetur adipisicing elit. Reiciendis est recusandae dolores porro cupiditate quidem delectus consequuntur ex nihil. Cumque nisi maiores porro tenetur debitis, assumenda quo fuga dolor architecto!</p>
+            </div>
+        </div>
+    </section>
+{% endblock %}

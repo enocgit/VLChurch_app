@@ -6,5 +6,5 @@ from fellowships.models import Fellowship
 
 class FellowshipsList(ListView):
     model = Fellowship
-    template_name = 'fellowship_list.html'
+    template_name = 'fellowships/fellowship.html'
     context_object_name = 'fellowships'

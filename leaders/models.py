@@ -19,4 +19,4 @@ class Leader(models.Model):
     # birthday = models.DateField(auto_now=False, auto_now_add=False, null=True, blank=True)
 
     def __str__(self):
-        return self.member.name
+        return f'{self.member.first_name} {self.member.last_name}'

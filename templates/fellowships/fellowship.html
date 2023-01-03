@@ -8,10 +8,10 @@
         <a class="nav-link" href="{% url 'homepage:homepage' %}" aria-current="page">Home</a>
     </li>
     <li class="nav-item">
-        <a class="nav-link" href="#">About</a>
+        <a class="nav-link" href="{% url 'homepage:about' %}">About</a>
     </li>
     <li class="nav-item">
-        <a class="nav-link" href="#">Contact</a>
+        <a class="nav-link" href="{% url 'homepage:contact' %}">Contact</a>
     </li>
 {% endblock %}
 {% block content %}
