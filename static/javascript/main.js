@@ -20,7 +20,19 @@
 $(document).ready(function(){
     $(window).scroll(() => {
         let scrollTop = $(window).scrollTop()
+        if (scrollTop > 200){
+            $('#about .vision .pic').css({'visibility': 'visible'})
+            $('#about .vision .pic').css({'transition': '1s all ease-in-out'})
+            $('#about .vision .inside-pic').css({'visibility': 'visible'})
+            $('#about .vision .inside-pic').addClass('animate__animated animate__fadeInLeft')
+            // $('#about .vision .inside-pic').css({'visibility': 'visible'})
+            // $('#about .vision .inside-pic').addClass('animate__animated animate__fadeInTop')
+        }
         if (scrollTop > 400){
+            // fellowship
+            $('#men-fellow .square').css({'visibility': 'visible'})
+            $('#men-fellow .square').addClass('animate__animated animate__fadeIn')
+            // location
             $('.main-location .lead').css({'visibility': 'visible'})
             $('.main-location .head').css({'visibility': 'visible'})
             $('.main-location .btn-help').css({'visibility': 'visible'})
@@ -35,6 +47,11 @@ $(document).ready(function(){
             $('.main-leaders .row').addClass('animate__animated animate__fadeIn')
             $('.main-leaders .head').addClass('animate__animated animate__fadeIn')
             // prompt('100')
+        }
+        if (scrollTop > 1100){
+            // women fellowship
+            $('#women-fellow h1').css({'visibility': 'visible'})
+            $('#women-fellow h1').addClass('animate__animated animate__flipInX')
         }
     })
 })

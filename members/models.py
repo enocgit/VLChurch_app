@@ -5,7 +5,7 @@ from django.contrib.auth.models import AbstractUser
 
 # members
 class Member(AbstractUser): # members inheriting from AbstractUser model
-    # username = models.CharField(max_length=60, unique=True)
+    # username = models.CharField(max_length=100, unique=True)
     # name = models.CharField(max_length=255, null=True, blank=True)
     picture = models.ImageField(upload_to='static/uploads', height_field=None, width_field=None, max_length=None, null=True, blank=True)
     birthday = models.DateField(null=True, blank=True)
