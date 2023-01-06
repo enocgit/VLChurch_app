@@ -1,0 +1,73 @@
+{% extends 'homepage/base.html' %}
+{% load static %}
+{% block title %}
+    Chat
+{% endblock %}
+{% block active %}
+    <li class="nav-item">
+        <a class="nav-link" href="{% url 'homepage:homepage' %}" aria-current="page">Home</a>
+    </li>
+    <li class="nav-item">
+        <a class="nav-link" href="{% url 'homepage:about' %}">About</a>
+    </li>
+    <li class="nav-item">
+        <a class="nav-link active" href="{% url 'homepage:contact' %}">Contact</a>
+    </li>
+{% endblock %}
+{% block content %}
+    <section class="mt-5" id="chats">
+        <div class="mt-4 ms-4 position-fixed">
+            <i class="bi-menu-button menu-btn fs-2" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasWithBackdrop" aria-controls="offcanvasWithBackdrop"></i>
+            <span class="menu-btn-text ms-1">Click to view all chats</span>
+            <!-- <button class=" border-none" >
+            </button> -->
+        </div>
+
+        <div class="d-flex justify-content-end avatar pt-4 float-end me-5">
+            <div class="">
+                <img class="rounded-circle" src="{{ request.user.picture.url }}" alt="" width="50rem" height="50rem">
+            </div>
+            <div class="ms-2 d-flex flex-column">
+                {% if request.user.is_authenticated %}
+                    <p>
+                        {{ request.user.first_name }} {{ request.user.last_name }}
+                    </p>
+                    <a href="{% url 'accounts:logout' %}">
+                        <small class="logout">Log out</small>
+                    </a>
+                {% else %}
+                    no user
+                {% endif %}
+            </div>
+        </div>
+        <div class="container">
+            
+            <div class="banner px-4 py-5 rounded-3 animate__animated animate__fadeIn text-center">
+                <h2 class="fw-bolder d-inline-block">{% block banner_head %}{% endblock %}</h2>
+                <i class="bi-chat-fill ms-3" style="font-size: 2rem;"></i>
+            </div>
+            <div class="p-4">
+                {% block content_chat %}
+
+                {% endblock %}
+            </div>
+            <form class="d-flex flex-column comment-box my-5" method="post">
+                {% csrf_token %}
+                {{ form.media }}
+                {{ form.as_p }}
+                <input type="submit" value="Comment" class="w-25 btn btn-primary text-light">
+                <!-- <div id="comment-field"></div> -->
+
+                <!-- <textarea name="" id="comment-field" cols="40" rows="10" class="rounded-4 p-3 chats-textarea"></textarea> -->
+            </form>
+
+            <!-- off canvas -->
+            {% block canvas %}
+                
+            {% endblock %}
+            
+              
+
+        </div>
+    </section>
+{% endblock %}

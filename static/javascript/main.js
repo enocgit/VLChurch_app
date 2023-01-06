@@ -53,5 +53,32 @@ $(document).ready(function(){
             $('#women-fellow h1').css({'visibility': 'visible'})
             $('#women-fellow h1').addClass('animate__animated animate__flipInX')
         }
+        // if (scrollTop > 1180){
+        //     // women fellowship
+        //     $('.main-footer').css({'visibility': 'visible', 'transition': 'all 0.5s ease-in-out'})
+        //     $('.main-footer').addClass('animate__animated animate__fadeInTop')
+        // }
     })
+
+    $('.menu-btn').on({
+        mouseover: function(){
+            $('.menu-btn-text').css({'visibility':'visible'})
+            // $('.menu-btn-text').addClass('animate__animated animate__zoomInUp')
+        },
+        mouseleave: function(){
+            $('.menu-btn-text').css({'visibility':'hidden'})
+            // $('.menu-btn-text').addClass('animate__animated animate__lightSpeedOutRight')
+        }
+    })
+    
+    var tooltipTriggerList = [].slice.call(document.querySelectorAll('[data-bs-toggle="tooltip"]'))
+    var tooltipList = tooltipTriggerList.map(function (tooltipTriggerEl) {
+    return new bootstrap.Tooltip(tooltipTriggerEl)
+    })
+
+    $('.login-form input[type="text"]').addClass('form-control')
+    $('.login-form input[type="password"]').addClass('form-control')
+    $('.login-form label').addClass('form-label')
+
+
 })

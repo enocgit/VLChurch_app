@@ -1,6 +1,10 @@
 from django.db import models
 from members.models import Member
 from django.contrib.auth import get_user_model
+from ckeditor.fields import RichTextField
+from django.utils.html import escape, strip_tags
+
+
 
 
 # winner
@@ -31,20 +35,20 @@ class CarouselImg(models.Model):
         return f'{self.image}'
     
     
-# chat
+# chats
 class Chat(models.Model):
     name = models.CharField(max_length=60 )
-    datetime = models.DateField(auto_now=False, auto_now_add=False)
+    datetime = models.DateField('date & time', auto_now_add=True)
     
     def __str__(self):
         return self.name
     
 # comment
 class Comment(models.Model):
-    message = models.TextField(default='')
-    user = models.ForeignKey(get_user_model(), verbose_name='member', on_delete=models.CASCADE)
-    datetime = models.DateTimeField(auto_now=False, auto_now_add=False)
+    message = RichTextField(default='', null=True, blank=True)
+    user = models.ForeignKey(get_user_model(), verbose_name='member', on_delete=models.CASCADE, null=True, blank=True)
+    datetime = models.DateTimeField('date & time', auto_now=True)
     chat = models.ForeignKey('Chat', on_delete=models.CASCADE, null=True, blank=True)
     
     def __str__(self):
-       return self.message
+       return strip_tags(self.message)

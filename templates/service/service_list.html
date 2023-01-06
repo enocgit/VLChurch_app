@@ -1,5 +1,5 @@
 {% extends 'homepage/base.html' %}
-
+{% load humanize %}
 {% block title %}
     Sunday Service
 {% endblock %}
@@ -15,105 +15,105 @@
     </li>
 {% endblock %}
 {% block content %}
-    <section class="service mh-100">
-        <div class="container pb-5 rounded-5">
-            <h1 class="text-center animate__animated animate__pulse" style="font-family: Actor, sans-serif;">Join us on Sunday</h1>
-            <div class="date mt-5 row row-cols-1 row-cols-sm-2 row-cols-lg-4">
-                <div class="animate__animated animate__fadeInLeft">
-                    <span class="sub-heading">Date :</span>
-                </div>
-                <div class="mt-4 mt-sm-4 mt-lg-0">
-                    <span class="">22nd October, 2022</span>
-                </div>
-                <div class="mt-4 mt-sm-4 mt-lg-0 animate__animated animate__fadeInUp">
-                    <span class="sub-heading">Time :</span>
-                </div>
-                <div class="mt-4 mt-sm-4 mt-lg-0">
-                    <span class="">8:00a.m</span>
-                </div>
-            </div>
-            <hr class="w-75 mx-auto">
-            <div class="date mt-4 mt-sm-6 row row-cols-sm-1 row-cols-lg-2">
-                <div class="col-lg-3 animate__animated animate__fadeInLeft">
-                    <span class="sub-heading">Venue :</span>
-                </div>
-                <div class="col-lg-9 mt-4 mt-lg-0">
-                    <span class="p-3 fs-5 venue" style="display: inline-block;">Victorious Living Church International, Kasoa</span>
-                </div>
-            </div>
-            <hr class="w-75 mx-auto">
-            <div class="mt-4 mt-sm-6 date row gap-4 row-cols-1 row-cols-sm-3">
-                <!-- teacher -->
-                <div class="col-12 col-sm-5 d-flex flex-column align-items-center align-items-sm-start animate__animated animate__fadeInLeft">
-                    <div class="sub-heading" style="background-color: #cad4eb;">Teacher :</div>
-                    <div>
-                        <img class="img-fluid rounded-circle mt-2" src="https://placebear.com/200/200" alt="" height="150rem" width="150rem">
+    {% if service %}
+        {% for schedule in service %}
+            
+            <section class="service mh-100" style="background: url('../../static/images/sunday_service_bg.jpg');">
+                <div class="container pb-5 rounded-5">
+                    <h1 class="text-center animate__animated animate__pulse" style="font-family: Actor, sans-serif;">Join us on Sunday</h1>
+                    <div class="date mt-5 row row-cols-1 row-cols-sm-2 row-cols-lg-4">
+                        <div class="animate__animated animate__fadeInLeft">
+                            <span class="sub-heading">Date :</span>
+                        </div>
+                        <div class="mt-4 mt-sm-4 mt-lg-0">
+                            <span class="">{{ schedule.datetime.date|date:"jS F, Y" }}</span>
+                        </div>
+                        <div class="mt-4 mt-sm-4 mt-lg-0 animate__animated animate__fadeInUp">
+                            <span class="sub-heading">Time :</span>
+                        </div>
+                        <div class="mt-4 mt-sm-4 mt-lg-0">
+                            <span class="">{{ schedule.datetime.time }}</span>
+                        </div>
                     </div>
-                    <div>
-                        <p class="ms-sm-2 text-light">Enoch Amponsah</p>
+                    <hr class="w-75 mx-auto">
+                    <div class="date mt-4 mt-sm-6 row row-cols-sm-1 row-cols-lg-2">
+                        <div class="col-lg-3 animate__animated animate__fadeInLeft">
+                            <span class="sub-heading">Venue :</span>
+                        </div>
+                        <div class="col-lg-9 mt-4 mt-lg-0">
+                            <span class="p-3 fs-5 venue" style="display: inline-block;">{{ schedule.venue }}</span>
+                        </div>
                     </div>
-                </div>
-                <!-- line -->
-                <div class="col-sm-1 d-none d-lg-block" style="border-inline-start: 1px solid white; height: 6rem; margin-inline-start: -1rem; margin-block-start: 3rem">
-                </div>
-                <!-- preacher -->
-                <div class="col-12 col-sm-5 d-flex flex-column align-items-center align-items-sm-start animate__animated animate__fadeInRight">
-                    <div class="col sub-heading" style="background-color: #cad4eb;">Preacher :</div>
-                    <div>
-                        <img class="img-fluid rounded-circle mt-2" src="https://placebear.com/200/200" alt="" height="150rem" width="150rem">
+                    <hr class="w-75 mx-auto">
+                    <div class="mt-4 mt-sm-6 date row gap-4 row-cols-1 row-cols-sm-3">
+                        <!-- teacher -->
+                        <div class="col-12 col-sm-5 d-flex flex-column align-items-center align-items-sm-start animate__animated animate__fadeInLeft">
+                            <div class="sub-heading" style="background-color: #D9D9D9;">Teacher :</div>
+                            <div>
+                                <img class="img-fluid rounded-circle mt-2" src="{{ schedule.teacher.picture.url }}" alt="" height="150rem" width="150rem">
+                            </div>
+                            <div>
+                                <p class="ms-sm-2 text-light pt-1">
+                                    {% if schedule.teacher.leader %}
+                                        {{ schedule.teacher.leader.title }} {{ schedule.teacher.first_name }} {{ schedule.teacher.last_name }}
+                                    {% else %}
+                                        {{ schedule.teacher.first_name }} {{ schedule.teacher.last_name }}
+                                    {% endif %}
+                                </p>
+                            </div>
+                        </div>
+                        <!-- line -->
+                        <div class="col-sm-1 d-none d-lg-block" style="border-inline-start: 1px solid white; height: 6rem; margin-inline-start: -1rem; margin-block-start: 3rem">
+                        </div>
+                        <!-- preacher -->
+                        <div class="col-12 col-sm-5 d-flex flex-column align-items-center align-items-sm-start animate__animated animate__fadeInRight">
+                            <div class="col sub-heading" style="background-color: #D9D9D9;">Preacher :</div>
+                            <div>
+                                <img class="img-fluid rounded-circle mt-2" src="{{ schedule.preacher.picture.url }}" alt="" height="150rem" width="150rem">
+                            </div>
+                            <div>
+                                <p class="ms-sm-2 text-light">
+                                    {% if schedule.preacher.leader %}
+                                       {{ schedule.preacher.leader.title }} {{ schedule.preacher.first_name }} {{ schedule.preacher.last_name }}
+                                    {% else %}
+                                        {{ schedule.preacher.first_name }} {{ schedule.preacher.last_name }}
+                                    {% endif %}
+                                    </p>
+                            </div>
+        
+                        </div>
                     </div>
-                    <div>
-                        <p class="ms-sm-2 text-light">Joshua Sikibi</p>
+                    <hr class="w-75 mx-auto">
+        
+                    <div class="mt-sm-6 date">
+                        <img src="../../../static/images/🦆 icon _music 1_.svg" alt="">
+                        <span class="ms-2 p-3" style="background-color: #41292d; color:orange; border-end-end-radius: 2rem; display: inline-block">{{ schedule.music_group.name }}</span>
                     </div>
-
+                    <hr class="w-75 mx-auto">
+        
+                    {% if schedule.guests.all %}
+                        
+                        <div class="mt-sm-6 date row row-cols-1 row-cols-sm-4">
+                                <div class="col-sm-2">
+                                    <h5 class="" style="color: burlywood; text-decoration: underline">{% if schedule.guests.count > 1 %}Guests{% else %}Guest{% endif %}</h5>
+                                </div>
+                            {% for guest in schedule.guests.all %}     
+                                <div class="col-sm-5">
+                                    <img class="img-fluid rounded-circle ms-sm-5 mt-2" src="{{ guest.picture.url }}" alt="{{ guest.name }}" height="80rem" width="80rem">
+                                    <p class="ms-sm-5 text-light">{{ guest.name }}</p>
+                                    <!-- <p class="text-center" style="color: burlywood">({{ guest.guest_from }})</p> -->
+                                </div>
+                            {% endfor %}
+                            <!-- <div class="col-sm-5">
+                                <img class="img-fluid rounded-circle ms-sm-5 mt-2" src="https://placebear.com/200/200" alt="" height="80rem" width="80rem">
+                                <p class="ms-sm-5 text-light">Pastor Stephen</p>
+                            </div> -->
+                        </div>
+                        <hr class="w-75 mx-auto">
+                    {% endif %}
+        
                 </div>
-            </div>
-
-            <!-- <div class="mt-4 mt-sm-6 row gap-3 gap-md-4 gap-lg-5 date">
-                <div class="col-2 sub-heading" style="background-color: #cad4eb;">Teacher :</div>
-                <div class="col-2 sub-heading" style="background-color: #cad4eb; margin-inline-start: 8.5rem;">Preacher :</div>
-            </div>
-            <div class="row row-cols-sm-3 date">
-                <div class="col-lg-5 ms-sm-4">
-                    <div>
-                        <img class="img-fluid rounded-circle mt-2" src="https://placebear.com/200/200" alt="" height="150rem" width="150rem">
-                    </div>
-                    <p class="ms-sm-2 text-light">Enoch Amponsah</p>
-                </div>
-
-                <div class="col-sm-1 d-none d-lg-block" style="border-inline-start: 1px solid white; height: 6rem; margin-inline-start: -1rem; margin-block-start: 3rem">
-                </div>
-                
-                <div class="col-sm-5" style="margin-inline-start: 2.5rem;">
-                    <div>
-                        <img class="img-fluid rounded-circle mt-2" src="https://placebear.com/250/250" alt="" height="150rem" width="150rem">
-                    </div>
-                    <p class="ms-sm-2 text-light">Joshua Sikibi</p>
-                </div>
-            </div> -->
-            <hr class="w-75 mx-auto">
-
-            <div class="mt-sm-6 date">
-                <img src="../../../static/images/🦆 icon _music 1_.svg" alt="">
-                <span class="ms-2 p-3" style="background-color: #41292d; color:orange; border-end-end-radius: 2rem; display: inline-block">Group 2</span>
-            </div>
-            <hr class="w-75 mx-auto">
-
-            <div class="mt-sm-6 date row row-cols-1 row-cols-sm-4">
-                <div class="col-sm-2">
-                    <h5 class="" style="color: burlywood; text-decoration: underline">Guests</h5>
-                </div>
-                <div class="col-sm-5">
-                    <img class="img-fluid rounded-circle ms-sm-5 mt-2" src="https://placebear.com/200/200" alt="" height="80rem" width="80rem">
-                    <p class="ms-sm-5 text-light">Pastor Stephen</p>
-                </div>
-                <div class="col-sm-5">
-                    <img class="img-fluid rounded-circle ms-sm-5 mt-2" src="https://placebear.com/200/200" alt="" height="80rem" width="80rem">
-                    <p class="ms-sm-5 text-light">Pastor Stephen</p>
-                </div>
-            </div>
-            <hr class="w-75 mx-auto">
-
-        </div>
-    </section>
+            </section>
+        {% endfor %}
+    {% endif %}
 {% endblock %}

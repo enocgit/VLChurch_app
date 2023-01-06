@@ -9,6 +9,7 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"/>
     <link rel="stylesheet" href="{% static 'bootstrap/dist/css/bootstrap.min.css' %}" type="text/css">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.3.0/font/bootstrap-icons.css">
+    <!-- <link rel="stylesheet" href="{% static 'quill/dist/quill.snow.css' %}" type="text/css"> -->
     
     <link rel="stylesheet" href="{% static 'stylesheet/style.css' %}" type="text/css">
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=ABeeZee" />
@@ -23,7 +24,10 @@
     <script src="{% static 'bootstrap/dist/js/bootstrap.bundle.min.js' %}"></script>
     <script src="{% static 'bootstrap-icons/font/bootstrap-icons.css' %}"></script>
     <script src="{% static 'jquery/dist/jquery.min.js' %}"></script>
+    <!-- <script src="{% static 'quill/dist/quill.min.js' %}"></script> -->
     <script src="{% static 'javascript/main.js' %}" async></script>
+    <!-- <script src="https://cdn.quilljs.com/1.3.6/quill.js"></script> -->
+
     <!-- <script src="https://cdn.jsdelivr.net/npm/jquery@3.6.0/dist/jquery.min.js" integrity="sha384-J0oG+zTk1GWr/A7V+jI6J/yVuWh2Q3zqVuIj+Uz7JxNx6s1+jCKPOm+W8yv9J9j+" crossorigin="anonymous"></script> -->
     <title>{% block title %}Victorious Living Church International{% endblock %}</title>
 </head>
@@ -55,7 +59,8 @@
                           <a class="dropdown-item" href="/#leaders">Leaders</a>
                           <a class="dropdown-item" href="{% url 'fellowships:fellowships-list' %}">Fellowship Groups</a>
                           <a class="dropdown-item" href="{% url 'programmes:programmes-list' %}">Upcoming programmes</a>
-                          <a class="dropdown-item" href="#">Chat</a>
+                          <a class="dropdown-item mb-4" href="{% url 'chats:chat-list' %}">Chat</a>
+                          <a class="dropdown-item d-inline give" href="" style="background-color: #3a202c; color: #c6a9cc;" data-bs-toggle="tooltip" data-bs-placement="bottom" title="Tithe, Offering, or Donation">Give</a>
                       </div>
                   </li>
                   <!-- <li class="nav-item ms-5 position-relative sign-in">
@@ -77,6 +82,22 @@
     <footer class="p-5 text-center main-footer">
         Copyright &copy; 2022 Victorious Living Church International
     </footer>
+
+    <!-- <script src="quill/dist/quill.min.js/quill.min.js"></script>
+  <script>
+    var quill = new Quill('#comment-field', {
+      modules: {
+        toolbar: [
+          [{ header: [1, 2, false] }],
+          ['bold', 'italic', 'underline'],
+          ['link', 'blockquote', 'code-block', 'emoji'],
+          [{ list: 'ordered' }, { list: 'bullet' }]
+        ]
+      },
+      placeholder: 'Compose an epic...',
+      theme: 'snow'
+    });
+  </script> -->
 
 </body>
 </html>

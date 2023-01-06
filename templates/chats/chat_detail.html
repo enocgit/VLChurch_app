@@ -1,0 +1,69 @@
+{% extends 'chats/base.html' %}
+{% load humanize %}
+
+{% block title %}
+    Chat
+{% endblock %}
+{% block active %}
+    <li class="nav-item">
+        <a class="nav-link" href="{% url 'homepage:homepage' %}" aria-current="page">Home</a>
+    </li>
+    <li class="nav-item">
+        <a class="nav-link" href="{% url 'homepage:about' %}">About</a>
+    </li>
+    <li class="nav-item">
+        <a class="nav-link" href="{% url 'homepage:contact' %}">Contact</a>
+    </li>
+{% endblock %}
+
+{% block content_chat %}
+{% if chat.comment_set.all %}
+        
+{% for comment in chat.comment_set.all %}
+    
+    <div class="comment row p-2 shadow">
+        <div class="col-2">
+            <img src="{{ request.user.picture.url }}" alt="" class="rounded-circle" width="80rem" height="80rem" />
+        </div>
+        <div class="col-7">
+            <h6 class="name fw-bold">{{ comment.user.first_name }} {{ comment.user.last_name }}</h6>
+            <p class="mt-4">{{ comment.message|safe }}</p>
+        </div>
+        <div class="col-3">
+            <small class="bg-info text-center text-light rounded-4 px-4 py-1 date">{{ comment.datetime|naturaltime }}</small>
+        </div>
+    </div>
+{% endfor %}
+
+{% else %}
+    no comment yet
+{% endif %}
+    
+{% endblock %}
+{% block canvas %}
+<div class="offcanvas offcanvas-start" tabindex="-1" id="offcanvasWithBackdrop" aria-labelledby="offcanvasWithBackdropLabel">
+    <div class="offcanvas-header">
+      <h5 class="offcanvas-title" id="offcanvasWithBackdropLabel" style="color: #3e535f">Chats</h5>
+      <button type="button" class="btn-close text-reset" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+    </div>
+    <div class="offcanvas-body">
+        {% if chats %}
+            
+            {% for chat in chats %}
+                
+                
+                <div class="">
+                    <i class="bi-chat-fill me-3" style="font-size: 2rem; color: #3e535f"></i>
+                    <a href="{% url 'chats:chat-detail' chat.pk %}" class="text-decoration-none chats-list">
+                        <span class="fw-bold">{{ chat.name }}</span>
+                    </a>
+                </div>
+            {% endfor %}
+        {% endif %}
+    </div>
+</div>
+{% endblock %}
+{% block banner_head %}
+    {{ chat.name }}
+{% endblock %}
+

@@ -38,13 +38,16 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+    'django.contrib.humanize',
+    'chats',
     'homepage',
     'fellowships',
     'leaders',
     'members',
     'programmes',
-    'chat',
     'service',
+    'accounts',
+    'ckeditor',
 ]
 
 MIDDLEWARE = [
@@ -132,3 +135,8 @@ STATICFILES_DIRS = [BASE_DIR/'static']
 # https://docs.djangoproject.com/en/4.1/ref/settings/#default-auto-field
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
+
+
+# LOGIN_REDIRECT_URL = 'chats:chat-list'
+
+LOGOUT_REDIRECT_URL = 'homepage:homepage'

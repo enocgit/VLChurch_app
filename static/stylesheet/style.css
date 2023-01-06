@@ -1,9 +1,9 @@
 :root {
-    --primary-color: #41292d;
+    --primary-color: #3e535f;
     --primary-white: #f7e9e8;
     --secondary-color: #CE7B9D;
     --main-area-primary: #c0699b;
-    --main-area-secondary: burlywood;
+    --main-area-secondary: #a7d7fc;
     --third-color: #9F9495;
  
     --animate-duration: 1.5s;
@@ -30,8 +30,8 @@ body {
     background-repeat: no-repeat;
     background-size: cover;
     background-position: center;
-    border-bottom-left-radius: 20%;
-    border-bottom-right-radius: 90%;
+    border-bottom-left-radius: 50%;
+    border-bottom-right-radius: 300%;
 }
 #about .vision {
     margin-inline: 8rem;
@@ -116,7 +116,7 @@ body {
     padding-block-start: 1rem;
 }
 .carousel-item img {
-    height: 20rem;
+    height: 30rem;
     object-fit: cover;
 }
 /* .col-sm-6 .ms-sm-2 {
@@ -136,6 +136,50 @@ body {
     background-size: cover;
     background-repeat: no-repeat;
     padding-top: 8rem;
+}
+.comment {
+    margin-top: 1rem !important;
+    border: 1px solid #eee;
+    border-bottom-right-radius: 100px;
+    border-top-left-radius: 10px;
+    border-top-right-radius: 10px;
+    border-bottom-left-radius: 10px;
+}
+.comment .name {
+    color: var(--primary-color);
+}
+.comment .date {
+    background-color: #3B8EBC !important;
+}
+#chats .container {
+    width: 60vw;
+    margin-inline: auto;
+}
+#chats .banner {
+    background-color: #3e535f;
+    color: #a7d7fc;
+    margin-top: 5rem;
+}
+#chats .avatar {
+    width: 10vw;
+}
+#chats .avatar .logout {
+    color: #444;
+    text-decoration: dotted;
+}
+#chats .avatar a {
+    /* text-decoration-style: dotted;
+    text-decoration-color: #444; */
+    text-decoration: none;
+}
+#chats .chats-list {
+    color: #78b8e9;
+    transition: all 0.5s cubic-bezier(0.075, 0.82, 0.165, 1);
+}
+#chats .chats-list:hover {
+    font-size: 1.1rem;
+    /* transform: scale(1.05) !important; */
+    transition: all 0.5s cubic-bezier(0.075, 0.82, 0.165, 1);
 }
 #contact .form {
     width: 40vw;
@@ -158,7 +202,7 @@ body {
     border: 0.15em solid var(--main-area-secondary) !important;
     transition: all 0.3s ease-in-out;
 }
-.form-search:focus{
+.form-search:focus, #chats .chats-textarea:focus{
     outline: 0.1rem solid var(--main-area-secondary) !important;
     transition: all 0.3s ease-in-out;
 }
@@ -166,8 +210,19 @@ body {
     background: url('https://www.placebear.com/200/200');
 } */
 .home-carousel {
-    /* margin-top: 10rem; */
+    /* margin-top: 8rem !important; */
     /* background-color: var(--primary-color); */
+}
+#login {
+    margin-top: 10rem;
+    margin-bottom: 10rem;
+}
+#login .container {
+    width: 30vw;
+    margin-inline: auto;
+}
+#login .login-form .input {
+    width: 100%;
 }
 #music {
     background-image: url('../../static/images/unsplash_hgO1wFPXl3I.jpg');
@@ -262,6 +317,9 @@ body {
     /* background: var(--primary-color) !important; */
     /* min-height: 70vh; */
 }
+/* .main-intro .header {
+    margin-top: 5rem;
+} */
 .main-location {
     /* background: var(--primary-white); */
     background: var(--primary-color) !important;
@@ -289,8 +347,14 @@ body {
 .main-leaders .content {
     margin-inline: auto;
 }
+.menu-btn-text {
+    visibility: hidden;
+}
 .navbar-main {
     background-color: var(--primary-color) !important;
+}
+.navbar-main .give:hover {
+    color: var(--primary-white) !important;
 }
 .navbar-brand {
     color: var(--main-area-secondary) !important
@@ -310,9 +374,30 @@ body {
     border: 0;
 }  
 .programme {
-    background-image: url('../../static/images/fundraising1.jpg');
+    /* background-image: url('../../static/images/fund.jpg'); */
     background-repeat: no-repeat;
     background-size: cover;
+    position: relative;
+    /* min-height: 100vh */
+    /* filter: brightness(0.2); */
+}
+.programme > * {
+    z-index: 1; 
+    /* position: absolute; */
+    /* filter: none !important; */
+}
+.programme::before {
+    content: "";
+    position: absolute;
+    z-index: 0;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: inherit;
+    background-repeat: no-repeat;
+    background-size: cover;
+    filter: brightness(0.2);
 }
 .programme .container {
     width: 40vw !important;
@@ -334,10 +419,10 @@ body {
     column-gap: 0;
 } */
 .service {
-    background-image: url('../../static/images/sunday_service_bg.jpg');
-    background-repeat: no-repeat;
-    background-size: cover;
-    background-position: 0rem -2rem;
+    /* background-image: url('../../static/images/sunday_service_bg.jpg'); */
+    background-repeat: no-repeat !important;
+    background-size: cover !important;
+    background-position: 0rem -2rem !important;
     padding-top: 6rem;
     padding-bottom: 6rem;
 }

@@ -22,4 +22,6 @@ urlpatterns = [
     path('fellowships/', include('fellowships.urls')),
     path('upcoming-programmes/', include('programmes.urls')),
     path('sunday-service/', include('service.urls')),
+    path('accounts/', include('accounts.urls')),
+    path('chats/', include('chats.urls', namespace='chats')),
 ]
