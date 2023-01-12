@@ -1,0 +1,43 @@
+<nav class="bg-white flex items-center justify-between px-4 py-3 w-full">
+    <!-- <div class="flex items-center">
+      Other
+    </div> -->
+    <div class="block lg:hidden">
+      <button class="flex items-center px-3 py-2 border rounded hover:text-white hover:border-white">
+        <svg class="fill-current h-3 w-3" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><title>Menu</title><path d="M0 3h20v2H0V3zm0 6h20v2H0V9zm0 6h20v2H0v-2z"/></svg>
+      </button>
+    </div>
+    <div class="w-full block flex-grow lg:flex lg:items-center lg:w-auto hidden lg:block mt-2 lg:mt-0 bg-white lg:bg-transparent lg:shadow-none">
+      <div class="text-sm lg:flex-grow">
+        <a href="#" class="block mt-4 lg:inline-block lg:mt-0 mr-4">
+          Home
+        </a>
+        <a href="#" class="block mt-4 lg:inline-block lg:mt-0 mr-4">
+          About
+        </a>
+        <a href="#" class="block mt-4 lg:inline-block lg:mt-0 mr-4">
+          Sunday Service
+        </a>
+        <div class="relative inline-block text-left">
+          <div>
+            <button class="bg-white text-left leading-none px-2 py-2 rounded-full text-gray-800 font-semibold hover:bg-gray-200 focus:outline-none focus:bg-gray-200 focus:text-gray-800 dropdown-toggle" type="button">
+              More
+              <svg class="fill-current h-4 w-4" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path d="M9.293 12.95l.707.707L15.657 8l-1.414-1.414L10 10.828 5.757 6.586 4.343 8z"/></svg>
+            </button>
+            <div class="dropdown-menu absolute hidden text-gray-700 pt-1">
+              <a href="#" class="block px-3 py-2 rounded-md text-base font-medium text-gray-900 hover:text-white hover:bg-gray-700 focus:outline-none focus:text-white focus:bg-gray-700">Leaders</a>
+              <a href="#" class="block px-3 py-2 rounded-md text-base font-medium text-gray-900 hover:text-white hover:bg-gray-700 focus:outline-none focus:text-white focus:bg-gray-700">Fellowship Groups</a>
+              <a href="#" class="block px-3 py-2 rounded-md text-base font-medium text-gray-900 hover:text-white hover:bg-gray-700 focus:outline-none focus:text-white focus:bg-gray-700">Upcoming Programmes</a>
+              <a href="#" class="block px-3 py-2 rounded-md text-base font-medium text-gray-900 hover:text-white hover:bg-gray-700 focus:outline-none focus:text-white focus:bg-gray-700">Chat</a>
+              <a href="#" class="block px-3 py-2 rounded-md text-base font-medium text-gray-900 hover:text-white hover:bg-gray-700 focus:outline-none focus:text-white focus:bg-gray-700">Give</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </nav>
+
+
+
+
+  before:absolute before:z-0 before:top-0 before:left-0 before:w-full before:h-full before:bg-[inherit] before:bg-no-repeat before:bg-cover before:brightness-[0.2] 

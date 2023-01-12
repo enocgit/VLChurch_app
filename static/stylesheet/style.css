@@ -3,7 +3,7 @@
     --primary-white: #f7e9e8;
     --secondary-color: #CE7B9D;
     --main-area-primary: #c0699b;
-    --main-area-secondary: #a7d7fc;
+    --main-area-secondary: #462D1A;
     --third-color: #9F9495;
  
     --animate-duration: 1.5s;
@@ -16,6 +16,7 @@ body {
     overflow-x: hidden;
     /* overflow: auto; */
     /* max-width: 100vw; */
+    font-family: 'Abhaya Libre', serif;
 }
 
 /* ******************************************************************** */
@@ -213,6 +214,31 @@ body {
     /* margin-top: 8rem !important; */
     /* background-color: var(--primary-color); */
 }
+header .container {
+    width: 90vw !important;
+    margin-inline-start: 12rem;
+}
+header .icons {
+    width: 14%
+}
+.hm-img {
+    width: 100vw;
+    min-height: 30vh;
+    background: url('../../static/images/Rectangle\ 29.jpg');
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: contain;
+    padding-inline: 20rem;
+    padding-block: 4rem;
+    color: white;
+}
+.hm-img h2 {
+    font-size: 7rem;
+    font-weight: bold;
+}
+.hm-img p {
+    font-size: 2rem;
+}
 #login {
     margin-top: 10rem;
     margin-bottom: 10rem;
@@ -322,17 +348,20 @@ body {
 } */
 .main-location {
     /* background: var(--primary-white); */
-    background: var(--primary-color) !important;
+    background: #f2f2f2 !important;
 }
 .main-intro .content, .main-location .content {
     /* width: 40rem; */
 }
 .main-location .head, .main-location .lead, .main-location .btn-help {
-    visibility: hidden;
+    /* visibility: hidden; */
     transition: all 0.8s ease-in-out;
 }
+.main-location .content, .giving .content div:nth-of-type(1), .request .content div:nth-of-type(2) {
+    width: 35vw;
+}
 .main-leaders .head, .main-leaders .row {
-    visibility: hidden;
+    /* visibility: hidden; */
 }
 .main-intro .content p, .main-location .content p {
     /* width: 25rem; */
@@ -351,7 +380,15 @@ body {
     visibility: hidden;
 }
 .navbar-main {
-    background-color: var(--primary-color) !important;
+    /* background-color: var(--primary-color) !important; */
+}
+.navbar-main .nav-link {
+    font-size: 1.3rem;
+}
+.navbar-main .navbar-nav {
+    /* display: flex !important;
+    justify-content: center !important; */
+    margin-inline-start: 14rem !important;
 }
 .navbar-main .give:hover {
     color: var(--primary-white) !important;

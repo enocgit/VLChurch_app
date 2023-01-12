@@ -3,17 +3,6 @@
 {% block title %}
     Chats
 {% endblock %}
-{% block active %}
-    <li class="nav-item">
-        <a class="nav-link" href="{% url 'homepage:homepage' %}" aria-current="page">Home</a>
-    </li>
-    <li class="nav-item">
-        <a class="nav-link" href="{% url 'homepage:about' %}">About</a>
-    </li>
-    <li class="nav-item">
-        <a class="nav-link" href="{% url 'homepage:contact' %}">Contact</a>
-    </li>
-{% endblock %}
 {% block content_chat %}
     
     <!-- <div class="comment row p-2 shadow">
@@ -40,9 +29,10 @@
             <small class="bg-info text-center text-light rounded-4 px-4 py-1 date">Today</small>
         </div>
     </div> -->
+
 {% endblock %}
 {% block canvas %}
-<div class="offcanvas offcanvas-start" tabindex="-1" id="offcanvasWithBackdrop" aria-labelledby="offcanvasWithBackdropLabel">
+<!-- <div class="offcanvas offcanvas-start" tabindex="-1" id="offcanvasWithBackdrop" aria-labelledby="offcanvasWithBackdropLabel">
     <div class="offcanvas-header">
       <h5 class="offcanvas-title" id="offcanvasWithBackdropLabel" style="color: #3e535f">Chats</h5>
       <button type="button" class="btn-close text-reset" data-bs-dismiss="offcanvas" aria-label="Close"></button>
@@ -56,13 +46,13 @@
             {% for chat in chats %}
                 
                 <div class="">
-                    <i class="bi-chat-fill me-3" style="font-size: 2rem; color: #3e535f"></i>
+                    <i class="bi-chat-fill mr-3" style="font-size: 2rem; color: #3e535f"></i>
                     <a href="{% url 'chats:chat-detail' chat.pk %}" class="text-decoration-none chats-list">
-                        <span class="fw-bold">{{ chat.name }}</span>
+                        <span class="font-bold">{{ chat.name }}</span>
                     </a>
                 </div>
             {% endfor %}
         {% endif %}
     </div>
-</div>
+</div> -->
 {% endblock %}

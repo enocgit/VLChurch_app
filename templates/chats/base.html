@@ -3,31 +3,20 @@
 {% block title %}
     Chat
 {% endblock %}
-{% block active %}
-    <li class="nav-item">
-        <a class="nav-link" href="{% url 'homepage:homepage' %}" aria-current="page">Home</a>
-    </li>
-    <li class="nav-item">
-        <a class="nav-link" href="{% url 'homepage:about' %}">About</a>
-    </li>
-    <li class="nav-item">
-        <a class="nav-link active" href="{% url 'homepage:contact' %}">Contact</a>
-    </li>
-{% endblock %}
 {% block content %}
-    <section class="mt-5" id="chats">
-        <div class="mt-4 ms-4 position-fixed">
-            <i class="bi-menu-button menu-btn fs-2" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasWithBackdrop" aria-controls="offcanvasWithBackdrop"></i>
-            <span class="menu-btn-text ms-1">Click to view all chats</span>
+    <!-- <section class="mt-5" id="chats">
+        <div class="mt-4 ml-4 fixed">
+            <i class="bi-menu-button menu-btn text-xl" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasWithBackdrop" aria-controls="offcanvasWithBackdrop"></i>
+            <span class="menu-btn-text ml-2">Click to view all chats</span> -->
             <!-- <button class=" border-none" >
             </button> -->
-        </div>
+        <!-- </div>
 
-        <div class="d-flex justify-content-end avatar pt-4 float-end me-5">
+        <div class="flex justify-end avatar pt-4 float-right mr-5">
             <div class="">
-                <img class="rounded-circle" src="{{ request.user.picture.url }}" alt="" width="50rem" height="50rem">
+                <img class="rounded-full" src="{{ request.user.picture.url }}" alt="" width="50rem" height="50rem">
             </div>
-            <div class="ms-2 d-flex flex-column">
+            <div class="ml-2 flex flex-col">
                 {% if request.user.is_authenticated %}
                     <p>
                         {{ request.user.first_name }} {{ request.user.last_name }}
@@ -40,26 +29,57 @@
                 {% endif %}
             </div>
         </div>
-        <div class="container">
+        <div class="container"> -->
             
-            <div class="banner px-4 py-5 rounded-3 animate__animated animate__fadeIn text-center">
-                <h2 class="fw-bolder d-inline-block">{% block banner_head %}{% endblock %}</h2>
-                <i class="bi-chat-fill ms-3" style="font-size: 2rem;"></i>
+            <!-- <div class="banner px-4 py-5 rounded-3 animate__animated animate__fadeIn text-center">
+                <h2 class="fw-bolder d-inline-block">h2>
+                <i class="bi-chat-fill ml-3" style="font-size: 2rem;"></i>
             </div>
-            <div class="p-4">
-                {% block content_chat %}
+            <div class="p-4"> -->
 
+            <section class="font-sans bg-[#fcfafa]">
+                <div class="w-11/12 mx-auto py-5">
+                    <div class="flex justify-end items-center w-3/12 ml-auto">
+                        <img src="{% static 'images/no_image.jpeg' %}" alt="" class="rounded-full w-[50px] h-[50px]">
+                        <small class="text-[1rem] ml-3">Mavis Ansah</small>
+                    </div>
+                </div>
+                <!-- chat name -->
+                <div class="w-6/12 mx-auto p-16 bg-[#1a1a27] text-white rounded-2xl mt-5 mb-10">
+                    <div class="flex w-4/12 mx-auto items-center">
+                        <i class="bi-chat-fill text-3xl"></i>
+                        <h3 class="ml-6 text-4xl font-bold font-sans-head">
+                            {% block banner_head %}
+                                General
+                            {% endblock %}
+                        </h3>
+                    </div>
+                </div>
+                
+                {% block content_chat %}
+                    
                 {% endblock %}
-            </div>
-            <form class="d-flex flex-column comment-box my-5" method="post">
+                <!-- {% block form %} -->
+                <form action="" class="w-6/12 mx-auto mt-10 flex items-start mb-5">
+                    {% csrf_token %}
+                    {{ form.media }}
+                    {{ form.as_p }}
+                    
+                    <input type="submit" value="Comment" class="ml-6 bg-[#007AFF] text-white rounded-lg p-2 text-sm">
+                </form>
+                <!-- {% endblock %} -->
+
+            </section>
+            <!-- </div>
+            <form class="flex flex-col comment-box my-5" method="post">
                 {% csrf_token %}
                 {{ form.media }}
                 {{ form.as_p }}
-                <input type="submit" value="Comment" class="w-25 btn btn-primary text-light">
+                <input type="submit" value="Comment" class="w-25 btn btn-primary text-light"> -->
                 <!-- <div id="comment-field"></div> -->
 
                 <!-- <textarea name="" id="comment-field" cols="40" rows="10" class="rounded-4 p-3 chats-textarea"></textarea> -->
-            </form>
+            <!-- </form> -->
 
             <!-- off canvas -->
             {% block canvas %}
@@ -68,6 +88,7 @@
             
               
 
-        </div>
-    </section>
+        <!-- </div>
+    </section> -->
+
 {% endblock %}
