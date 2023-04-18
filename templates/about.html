@@ -1,16 +1,14 @@
-{% extends 'homepage/base.html' %}
-{% load static %}
-{% block title %}
-    About us
-{% endblock %}
-{% block nav_about %}
-    <li class="text-lg">
-    <a href="{% url 'homepage:about' %}" class="block py-2 pl-3 pr-4 text-white md:text-gray-700 rounded hover:bg-gray-100 md:hover:bg-transparent md:border-0 md:hover:text-[#462D1A] md:p-0 dark:text-gray-400 md:dark:hover:text-white dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent md:overline md:decoration-[#EABE7C] bg-[#462D1A] md:bg-[initial]">About</a>
-    </li>
-{% endblock %}
-
-{% block content %}
-    <!-- <section id="about">
+{% extends 'homepage/base.html' %} {% load static %} {% block title %} About us
+{% endblock %} {% block nav_about %}
+<li class="text-lg">
+  <a
+    href="{% url 'homepage:about' %}"
+    class="block py-2 pl-3 pr-4 text-white md:text-gray-700 rounded hover:bg-gray-100 md:hover:bg-transparent md:border-0 md:hover:text-[#462D1A] md:p-0 dark:text-gray-400 md:dark:hover:text-white dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent md:overline md:decoration-[#EABE7C] bg-[#462D1A] md:bg-[initial]"
+    >About</a
+  >
+</li>
+{% endblock %} {% block content %}
+<!-- <section id="about">
         <div class="banner">
 
         </div>
@@ -38,37 +36,71 @@
         </div>
     </section> -->
 
-    <div class="bg-[url('/static/images/unsplash_6V2vCZ2hYtY.jpg')] bg-cover bg-no-repeat h-[30vh] w-full bg-center border-b-8 rounded-bl-[60%] rounded-br-[60%] animate__animated animate__fadeIn">
-        
+<div
+  class="bg-cover bg-no-repeat h-[30vh] w-full bg-center border-b-8 rounded-bl-[60%] rounded-br-[60%] animate__animated animate__fadeIn"
+  style="background-image: url('/static/images/about-img.jpg')"
+></div>
+<section class="py-[6rem] relative overflow-x-hidden">
+  <div
+    class="container flex md:flex-row flex-col justify-between md:items-center w-[80vw] mx-auto"
+  >
+    <div class="lg:mr-[9rem] animate__animated animate__fadeInTopLeft">
+      <h2 class="text-5xl sm:text-6xl font-bold mb-8 text-[#877B7B]">
+        Mission
+      </h2>
+      <p class="text-2xl sm:text-3xl">
+        Lorem ipsum dolor sit amet, consectetur adipisicing elit. Dolorem?
+      </p>
     </div>
-    <section class="py-[6rem] relative overflow-x-hidden">
-        <div class="container flex md:flex-row flex-col justify-between md:items-center w-[80vw] mx-auto">
-          <div class="lg:mr-[9rem] animate__animated animate__fadeInTopLeft">
-            <h2 class="text-5xl sm:text-6xl font-bold mb-8 text-[#877B7B]">Mission</h2>
-            <p class="text-2xl sm:text-3xl">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Dolorem?</p>
-          </div>
-          <div class="shrink-0 mt-16 lg:mt-0">
-            <img src="{% static 'images/Rectangle 18.jpg' %}" alt="" class="w-[100vw] md:w-[45vw] relative z-10 animate__animated animate__fadeInRight">
-            <div class="absolute top-[20rem] right-[-12rem] sm:top-[18rem] md:top-[12rem] lg:top-[6rem] z-[2] sm:right-[-10rem] lg:right-[-10rem]">
-                <img src="{% static 'images/Rectangle 20.jpg' %}" alt="" class="w-[100vw] md:w-[45vw] ">
-            </div>
-          </div>
-        </div>
-    </section>
-    <section class="py-[6rem] mb-[10rem] sm:mt-10 relative" id="about-vision">
-        <div class="container flex md:flex-row-reverse flex-col justify-between md:items-center w-[80vw] mx-auto">
-          <div class="right-content">
-            <h2 class="text-5xl sm:text-6xl font-bold mb-8 text-[#877B7B] invisible">Vision</h2>
-            <p class="text-2xl sm:text-3xl invisible">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Dolorem?</p>
-          </div>
-          <div class="shrink-0 mt-16 lg:mt-0 md:mr-[3rem] lg:mr-[9rem] invisible left-content">
-            <img src="{% static 'images/Rectangle 19.jpg' %}" alt="" class="md:w-[45vw] relative z-10">
-            <div class="absolute top-[25rem] left-[-12rem] sm:top-[18rem] md:top-[12rem] lg:top-[6rem] z-[2] sm:left-[-10rem] lg:left-[-10rem]">
-                <img src="{% static 'images/Rectangle 21.jpg' %}" alt="" class="w-[100vw] md:w-[45vw]">
-            </div>
-          </div>
-        </div>
-    </section>
-          
-   {{ current_year }}
-{% endblock %}
+    <div class="shrink-0 mt-16 lg:mt-0">
+      <img
+        src="{% static 'images/mission-img.jpg' %}"
+        alt=""
+        class="w-[100vw] md:w-[45vw] relative z-10 animate__animated animate__fadeInRight"
+      />
+      <div
+        class="absolute top-[20rem] right-[-12rem] sm:top-[18rem] md:top-[12rem] lg:top-[6rem] z-[2] sm:right-[-10rem] lg:right-[-10rem]"
+      >
+        <img
+          src="{% static 'images/mission-img-2.jpg' %}"
+          alt=""
+          class="w-[100vw] md:w-[45vw]"
+        />
+      </div>
+    </div>
+  </div>
+</section>
+<section class="py-[6rem] mb-[10rem] sm:mt-10 relative" id="about-vision">
+  <div
+    class="container flex md:flex-row-reverse flex-col justify-between md:items-center w-[80vw] mx-auto"
+  >
+    <div class="right-content">
+      <h2 class="text-5xl sm:text-6xl font-bold mb-8 text-[#877B7B] invisible">
+        Vision
+      </h2>
+      <p class="text-2xl sm:text-3xl invisible">
+        Lorem ipsum dolor sit amet, consectetur adipisicing elit. Dolorem?
+      </p>
+    </div>
+    <div
+      class="shrink-0 mt-16 lg:mt-0 md:mr-[3rem] lg:mr-[9rem] invisible left-content"
+    >
+      <img
+        src="{% static 'images/vision-img.jpg' %}"
+        alt=""
+        class="md:w-[45vw] relative z-10"
+      />
+      <div
+        class="absolute top-[25rem] left-[-12rem] sm:top-[18rem] md:top-[12rem] lg:top-[6rem] z-[2] sm:left-[-10rem] lg:left-[-10rem]"
+      >
+        <img
+          src="{% static 'images/vision-img-2.jpg' %}"
+          alt=""
+          class="w-[100vw] md:w-[45vw]"
+        />
+      </div>
+    </div>
+  </div>
+</section>
+
+{{ current_year }} {% endblock %}
