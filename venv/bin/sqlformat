@@ -1,4 +1,6 @@
-#!/home/enochansah/Prog/Projects/vlchurch_app/venv/bin/python
+#!/bin/sh
+'''exec' "/run/media/enochansah/Linux Files/Prog/Projects/vlchurch_app/venv/bin/python3" "$0" "$@"
+' '''
 # -*- coding: utf-8 -*-
 import re
 import sys

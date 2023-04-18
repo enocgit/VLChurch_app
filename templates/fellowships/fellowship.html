@@ -15,7 +15,7 @@
     </li>
 {% endblock %}
 {% block content %}
-    <section id="music">
+    <!-- <section id="music">
         <div class="music-shape d-flex justify-content-between align-items-center animate__animated animate__fadeInLeft">
             <h3 class="primary-brown">MUSIC</h3>
             <div class="circ-line rounded-circle">
@@ -51,5 +51,46 @@
         <a href="">
             <button class="btn">Get more info</button>
         </a>
+    </section> -->
+
+
+    <!-- Music -->
+    <section class="bg-[url('/static/images/unsplash_hgO1wFPXl3I.jpg')] bg-no-repeat bg-cover bg-center pt-[15rem]">
+        <div class="h-[15rem] w-[13rem] smpl:w-[25rem] sm:w-[35rem] md:w-[40rem] lg:w-[50rem] bg-white py-[2rem] rounded-tr-[20%] rounded-br-[20%] mb-16  animate__animated animate__fadeInLeft">
+            <div class="flex flex-col md:flex-row w-9/12 mx-auto justify-between items-center">
+                <h2 class="font-fantasy text-6xl md:text-[7rem] text-[#462D1A] font-normal">Music</h2>
+                <div class="mt-8 inline-block h-[5rem] w-[5rem] md:h-[8rem] md:w-[8rem] bg-[#E78640] m-[0.7rem] rounded-full">
+                    <div class="relative top-[-1rem] left-[-1rem] h-[7rem] w-[7rem] md:h-[10rem] md:w-[10rem] border-[0.3rem] border-[#e78640] rounded-full"></div>
+                </div>
+            </div>
+
+            </div>
+        </div>
+        <div class="w-8/12 mssp:w-4/12 lg:w-3/12 mx-auto lg:ml-[50rem] animate__animated animate__fadeIn">
+            <a href="">
+                <button class="bg-[#E9EFF4] py-3 px-6 text-orange-500 rounded-lg text:lg mssp:text-xl  mb-[8rem]">Join us</button>
+            </a>
+        </div>
+    </section>
+    <!-- Men Fellowship -->
+    <section class="bg-[url('/static/images/Rectangle_5.jpg')] bg-no-repeat bg-cover bg-center py-[12rem] font-sans" id="men-fellow">
+        <div class="bg-white w-10/12 md:w-8/12 lg:w-5/12 mx-auto text-center pt-[6rem] pb-[4rem] px-8 invisible">
+           <h1 class="uppercase text-[2.5rem] mssp:text-[3rem] smpl:text-[4rem] sm:text-[6rem] leading-[1.5rem]">Men</h1>
+           <h2 class="uppercase text-[1.5rem] mssp:text-[2rem] smpl:text-[3rem] sm:text-[4rem] font-normal">Fellowship</h2>
+           <a href="">
+            <button class="text-white bg-black mt-6 rounded-lg px-6 py-4 text-md mssp:text-lg">Read more</button>
+           </a>
+        </div>
+    </section>
+    <!-- Women fellowship -->
+    <section class="bg-[url('/static/images/Rectangle_7.jpg')] bg-no-repeat bg-cover bg-center py-[12rem] font-cursive" id="women-fellow">
+        <div class="w-8/12 smpl:w-3/12 2xl:w-2/12 mx-auto">
+            <h1 class="text-white text-4xl mspp:text-6xl">Women fellowship</h1>
+        </div>
+        <div class="w-7/12 smpl:w-4/12 lg:w-3/12 mx-auto lg:ml-[50rem] mt-16 font-sans">
+            <a href="">
+                <button class="bg-black py-3 px-5 text-orange-500 rounded-lg text-lg mspp:text-xl ">Read more</button>
+            </a>
+        </div>
     </section>
 {% endblock %}

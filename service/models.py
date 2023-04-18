@@ -1,4 +1,5 @@
 from django.db import models
+from ckeditor.fields import RichTextField
 
 from fellowships.models import MusicGroup
 
@@ -31,3 +32,11 @@ class SundayService(models.Model):
 
     def __str__(self):
         return f'{self.datetime.date()} Sunday Church Service'
+
+
+class SundayRecap(models.Model):
+    message = RichTextField(default='', null=True, blank=True)
+    date = models.DateField(auto_now=False)
+    
+    def __str__(self):
+        return f'{self.date}'

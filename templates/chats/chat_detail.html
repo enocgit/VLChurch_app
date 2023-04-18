@@ -1,69 +1,79 @@
-{% extends 'chats/base.html' %}
-{% load humanize %}
-
+{% extends 'homepage/base.html' %}
 {% block title %}
-    Chat
+    Chats
 {% endblock %}
-{% block active %}
-    <li class="nav-item">
-        <a class="nav-link" href="{% url 'homepage:homepage' %}" aria-current="page">Home</a>
-    </li>
-    <li class="nav-item">
-        <a class="nav-link" href="{% url 'homepage:about' %}">About</a>
-    </li>
-    <li class="nav-item">
-        <a class="nav-link" href="{% url 'homepage:contact' %}">Contact</a>
-    </li>
-{% endblock %}
+{% block content %}
 
-{% block content_chat %}
-{% if chat.comment_set.all %}
-        
-{% for comment in chat.comment_set.all %}
-    
-    <div class="comment row p-2 shadow">
-        <div class="col-2">
-            <img src="{{ request.user.picture.url }}" alt="" class="rounded-circle" width="80rem" height="80rem" />
-        </div>
-        <div class="col-7">
-            <h6 class="name fw-bold">{{ comment.user.first_name }} {{ comment.user.last_name }}</h6>
-            <p class="mt-4">{{ comment.message|safe }}</p>
-        </div>
-        <div class="col-3">
-            <small class="bg-info text-center text-light rounded-4 px-4 py-1 date">{{ comment.datetime|naturaltime }}</small>
-        </div>
-    </div>
-{% endfor %}
 
-{% else %}
-    no comment yet
-{% endif %}
-    
-{% endblock %}
-{% block canvas %}
-<div class="offcanvas offcanvas-start" tabindex="-1" id="offcanvasWithBackdrop" aria-labelledby="offcanvasWithBackdropLabel">
-    <div class="offcanvas-header">
-      <h5 class="offcanvas-title" id="offcanvasWithBackdropLabel" style="color: #3e535f">Chats</h5>
-      <button type="button" class="btn-close text-reset" data-bs-dismiss="offcanvas" aria-label="Close"></button>
-    </div>
-    <div class="offcanvas-body">
-        {% if chats %}
-            
-            {% for chat in chats %}
-                
-                
-                <div class="">
-                    <i class="bi-chat-fill me-3" style="font-size: 2rem; color: #3e535f"></i>
-                    <a href="{% url 'chats:chat-detail' chat.pk %}" class="text-decoration-none chats-list">
-                        <span class="fw-bold">{{ chat.name }}</span>
-                    </a>
+
+    <section class="font-sans">
+        <div class="bg-[#222] text-white p-4">
+            <div class="container flex justify-end pr-12">
+                <div class="flex items-center w-1/12">
+                    <img src="https://www.placebear.com/70/70" alt="" class="w-[50px] h-[50px] rounded-full">
+                    <p class="ml-2">Hannah Acheampong</p>
                 </div>
-            {% endfor %}
-        {% endif %}
-    </div>
-</div>
-{% endblock %}
-{% block banner_head %}
-    {{ chat.name }}
-{% endblock %}
+            </div>
+        </div>
+        <div class="bg-[#222] px8 py-16 mt-[5rem] w-6/12 mx-auto rounded-lg flex justify-center items-center mb-16">
+            <i class="bi-chat-fill text-3xl text-white"></i>
+            <h2 class="text-white ml-4 text-3xl font-bold">General</h2>
+        </div>
 
+        <div class="">
+            <div class="flex w-6/12 mx-auto p-6 bg-white shadow-xl border-gray-100 border rounded-lg mt-4">
+                <img src="https://www.placebear.com/70/70" alt="" class="w-[75px] h-[75px] rounded-full">
+                <div class="ml-5 w-9/12">
+                    <h4 class="font-bold text-gray-600">Hannah Acheampong</h4>
+                    <p class="mt-4 ">Hello, everyone</p>
+                </div>
+                <small class="bg-[#5E8D9C] px-5 py-1 text-white rounded-md self-start">Today</small>
+            </div>
+            <div class="flex w-6/12 mx-auto p-6 bg-white shadow-xl border-gray-100 border rounded-lg mt-4">
+                <img src="https://www.placebear.com/70/70" alt="" class="w-[75px] h-[75px] rounded-full">
+                <div class="ml-5 w-9/12">
+                    <h4 class="font-bold text-gray-600">Frank Amo</h4>
+                    <p class="mt-4 ">Hannah. How are you doing?</p>
+                </div>
+                <small class="bg-[#5E8D9C] px-5 py-1 text-white rounded-md self-start">Today</small>
+            </div>
+        </div>
+
+        <form method="post" class="w-6/12 mx-auto mt-10">
+            {% csrf_token %}
+            {{ form.media }}
+            {{ form.as_p }}
+            <input type="submit" value="Post" class="mt-5 bg-blue-800 text-white px-6 py-1 rounded-md hover:cursor-pointer">
+        </form>
+    </section>
+
+
+    <!-- Drawer -->
+
+<!-- drawer init and toggle -->
+ <i data-drawer-target="drawer-example" data-drawer-show="drawer-example" aria-controls="drawer-example" class="bi-text-left text-3xl fixed top-[20rem] left-6 hover:cursor-pointer text-gray-800"></i>
+ 
+ <!-- drawer component -->
+ <div id="drawer-example" class="fixed top-0 left-0 z-40 h-screen overflow-y-auto font-sans transition-transform -translate-x-full bg-[#585858] text-white w-80 dark:bg-gray-800" tabindex="-1" aria-labelledby="drawer-label">
+   <div class="mt-[10rem]">
+        <i class="bi-text-left text-xl text-white absolute top-[1rem] left-4 hover:cursor-pointer" data-drawer-hide="drawer-example" ></i>
+        {% if chats %}
+        <ul class="">
+            {% for chat in chats %}   
+                <a href="">
+                    <li class="mb-2 px-12 p-4 font-bold hover:cursor-pointer"><i class="bi-chat-fill text-[#5E8D9C] text-lg mr-3"></i> {{ chat.name }} </li>
+                </a>
+                <!-- <a href="">
+                    <li class="mb-2 px-12 p-4 font-bold hover:cursor-pointer"><i class="bi-chat-fill text-[#5E8D9C] text-lg mr-3"></i> Quizzes</li>
+                </a> -->
+                <!-- <a href="">
+                    <li class="mb-2 bg-[#E8E6E6] px-12 p-4 font-bold text-[#585858] hover:cursor-pointer"><i class="bi-chat-fill text-[#5E8D9C] text-lg mr-3"></i> General</li>
+                </a> -->
+            {% endfor %}
+        </ul>
+            
+        {% endif %}
+   </div>
+ </div>
+ 
+{% endblock %}

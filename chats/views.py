@@ -1,8 +1,8 @@
 from django.shortcuts import render, get_object_or_404, redirect
 from django.urls import reverse, reverse_lazy
-from django.views.generic import View, ListView, DetailView, FormView
+from django.views.generic import View, ListView, DetailView, FormView, CreateView
 from django.contrib.auth.mixins import LoginRequiredMixin
-from chats.models import Chat
+from chats.models import Chat, Comment
 from .forms import CommentForm
 
 # class ChatList(LoginRequiredMixin, ListView):
@@ -23,23 +23,24 @@ from .forms import CommentForm
         
 #         return context
     
-class ChatList(LoginRequiredMixin, ListView):
-    model = Chat
-    template_name = 'chats/chat_list.html'
-    context_object_name = 'chats'
+# class ChatList(ListView):
+#     model = Chat
+#     template_name = 'chats/chat_list.html'
+#     context_object_name = 'chats'
 
-    def get(self, request, *args, **kwargs):
-        # Get the chat ID from the cookie
-        chat_id = request.COOKIES.get('chat_id')
+#     def get(self, request, *args, **kwargs):
+#         # Get the chat ID from the cookie
+#         chat_id = request.COOKIES.get('chat_id')
         
-        # If a chat ID is stored in the cookie, redirect the user to the detail view of that chat
-        if chat_id:
-            return redirect(reverse('chats:chat-detail', kwargs={'pk': chat_id}))
-        
-        # Otherwise, display the chat list as usual
-        return super().get(request, *args, **kwargs)
+#         # If a chat ID is stored in the cookie, redirect the user to the detail view of that chat
+#         if chat_id:
+#             return redirect(reverse('chats:chat-detail', kwargs={'pk': chat_id}))
 
-class ChatDetail(LoginRequiredMixin, FormView):
+#         # Otherwise, display the chat list as usual
+#         return super().get(request, *args, **kwargs)
+
+class ChatDetail(FormView):
+    # fields = ('message')
     form_class = CommentForm
     model = Chat
     template_name = 'chats/chat_detail.html'

@@ -1,4 +1,5 @@
 {% extends 'homepage/base.html' %}
+{% load static %}
 {% load humanize %}
 {% block title %}
     Upcoming Programmes
@@ -15,7 +16,7 @@
 </li>
 {% endblock %}
 {% block content %}
-    {% if programmes %}
+    <!-- {% if programmes %}
         {% for programme in programmes %}
             
             <section class="programme mh-100 pb-5" style="background-image: url({{programme.image.url}});">
@@ -27,27 +28,27 @@
                     </div>
                     <div class="d-flex mt-5 flex-column flex-md-row justify-content-between">
                         <div class="animate__animated animate__fadeInLeft">
-                            <img src="../../../static/images/icon _calendar_.svg" alt="" height="" width="">
+                            <img src="../../../static/images/icon _calendar_.svg" alt="" height="" width=""> -->
                             <!-- <i class="bi bi-phone" style="font-size: 4rem; color: white"></i> -->
-                        </div>
+                        <!-- </div>
                         <div class="ms-5">
                             <h4 class="mt-4" style="font-family: Akaya Kanadaka, script; color: burlywood;">{{ programme.datetime|date:"jS F, Y"}}</h4>
                         </div>
                     </div>
                     <div class="d-flex mt-5 flex-column flex-sm-row justify-content-between">
                         <div class="animate__animated animate__fadeInLeft">
-                            <img src="../../../static/images/🦆 icon _alarm_.svg" alt="" height="" width="">
+                            <img src="../../../static/images/🦆 icon _alarm_.svg" alt="" height="" width=""> -->
                             <!-- <i class="bi bi-phone" style="font-size: 4rem; color: white"></i> -->
-                        </div>
+                        <!-- </div>
                         <div class="ms-5">
                             <h4 class="mt-4" style="font-family: Akaya Kanadaka, script; color: burlywood">{{ programme.datetime.time|time:"h:i a" }}</h4>
                         </div>
                     </div>
                     <div class="d-flex mt-5 flex-column flex-sm-row justify-content-between">
                         <div class="animate__animated animate__fadeInLeft">
-                            <img src="../../../static/images/🦆 icon _pin alt_.svg" alt="" height="" width="">
+                            <img src="../../../static/images/🦆 icon _pin alt_.svg" alt="" height="" width=""> -->
                             <!-- <i class="bi bi-phone" style="font-size: 4rem; color: white"></i> -->
-                        </div>
+                        <!-- </div>
                         <div class="ms-5">
                             <h4 class="mt-4" style="font-family: Akaya Kanadaka, script; color: burlywood">{{ programme.venue }}</h4>
                         </div>
@@ -72,5 +73,51 @@
         {% endfor %}
     {% else %}
         
+    {% endif %} -->
+
+    {% if programmes %}
+        
+        {% for programme in programmes %}
+            
+            <section class="bg-no-repeat bg-center mb-16" style="background: url({{ programme.image.url }}); background-size: cover">
+                <div class="backdrop-brightness-[0.2]">
+                    <div class="container w-11/12 sm:w-9/12 mx-auto py-16 backdrop-brightness-50">
+                        <h1 class="text-center pb-16 text-4xl sm:text-6xl font-bold text-white transform uppercase animate__animated animate__fadeInDown">{{ programme.name }}</h1>
+        
+                        <div class="w-9/12 mdpl:w-7/12 mx-auto">
+                            <div class="flex flex-col sm:flex-row items-center mb-12">
+                                <img src="{% static 'images/icon _calendar_.svg' %}" alt="{{ programme.name }}" class=" animate__animated animate__fadeInLeft">
+                                <h3 class="mt-10 sm:mt-0 ml-0 sm:ml-8 text-[#DAC187] font-bold text-2xl">{{ programme.datetime.date | date:"jS F, Y"}}</h3>
+                            </div>
+                            <div class="flex flex-col sm:flex-row items-center mb-12">
+                                <img src="{% static 'images/🦆 icon _alarm_.svg' %}" alt="" class=" animate__animated animate__fadeInLeft">
+                                <h3 class="mt-10 sm:mt-0 ml-0 sm:ml-8 text-[#DAC187] font-bold text-2xl">{{ programme.datetime.time }}</h3>
+                            </div>
+                            <div class="flex flex-col sm:flex-row items-center mb-16">
+                                <img src="{% static 'images/🦆 icon _pin alt_.svg' %}" alt="" class=" animate__animated animate__fadeInLeft">
+                                <h3 class="mt-10 sm:mt-0 ml-0 sm:ml-8 text-[#DAC187] font-bold text-2xl">{{ programme.venue }}</h3>
+                            </div>
+                            {% if programme.guests.all %}
+                                <h4 class="text-white text-2xl font-bold mb-4">Guests</h4>
+                            {% endif %}
+                        </div>
+                            {% if programme.guests.all %}
+                            <div class="grid grid-cols-1 sm:grid-cols-2 mdpl:grid-cols-3 gap-4 w-7/12 mx-auto">
+                                {% for guest in programme.guests.all %}    
+                                        <div class="flex flex-col items-center">
+                                            <img src="{{ guest.picture.url }}" alt="{{ guest.image.url }}" class="w-[90px] h-[90px] rounded-full">
+                                            <small class="text-white text-lg">{{ guest.name }}</small>
+                                        </div>
+                                        
+                                        {% endfor %}
+                                    </div>
+                            {% endif %}
+                    </div>
+                </div>
+            </section>
+        {% endfor %}
+    {% else %}
+            <small class="text-red-800 text-sm ml-[20rem]">There are no upcoming programmes</small>
     {% endif %}
+
 {% endblock %}

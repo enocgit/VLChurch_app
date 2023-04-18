@@ -11,6 +11,8 @@ https://docs.djangoproject.com/en/4.1/ref/settings/
 """
 
 from pathlib import Path
+import dj_database_url
+import os
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
@@ -25,7 +27,7 @@ SECRET_KEY = 'django-insecure-29no%^g9flp8gx(_e=8&+@+p$_k3wrelhzk8u#=c7o=$rk#2+q
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['*']
 
 
 # Application definition
@@ -46,6 +48,7 @@ INSTALLED_APPS = [
     'members',
     'programmes',
     'service',
+    'gallery',
     'accounts',
     'ckeditor',
 ]
@@ -84,11 +87,15 @@ WSGI_APPLICATION = 'vlchurch_app.wsgi.application'
 # Database
 # https://docs.djangoproject.com/en/4.1/ref/settings/#databases
 
+# DATABASES = {
+#     'default': {
+#         'ENGINE': 'django.db.backends.sqlite3',
+#         'NAME': BASE_DIR / 'db.sqlite3',
+#     }
+# }
+
 DATABASES = {
-    'default': {
-        'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': BASE_DIR / 'db.sqlite3',
-    }
+    'default': dj_database_url.parse(os.environ.get('DATABASE_URL'))
 }
 
 
@@ -128,6 +135,7 @@ USE_TZ = True
 # https://docs.djangoproject.com/en/4.1/howto/static-files/
 
 STATIC_URL = 'static/'
+MEDIA_URL = 'media/'
 
 STATICFILES_DIRS = [BASE_DIR/'static']
 
@@ -140,3 +148,9 @@ DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 # LOGIN_REDIRECT_URL = 'chats:chat-list'
 
 LOGOUT_REDIRECT_URL = 'homepage:homepage'
+
+JAZZMIN_SETTINGS = {
+    "site_title": "VLC International",
+    "site_header": "VLC International",
+    "site_brand": "VLC International"
+}

@@ -1,27 +1,31 @@
 {%  load static %}
 
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" class="scroll-smooth">
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"/>
-    <link rel="stylesheet" href="{% static 'bootstrap/dist/css/bootstrap.min.css' %}" type="text/css">
+    <!-- <link rel="stylesheet" href="{% static 'bootstrap/dist/css/bootstrap.min.css' %}" type="text/css"> -->
+    <link rel="stylesheet" href="https://unpkg.com/flowbite@1.6.0/dist/flowbite.min.css" />
+
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.3.0/font/bootstrap-icons.css">
     <!-- <link rel="stylesheet" href="{% static 'quill/dist/quill.snow.css' %}" type="text/css"> -->
     
     <link rel="stylesheet" href="{% static 'stylesheet/style.css' %}" type="text/css">
+    <link rel="stylesheet" href="{% static 'stylesheet/dist/output.css' %}" type="text/css">
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=ABeeZee" />
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Alegreya+Sans+SC" />
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Akaya+Kanadaka" />
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Abhaya+Libre:regular,bold" />
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Actor" />
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Inter" />
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Advent Pro" />
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lobster" />
     
    <!-- <link rel="stylesheet" href="{% static 'bootstrap/font/bootstrap-icons.css' %}"> -->
-    <script src="{% static 'bootstrap/dist/js/bootstrap.bundle.min.js' %}"></script>
+    <!-- <script src="{% static 'bootstrap/dist/js/bootstrap.bundle.min.js' %}"></script> -->
     <script src="{% static 'bootstrap-icons/font/bootstrap-icons.css' %}"></script>
     <script src="{% static 'jquery/dist/jquery.min.js' %}"></script>
     <!-- <script src="{% static 'quill/dist/quill.min.js' %}"></script> -->
@@ -31,11 +35,28 @@
     <!-- <script src="https://cdn.jsdelivr.net/npm/jquery@3.6.0/dist/jquery.min.js" integrity="sha384-J0oG+zTk1GWr/A7V+jI6J/yVuWh2Q3zqVuIj+Uz7JxNx6s1+jCKPOm+W8yv9J9j+" crossorigin="anonymous"></script> -->
     <title>{% block title %}Victorious Living Church International{% endblock %}</title>
 </head>
-<body>
-    <nav class="shadow navbar navbar-expand-md navbar-dark navbar-main fixed-top">
-        <div class="container">
-          <a class="navbar-brand" href="#">Victorious Living Church</a>
-          <button class="navbar-toggler d-lg-none" type="button" data-bs-toggle="collapse" data-bs-target="#collapsibleNavId" aria-controls="collapsibleNavId" aria-expanded="false" aria-label="Toggle navigation">
+<body style="font-family: Abhaya Libre, serif;" class="">
+    <!-- <header class="py-4 shadow">
+      <div class="container d-flex justify-content-between">
+        <div class="">
+          <h1 class="fw-bold">Victorious Living Church International</h1>
+        </div>
+        <div class="d-flex justify-content-between icons">
+          <i class="bi-whatsapp fs-3"></i>
+          <i class="bi-facebook fs-3"></i>
+          <i class="bi-instagram fs-3"></i>
+        </div>
+        <div class="mt-2">
+          <a href="">
+            <button class="btn btn-outline-dark py-1 px-5 ms-3 fs-4">Call Us</button>
+          </a>
+        </div>
+      </div>
+    </header> -->
+    <!-- <nav class="navbar navbar-expand-md navbar-main bg-white mt-4">
+        <div class="container w-50"> -->
+          <!-- <a class="navbar-brand" href="#">Victorious Living Church</a> -->
+          <!-- <button class="navbar-toggler d-lg-none" type="button" data-bs-toggle="collapse" data-bs-target="#collapsibleNavId" aria-controls="collapsibleNavId" aria-expanded="false" aria-label="Toggle navigation">
               <span class="navbar-toggler-icon"></span>
           </button>
           <div class="collapse navbar-collapse" id="collapsibleNavId">
@@ -59,45 +80,149 @@
                           <a class="dropdown-item" href="/#leaders">Leaders</a>
                           <a class="dropdown-item" href="{% url 'fellowships:fellowships-list' %}">Fellowship Groups</a>
                           <a class="dropdown-item" href="{% url 'programmes:programmes-list' %}">Upcoming programmes</a>
-                          <a class="dropdown-item mb-4" href="{% url 'chats:chat-list' %}">Chat</a>
                           <a class="dropdown-item d-inline give" href="" style="background-color: #3a202c; color: #c6a9cc;" data-bs-toggle="tooltip" data-bs-placement="bottom" title="Tithe, Offering, or Donation">Give</a>
                       </div>
-                  </li>
+                  </li> -->
                   <!-- <li class="nav-item ms-5 position-relative sign-in">
                     <a href="" class="nav-link">Sign in</a>
                   </li> -->
-              </ul>
+              <!-- </ul> -->
 
-              <form class="d-flex my-2 my-lg-0">
+              <!-- <form class="d-flex my-2 my-lg-0">
                   <input class="form-control me-sm-2 form-search" type="text" placeholder="Search">
                   <button class="btn my-2 my-sm-0 btn-search" type="submit">Search</button>
-              </form>
-          </div>
+              </form> -->
+          <!-- </div>
     </div>
-  </nav>
+  </nav> -->
+  <!-- header -->
+  <header class="bg-white py-10 shadow-md shadow-gray-400">
+    <div class="container flex flex-col sm:flex-row justify-between items-center w-[90vw] xl:w-[80vw] min-h-[15vh] sm:min-h-[initial] mx-auto">
+      <div>
+        <h1 class="text-3xl sm:text-4xl tracking font-bold text-neutral-700">Victorious Living Church International</h1>
+      </div>
+      <div class="sm:w-[35vw] lg:flex lg:w-[30vw] justify-between">
+        <!-- social icons -->
+        <div class="mb-4 lg:mb-0 flex w-[40vw] sm:w-[20vw] md:w-[15vw] justify-between text-neutral-700">
+          <i class="bi-whatsapp hover:cursor-pointer cursor-pointer text-[2rem]" title="WhatsApp"></i>
+          <i class="bi-facebook hover:cursor-pointer cursor-pointer text-[2rem]" title="Facebook"></i>
+          <i class="bi-instagram hover:cursor-pointer cursor-pointe text-[2rem]" title="Instagram"></i>
+        </div>
+        <!-- call us button -->
+        <div>
+          <a href="{% url 'homepage:contact' %}">
+            <button class="text-center border-[1px] hover:border-[#EABE7C] border-[#8a8989] py-2 px-10 rounded-xl">Contact Us</button>
+          </a>
+        </div>
+      </div>
+    </div>
+  </header>
+  <!-- nav -->
+  
+<nav class="sticky z-20 top-0 px-2 bg-white border-gray-200 dark:bg-gray-900 dark:border-gray-700 mt-3">
+  <div class="container flex flex-wrap items-center justify-start md:justify-center mx-auto">
+    <button data-collapse-toggle="navbar-dropdown" type="button" class="inline-flex items-center p-2 ml-3 text-sm text-gray-500 rounded-lg md:hidden hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-gray-200 dark:text-gray-400 dark:hover:bg-gray-700 dark:focus:ring-gray-600" aria-controls="navbar-dropdown" aria-expanded="false">
+      <span class="sr-only">Open main menu</span>
+      <svg class="w-6 h-6" aria-hidden="true" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" d="M3 5a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1zM3 10a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1zM3 15a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1z" clip-rule="evenodd"></path></svg>
+    </button>
+    <div class="hidden w-full md:block md:w-auto" id="navbar-dropdown">
+      <ul class="flex flex-col p-4 mt-4 border border-gray-100 rounded-lg bg-gray-50 md:flex-row md:space-x-8 md:mt-0 md:text-sm md:font-medium md:border-0 md:bg-white dark:bg-gray-800 md:dark:bg-gray-900 dark:border-gray-700">
+        <li>
+          <a href="" class="font-bold text-gray-600 sm:text-[initial] text-sm sm:text-lg absolute left-[7rem] sm:left-[10rem] md:left-12 top-4 sm:top-4 lg:top-[initial] invisible" id="brand-sub">Victorious Living Church International</a>
+        </li>
+        {% block nav_home %}
+          
+          <li class="text-lg md:pl-[18rem] lg:pl-[initial]">
+            <a href="{% url 'homepage:homepage' %}" class="block py-2 pl-3 pr-4 text-gray-700 rounded hover:bg-gray-100 md:hover:bg-transparent md:border-0 md:hover:text-[#462D1A] md:p-0 dark:text-gray-400 md:dark:hover:text-white dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent ">Home</a>
+          </li>
+        {% endblock %}
+        {% block nav_about %}
+          
+          <li class="text-lg">
+            <a href="{% url 'homepage:about' %}" class="block py-2 pl-3 pr-4 text-gray-700 rounded hover:bg-gray-100 md:hover:bg-transparent md:border-0 md:hover:text-[#462D1A] md:p-0 dark:text-gray-400 md:dark:hover:text-white dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent">About</a>
+          </li>
+        {% endblock %}
+        {% block nav_service %}
+          
+          <li class="text-lg">
+            <a href="{% url 'service:service-list' %}" class="block py-2 pl-3 pr-4 text-gray-700 rounded hover:bg-gray-100 md:hover:bg-transparent md:border-0 md:hover:text-[#462D1A] md:p-0 dark:text-gray-400 md:dark:hover:text-white dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent">Sunday Service</a>
+          </li>
+        {% endblock %}
+        <li class="text-lg">
+            <button id="dropdownNavbarLink" data-dropdown-toggle="dropdownNavbar" class="flex items-center justify-between w-full py-2 pl-3 pr-4 font-medium text-gray-700 rounded hover:bg-gray-100 md:hover:bg-transparent md:border-0 md:hover:text-[#462D1A] md:p-0 md:w-auto dark:text-gray-400 dark:hover:text-white dark:focus:text-white dark:border-gray-700 dark:hover:bg-gray-700 md:dark:hover:bg-transparent">More <svg class="w-5 h-5 ml-1" aria-hidden="true" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" d="M5.293 7.293a1 1 0 011.414 0L10 10.586l3.293-3.293a1 1 0 111.414 1.414l-4 4a1 1 0 01-1.414 0l-4-4a1 1 0 010-1.414z" clip-rule="evenodd"></path></svg></button>
+            <!-- Dropdown menu -->
+            <div id="dropdownNavbar" class="z-10 hidden font-normal bg-white divide-y divide-gray-100 rounded shadow w-52 dark:bg-gray-700 dark:divide-gray-600">
+                <ul class="py-1 text-sm text-gray-700 dark:text-gray-400" aria-labelledby="dropdownLargeButton">
+                  <li class="text-lg">
+                    <a href="/#leaders" class="block px-4 py-2 hover:bg-[#462D1A] hover:text-white dark:hover:bg-gray-600 dark:hover:text-white">Leaders</a>
+                  </li>
+                  <li class="text-lg">
+                    <a href="{% url 'fellowships:fellowships-list' %}" class="block px-4 py-2 hover:bg-[#462D1A] hover:text-white dark:hover:bg-gray-600 dark:hover:text-white">Fellowship Groups</a>
+                  </li>
+                  <li class="text-lg">
+                    <a href="{% url 'programmes:programmes-list' %}" class="block px-4 py-2 hover:bg-[#462D1A] hover:text-white dark:hover:bg-gray-600 dark:hover:text-white">Upcoming Programmes</a>
+                  </li>
+                  <li class="text-lg">
+                    <a href="{% url 'chats:chat-detail' 1 %}" class="block px-4 py-2 hover:bg-[#462D1A] hover:text-white dark:hover:bg-gray-600 dark:hover:text-white">Chat</a>
+                  </li>
+                  <li class="text-lg">
+                    <a href="#" class="block px-4 py-2 hover:bg-[#462D1A] hover:text-white dark:hover:bg-gray-600 dark:hover:text-white">Gallery</a>
+                  </li>
+                  <li class="text-lg" data-tooltip-target="tooltip-bottom" data-tooltip-placement="bottom" >
+                    <a href="#" class="bg-[#d41132] text-orange-300 hover:text-[#d41132] block px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white">Give</a>
+                    <div id="tooltip-bottom" role="tooltip" class="absolute z-10 invisible inline-block px-3 py-2 text-[0.9rem] font-medium text-[#d41132] bg-white rounded-lg shadow-sm opacity-0 tooltip dark:bg-gray-700">
+                      Tithe, Offering, or Donation
+                      <div class="tooltip-arrow" data-popper-arrow></div>
+                  </div>
+                  
+                  </li>
+                </ul>
+              
+            </div>
+        </li>
+        
+      </ul>
+    </div>
+  </div>
+</nav>
+
     {% block content %}
         
     {% endblock %}
 
-    <footer class="p-5 text-center main-footer">
-        Copyright &copy; 2022 Victorious Living Church International
+    <!-- <footer class="p-5 main-footer text-white ">
+      <div class="d-flex justify-content-between">
+        <div>
+          <h2>Victorious Living Church International</h2>
+        </div>
+        <div>
+          <i class="bi-whatsapp fs-3"></i>
+            <i class="bi-facebook fs-3"></i>
+            <i class="bi-instagram fs-3"></i>
+        </div>
+      </div>
+        <p class="text-center mt-5">Copyright &copy; 2022</p>
+    </footer> -->
+
+    <footer class="py-[5rem] mt-16 bg-[#462D1A] text-white relative z-10">
+      <div class="container w-[80vw] mx-auto flex flex-col min-h-[45vh] sm:min-h-[30vh] justify-between">
+        <div class="flex flex-col lg:flex-row justify-between min-h-[30vh] sm:min-h-[20vh] lg:min-h-[initial]">
+          <h3 class="text-3xl sm:text-4xl font-bold">Victorious Living Church International</h3>
+          <div class="flex w-[50vw] sm:w-[20vw] justify-between">
+            <i class="bi-whatsapp hover:cursor-pointer cursor-pointer text-[2rem] " title="WhatsApp"></i>
+            <i class="bi-facebook hover:cursor-pointer cursor-pointer text-[2rem] " title="Facebook"></i>
+            <i class="bi-instagram hover:cursor-pointer cursor-pointer text-[2rem]" title="Instagram"></i>
+          </div>
+        </div>
+        <div class="self-center">
+          <p class="text-xl">Copyright &copy; {{ current_year }}</p>
+        </div>
+      </div>
+
     </footer>
 
-    <!-- <script src="quill/dist/quill.min.js/quill.min.js"></script>
-  <script>
-    var quill = new Quill('#comment-field', {
-      modules: {
-        toolbar: [
-          [{ header: [1, 2, false] }],
-          ['bold', 'italic', 'underline'],
-          ['link', 'blockquote', 'code-block', 'emoji'],
-          [{ list: 'ordered' }, { list: 'bullet' }]
-        ]
-      },
-      placeholder: 'Compose an epic...',
-      theme: 'snow'
-    });
-  </script> -->
+    <!-- <script src="https://unpkg.com/flowbite@1.6.0/dist/flowbite.min.js"></script> -->
+    <script src="{% static 'flowbite/dist/flowbite.min.js' %}"></script>
 
 </body>
 </html>
