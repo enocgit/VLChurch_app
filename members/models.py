@@ -15,5 +15,5 @@ class Member(AbstractUser):  # members inheriting from AbstractUser model
         'fellowships.Fellowship', verbose_name='fellowship group', null=True, blank=True)
 
     def __str__(self):
-        # return f'{self.first_name} {self.last_name}'
-        return self.username
+        return f'{self.first_name} {self.last_name}'
+        # return self.username
