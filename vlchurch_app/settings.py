@@ -30,9 +30,9 @@ dotenv.load_dotenv()
 
 # SECRET_KEY = secret_key.SECRET_KEY
 
-SECRET_KEY = os.getenv('SECRET_KEY')
+# SECRET_KEY = os.getenv('SECRET_KEY')
 
-# SECRET_KEY = 'django-insecure-29no%^g9flp8gx(_e=8&+@+p$_k3wrelhzk8u#=c7o=$rk#2+q'
+SECRET_KEY = 'django-insecure-29no%^g9flp8gx(_e=8&+@+p$_k3wrelhzk8u#=c7o=$rk#2+q'
 
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
