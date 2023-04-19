@@ -64,9 +64,12 @@
       rel="stylesheet"
       href="https://fonts.googleapis.com/css?family=Lobster"
     />
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet" />
 
     <!-- <link rel="stylesheet" href="{% static 'bootstrap/font/bootstrap-icons.css' %}"> -->
     <!-- <script src="{% static 'bootstrap/dist/js/bootstrap.bundle.min.js' %}"></script> -->
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+
     <script src="{% static 'bootstrap-icons/font/bootstrap-icons.css' %}"></script>
     <script src="{% static 'jquery/dist/jquery.min.js' %}"></script>
     <!-- <script src="{% static 'quill/dist/quill.min.js' %}"></script> -->
@@ -182,7 +185,7 @@
     <!-- nav -->
 
     <nav
-      class="sticky z-20 top-0 px-2 bg-white border-gray-200 dark:bg-gray-900 dark:border-gray-700 mt-3"
+      class="sticky shadow-lg z-20 top-0 px-2 bg-white border-gray-200 dark:bg-gray-900 dark:border-gray-700 mt-3"
     >
       <div
         class="container flex flex-wrap items-center justify-start md:justify-center mx-auto"
@@ -390,5 +393,8 @@
 
     <!-- <script src="https://unpkg.com/flowbite@1.6.0/dist/flowbite.min.js"></script> -->
     <script src="{% static 'flowbite/dist/flowbite.min.js' %}"></script>
+    <script>
+      AOS.init();
+    </script>
   </body>
 </html>

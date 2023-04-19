@@ -16,6 +16,7 @@ module.exports = {
     screens: {
       'mspp': '310px',
       'smpl': '424px',
+      'smp2': '462px',
       'smpp': '529px',
       'sm': '640px',
       // 'smpp': '767px',

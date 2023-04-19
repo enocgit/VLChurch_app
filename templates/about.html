@@ -13,12 +13,12 @@
 
         </div>
         <div class="flex items-center justify-evenly mission mt-5 position-relative">
-            <div class="content animate__animated animate__fadeInTopLeft">
+            <div class="content">
                 <h1 class="h1">mission</h1>
                 <p class="mt-4">Lorem ipsum dolor sit amet consectetur adipisicing elit. Veniam nostrum illo fuga modi ea aspernatur harum dolor adipisci, mollitia id beatae autem ad necessitatibus, aut labore fugiat iste dignissimos nam.</p>
             </div>
             <div class="pic">
-                <div class="inside-pic animate__animated animate__fadeInRight">
+                <div class="inside-pic">
 
                 </div>
             </div>
@@ -37,18 +37,26 @@
     </section> -->
 
 <div
-  class="bg-cover bg-no-repeat h-[30vh] w-full bg-center border-b-8 rounded-bl-[60%] rounded-br-[60%] animate__animated animate__fadeIn"
+  class="bg-cover bg-no-repeat h-[30vh] w-full bg-center border-b-8 rounded-bl-[60%] rounded-br-[60%] animate__fadeIn"
   style="background-image: url('/static/images/about-img.jpg')"
 ></div>
 <section class="py-[6rem] relative overflow-x-hidden">
   <div
     class="container flex md:flex-row flex-col justify-between md:items-center w-[80vw] mx-auto"
   >
-    <div class="lg:mr-[9rem] animate__animated animate__fadeInTopLeft">
-      <h2 class="text-5xl sm:text-6xl font-bold mb-8 text-[#877B7B]">
+    <div class="lg:mr-[9rem]">
+      <h2
+        class="text-5xl sm:text-6xl font-bold mb-8 text-[#877B7B]"
+        data-aos="fade-down-right"
+        data-aos-duration="2000"
+      >
         Mission
       </h2>
-      <p class="text-2xl sm:text-3xl">
+      <p
+        class="text-2xl sm:text-3xl"
+        data-aos="fade-down-right"
+        data-aos-duration="2000"
+      >
         Lorem ipsum dolor sit amet, consectetur adipisicing elit. Dolorem?
       </p>
     </div>
@@ -56,7 +64,9 @@
       <img
         src="{% static 'images/mission-img.jpg' %}"
         alt=""
-        class="w-[100vw] md:w-[45vw] relative z-10 animate__animated animate__fadeInRight"
+        class="w-[100vw] md:w-[45vw] relative z-10"
+        data-aos="fade-left"
+        data-aos-duration="2000"
       />
       <div
         class="absolute top-[20rem] right-[-12rem] sm:top-[18rem] md:top-[12rem] lg:top-[6rem] z-[2] sm:right-[-10rem] lg:right-[-10rem]"
@@ -65,6 +75,8 @@
           src="{% static 'images/mission-img-2.jpg' %}"
           alt=""
           class="w-[100vw] md:w-[45vw]"
+          data-aos="fade-left"
+          data-aos-duration="3000"
         />
       </div>
     </div>
@@ -75,15 +87,25 @@
     class="container flex md:flex-row-reverse flex-col justify-between md:items-center w-[80vw] mx-auto"
   >
     <div class="right-content">
-      <h2 class="text-5xl sm:text-6xl font-bold mb-8 text-[#877B7B] invisible">
+      <h2
+        class="text-5xl sm:text-6xl font-bold mb-8 text-[#877B7B]"
+        data-aos="fade-down"
+        data-aos-duration="2000"
+      >
         Vision
       </h2>
-      <p class="text-2xl sm:text-3xl invisible">
+      <p
+        class="text-2xl sm:text-3xl"
+        data-aos="fade-up"
+        data-aos-duration="2000"
+      >
         Lorem ipsum dolor sit amet, consectetur adipisicing elit. Dolorem?
       </p>
     </div>
     <div
-      class="shrink-0 mt-16 lg:mt-0 md:mr-[3rem] lg:mr-[9rem] invisible left-content"
+      class="shrink-0 mt-16 lg:mt-0 md:mr-[3rem] lg:mr-[9rem] left-content"
+      data-aos="fade-right"
+      data-aos-duration="2000"
     >
       <img
         src="{% static 'images/vision-img.jpg' %}"
