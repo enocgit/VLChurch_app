@@ -6,8 +6,8 @@ class Guest(models.Model):
     name = models.CharField(max_length=255)
     email = models.EmailField(max_length=100, null=True, blank=True)
     guest_from = models.CharField(max_length=255, null=True, blank=True)
-    picture = models.ImageField(upload_to='static/uploads', height_field=None,
-                                width_field=None, max_length=None, default='static/images/no_image.jpeg')
+    picture = models.ImageField(upload_to='images', height_field=None,
+                                width_field=None, max_length=None, default='static/images/no-image.png')
 
     def __str__(self):
         return self.name

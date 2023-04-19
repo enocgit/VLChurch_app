@@ -144,11 +144,19 @@
       >
         <div class="flex justify-end px-4 pt-4"></div>
         <div class="flex flex-col items-center pb-10">
+          {% if leader.member.picture %}
           <img
             class="w-24 h-24 mb-3 rounded-full shadow-lg"
             src="{{ leader.member.picture.url }}"
             alt="{{ leader.title }} {{leader.member.first_name}}{{ leader.member.last_name }}"
           />
+          {% else %}
+          <img
+            class="w-24 h-24 mb-3 rounded-full shadow-lg"
+            src="{% static 'images/no-image.png' %}"
+            alt="{{ leader.title }} {{leader.member.first_name}}{{ leader.member.last_name }}"
+          />
+          {% endif %}
           <h5 class="mb-1 text-xl font-medium text-gray-900 dark:text-white">
             {% if leader.title %}{{ leader.title }}{% endif %}
             {{leader.member.first_name}} {{ leader.member.last_name }}

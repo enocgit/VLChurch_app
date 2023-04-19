@@ -1,0 +1,14 @@
+/* This only changes this particular animation duration */
+/* .animate__animated.animate__FadeInRight {
+    --animate-duration: 5s;
+}
+
+.animate__animated.animate__FadeInLeft {
+    --animate-duration: 5s;
+} */
+  
+/* This changes all the animations globally */
+:root {
+  --animate-duration: 800ms;
+  --animate-delay: 5s;
+}
