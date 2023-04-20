@@ -1,20 +1,18 @@
-{% extends 'homepage/base.html' %}
-{% block title %}
-    Contact us
-{% endblock %}
+{% extends 'homepage/base.html' %} {% block title %} Contact us {% endblock %}
 {% block active %}
-    <li class="nav-item">
-        <a class="nav-link" href="{% url 'homepage:homepage' %}" aria-current="page">Home</a>
-    </li>
-    <li class="nav-item">
-        <a class="nav-link" href="{% url 'homepage:about' %}">About</a>
-    </li>
-    <li class="nav-item">
-        <a class="nav-link active" href="{% url 'homepage:contact' %}">Contact</a>
-    </li>
-{% endblock %}
-{% block content %}
-    <!-- <section id="contact">
+<li class="nav-item">
+  <a class="nav-link" href="{% url 'homepage:homepage' %}" aria-current="page"
+    >Home</a
+  >
+</li>
+<li class="nav-item">
+  <a class="nav-link" href="{% url 'homepage:about' %}">About</a>
+</li>
+<li class="nav-item">
+  <a class="nav-link active" href="{% url 'homepage:contact' %}">Contact</a>
+</li>
+{% endblock %} {% block content %}
+<!-- <section id="contact">
         <div class="banner">
             <h3 class="text-light text-center fw-bold">Christ is always available</h3>
         </div>
@@ -55,61 +53,134 @@
         </div>
     </section> -->
 
-    <section id="contact">
-        <div class="bg-[url('/static/images/contact_banner.jpg')] h-[50vh] w-full bg-cover bg-no-repeat bg-center">
-            <div class="container w-[80vw] mx-auto py-[6rem] smpl:py-[8rem]">
-                <h1 class="text-white text-center text-5xl font-bold animate__animated animate__swing">Christ is always available</h1>
+<section id="contact">
+  <div
+    class="bg-[url('/static/images/contact_banner.jpg')] h-[50vh] w-full bg-cover bg-no-repeat bg-center"
+  >
+    <div class="container w-[80vw] mx-auto py-[6rem] smpl:py-[8rem]">
+      <h1
+        class="text-white text-center text-5xl font-bold animate__animated animate__swing"
+      >
+        Christ is always available
+      </h1>
+    </div>
+  </div>
+  <div class="flex flex-col-reverse sm:flex-row">
+    <div class="w-[95vw] sm:w-[60vw] mx-auto py-5 sm:py-[6rem]">
+      <div class="w-9/12 mx-auto">
+        <h2
+          class="mb-10 text-3xl font-bold animate__animated animate__fadeInDown"
+        >
+          Means to reach us
+        </h2>
+        <form action="" class="animate__animated animate__fadeInUp">
+          <div class="mb-6">
+            <label
+              for="name"
+              class="block mb-2 text-md font-medium text-gray-900 dark:text-white"
+              >Name</label
+            >
+            <input
+              type="text"
+              id="name"
+              class="bg-gray-50 border border-gray-300 text-gray-900 text-md rounded-lg focus:ring-[#EABE7C] focus:border-[#EABE7C] block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-[#EABE7C] dark:focus:border-[#EABE7C]"
+              placeholder="Your name"
+              required
+            />
+          </div>
+          <div class="mb-6">
+            <label
+              for="email"
+              class="block mb-2 text-md font-medium text-gray-900 dark:text-white"
+              >Email</label
+            >
+            <div class="relative">
+              <div
+                class="absolute inset-y-0 left-0 flex items-center pl-3 pointer-events-none"
+              >
+                <svg
+                  aria-hidden="true"
+                  class="w-5 h-5 text-gray-500 dark:text-gray-400"
+                  fill="currentColor"
+                  viewBox="0 0 20 20"
+                  xmlns="http://www.w3.org/2000/svg"
+                >
+                  <path
+                    d="M2.003 5.884L10 9.882l7.997-3.998A2 2 0 0016 4H4a2 2 0 00-1.997 1.884z"
+                  ></path>
+                  <path
+                    d="M18 8.118l-8 4-8-4V14a2 2 0 002 2h12a2 2 0 002-2V8.118z"
+                  ></path>
+                </svg>
+              </div>
+              <input
+                type="text"
+                id="email-address-icon"
+                class="bg-gray-50 border border-gray-300 text-gray-900 text-md rounded-lg focus:ring-[#EABE7C] focus:border-[#EABE7C] block w-full pl-10 p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-[#EABE7C] dark:focus:border-[#EABE7C]"
+                placeholder="name@email.com"
+              />
             </div>
+          </div>
+          <div class="mb-6">
+            <label
+              for="phone"
+              class="block mb-2 text-md font-medium text-gray-900 dark:text-white"
+              >Phone number</label
+            >
+            <input
+              type="text"
+              id="phone"
+              class="bg-gray-50 border border-gray-300 text-gray-900 text-md rounded-lg focus:ring-[#EABE7C] focus:border-[#EABE7C] block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-[#EABE7C] dark:focus:border-[#EABE7C]"
+              placeholder="0552345678"
+              required
+            />
+          </div>
+          <div class="mb-6">
+            <label
+              for="message"
+              class="block mb-2 text-md font-medium text-gray-900 dark:text-white"
+              >How can we help</label
+            >
+            <textarea
+              id="message"
+              rows="4"
+              class="block p-2.5 w-full text-md text-gray-900 bg-gray-50 rounded-lg border border-gray-300 focus:ring-[#EABE7C] focus:border-[#EABE7C] dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-[#EABE7C] dark:focus:border-[#EABE7C]"
+              placeholder="Write your message here..."
+              required
+            ></textarea>
+          </div>
+          <input
+            type="submit"
+            value="Send"
+            class="hover:cursor-pointer cursor-pointer mb-6 bg-[#EABE7C] text-white p-3 text-center rounded-lg w-full font-extrabold"
+          />
+        </form>
+      </div>
+      <h2 class="text-center mt-4 font-bold text-2xl">Or</h2>
+      <div
+        class="flex flex-col sm:w-6/12 md:w-4/12 xl:w-3/12 2xl:w-2/12 mx-auto mt-8"
+      >
+        <div class="flex flex-col items-center sm:flex-row sm:items-[initial]">
+          <i class="bi-telephone text-4xl"></i>
+          <a href="tel:">
+            <p class="ml-0 sm:ml-4 mt-4 sm:mt-0 text-lg">053466723</p>
+          </a>
         </div>
-        <div class="flex flex-col-reverse sm:flex-row">
-            <div class="w-[95vw] sm:w-[60vw] mx-auto py-5 sm:py-[6rem]">
-                <div class="w-9/12  mx-auto">
-                    <h2 class="mb-10 text-3xl font-bold animate__animated animate__fadeInDown">Means to reach us</h2>
-                    <form action="" class="animate__animated animate__fadeInUp">
-                        <div class="mb-6">
-                            <label for="name" class="block mb-2 text-md font-medium text-gray-900 dark:text-white">Name</label>
-                            <input type="text" id="name" class="bg-gray-50 border border-gray-300 text-gray-900 text-md rounded-lg focus:ring-[#EABE7C] focus:border-[#EABE7C] block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-[#EABE7C] dark:focus:border-[#EABE7C]" placeholder="Your name" required>
-                        </div>
-                        <div class="mb-6">
-                            <label for="email" class="block mb-2 text-md font-medium text-gray-900 dark:text-white">Email</label>
-                            <div class="relative">
-                                <div class="absolute inset-y-0 left-0 flex items-center pl-3 pointer-events-none">
-                                  <svg aria-hidden="true" class="w-5 h-5 text-gray-500 dark:text-gray-400" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path d="M2.003 5.884L10 9.882l7.997-3.998A2 2 0 0016 4H4a2 2 0 00-1.997 1.884z"></path><path d="M18 8.118l-8 4-8-4V14a2 2 0 002 2h12a2 2 0 002-2V8.118z"></path></svg>
-                                </div>
-                                <input type="text" id="email-address-icon" class="bg-gray-50 border border-gray-300 text-gray-900 text-md rounded-lg focus:ring-[#EABE7C] focus:border-[#EABE7C] block w-full pl-10 p-2.5  dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-[#EABE7C] dark:focus:border-[#EABE7C]" placeholder="name@email.com">
-                              </div>
-                        </div>
-                        <div class="mb-6">
-                            <label for="phone" class="block mb-2 text-md font-medium text-gray-900 dark:text-white">Phone number</label>
-                            <input type="text" id="phone" class="bg-gray-50 border border-gray-300 text-gray-900 text-md rounded-lg focus:ring-[#EABE7C] focus:border-[#EABE7C] block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-[#EABE7C] dark:focus:border-[#EABE7C]" placeholder="0552345678" required>
-                        </div>
-                        <div class="mb-6">   
-                            <label for="message" class="block mb-2 text-md font-medium text-gray-900 dark:text-white">How can we help</label>
-                            <textarea id="message" rows="4" class="block p-2.5 w-full text-md text-gray-900 bg-gray-50 rounded-lg border border-gray-300 focus:ring-[#EABE7C] focus:border-[#EABE7C] dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-[#EABE7C] dark:focus:border-[#EABE7C]" placeholder="Write your message here..." required></textarea>
-                        </div>
-                        <input type="submit" value="Send" class="hover:cursor-pointer cursor-pointer mb-6 bg-[#EABE7C] text-white p-[0.3rem] text-center rounded-lg w-full font-extrabold">
-                    </form>
-
-                </div>
-                <h2 class="text-center mt-4 font-bold text-2xl">Or</h2>
-                <div class="flex flex-col sm:w-6/12 md:w-4/12 xl:w-3/12 2xl:w-2/12 mx-auto mt-8">
-                    <div class="flex flex-col items-center sm:flex-row sm:items-[initial]">
-                        <i class="bi-telephone text-4xl"></i>
-                        <a href="tel:">
-                            <p class="ml-0 sm:ml-4 mt-4 sm:mt-0 text-lg">053466723</p>
-                        </a>
-                    </div>
-                    <div class="flex flex-col items-center sm:flex-row sm:items-[initial] mt-5">
-                        <i class="bi-envelope-open text-4xl"></i>
-                        <a href="mailto:victoriouslci@gmail.com">
-                            <p class="ml-0 sm:ml-4 mt-4 sm:mt-0 text-lg">victoriouslci@gmail.com</p>
-                        </a>
-                    </div>
-                </div>
-            </div>
-            <div class="bg-[url('/static/images/contact_side.jpg')] bg-cover bg-center bg-no-repeat sm:w-[40vw] shadow-xl">
-
-            </div>
+        <div
+          class="flex flex-col items-center sm:flex-row sm:items-[initial] mt-5"
+        >
+          <i class="bi-envelope-open text-4xl"></i>
+          <a href="mailto:victoriouslci@gmail.com">
+            <p class="ml-0 sm:ml-4 mt-4 sm:mt-0 text-lg">
+              victoriouslci@gmail.com
+            </p>
+          </a>
         </div>
-    </section>
+      </div>
+    </div>
+    <div
+      class="bg-[url('/static/images/contact_side.jpg')] bg-cover bg-center bg-no-repeat sm:w-[40vw] shadow-xl"
+    ></div>
+  </div>
+</section>
 {% endblock %}
