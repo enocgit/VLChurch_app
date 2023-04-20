@@ -41,14 +41,12 @@
 </div>
 
     <section class="bg-[url('/static/images/sunday_service_bg.jpg')] bg-no-repeat bg-cover py-[5rem]">
-        <div class="container w-[80vw] sm:w-[65vw] md:w-[80vw] lg:w-[65vw] mx-auto p-8 sm:16 mdpl:p-[6rem] rounded-3xl" style="background-color: rgba(217, 217, 217, 0.2)">
-            <span data-tooltip-target="tooltip-bottom" data-tooltip-placement="bottom" data-modal-target="medium-modal" data-modal-toggle="medium-modal"class="cursor-pointer float-right relative bottom-16 text-neutral-700 left-12 text-[0.875rem]"><i class="bi bi-archive-fill text-lg mr-2"></i>Last Week Sunday Recap</span>
-            <div id="tooltip-bottom" role="tooltip" class="absolute z-10 inline-block px-3 py-2 text-sm font-medium text-white bg-gray-900 rounded-lg shadow-sm opacity-0 tooltip dark:bg-gray-700">
-                Tooltip on top
-                <div class="tooltip-arrow" data-popper-arrow></div>
-            </div>
+        
+        <div class="w-[80vw] sm:w-[65vw] md:w-[80vw] lg:w-[65vw] mx-auto p-8 mdpl:p-[6rem] rounded-3xl relative" style="background-color: rgba(217, 217, 217, 0.2)">
+            
+            <span data-tooltip-target="tooltip-bottom" data-tooltip-placement="bottom" data-modal-target="medium-modal" data-modal-toggle="medium-modal" class="cursor-pointer absolute top-[-2rem] mdpl:top-8 right-2 mdpl:right-10 text-neutral-700 text-[0.875rem]"><i class="bi bi-archive-fill text-lg mr-2"></i>View Last Week Recap</span>
             {% if service %}
-                <h2 class="text-center mb-8 text-3xl text-[#462D1A]  animate__pulse">Join us on Sunday</h2>
+                <h2 class="text-center mb-8 text-3xl text-[#462D1A] animate_animated animate__pulse block px-auto">Join us on Sunday</h2>
                 <!-- date -->
                     <div class="md:flex md:flex-row md:justify-between mb-8">
                     

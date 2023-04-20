@@ -2,44 +2,45 @@ $(function(){
 
     document.documentElement.style.setProperty('--animate-duration', '1.5s');
 
-    // $(window).on({
-    //     scroll: function(){
-    //         let scrollTop = $(window).scrollTop()
-    //         // if (scrollTop > 200){
-    //         //     $('#about .vision .pic').css({'visibility': 'visible'})
-    //         //     $('#about .vision .pic').css({'transition': '1s all ease-in-out'})
-    //         //     $('#about .vision .inside-pic').css({'visibility': 'visible'})
-    //         //     $('#about .vision .inside-pic').addClass('animate__animated animate__fadeInLeft')
-    //         //     // $('#about .vision .inside-pic').css({'visibility': 'visible'})
-    //         //     // $('#about .vision .inside-pic').addClass('animate__animated animate__fadeInTop')
-    //         // }
-    //         if (scrollTop >120) {
-    //             $('#brand-sub').removeClass('invisible')
-    //             $('#brand-sub').addClass('visible')
-    //             $('#brand-sub').fadeIn()
-    //         }
-    //         if (scrollTop < 120){
-    //             $('#brand-sub').addClass('invisible')
-    //         }
-    //         if (scrollTop > 400){
-    //             // fellowship
-    //             // $('#men-fellow .square').css({'visibility': 'visible'})
-    //             // $('#men-fellow .square').addClass('animate__animated animate__fadeIn')
-    //         //     // location
-    //             // $('#home-location .p').css({'visibility': 'visible'})
-    //             // $('#home-location .h1').css({'visibility': 'visible'})
-    //             // $('#home-location .btn-help').css({'visibility': 'visible'})
-    //             $('#home-location p').removeClass('invisible')
-    //             $('#home-location p').addClass('visible')
-    //             $('#home-location p').addClass('animate__animated animate__fadeInRight')
-    //             $('#home-location h2').removeClass('invisible')
-    //             $('#home-location h2').addClass('visible')
-    //             $('#home-location h2').addClass('animate__animated animate__fadeInLeft')
 
-    //             // $('#home-location .btn-help').addClass('animate__animated animate__fadeInLeft')
-    //             // alert('hi')
-    //         //     // prompt('100')
-    //         }
+    $(window).on({
+        scroll: function(){
+            let scrollTop = $(window).scrollTop()
+            // if (scrollTop > 200){
+            //     $('#about .vision .pic').css({'visibility': 'visible'})
+            //     $('#about .vision .pic').css({'transition': '1s all ease-in-out'})
+            //     $('#about .vision .inside-pic').css({'visibility': 'visible'})
+            //     $('#about .vision .inside-pic').addClass('animate__animated animate__fadeInLeft')
+            //     // $('#about .vision .inside-pic').css({'visibility': 'visible'})
+            //     // $('#about .vision .inside-pic').addClass('animate__animated animate__fadeInTop')
+            // }
+            if (scrollTop >120) {
+                $('#brand-sub').removeClass('invisible')
+                $('#brand-sub').addClass('visible')
+                $('#brand-sub').fadeIn()
+            }
+            if (scrollTop < 120){
+                $('#brand-sub').addClass('invisible')
+            }
+            // if (scrollTop > 400){
+                // fellowship
+                // $('#men-fellow .square').css({'visibility': 'visible'})
+                // $('#men-fellow .square').addClass('animate__animated animate__fadeIn')
+            //     // location
+                // $('#home-location .p').css({'visibility': 'visible'})
+                // $('#home-location .h1').css({'visibility': 'visible'})
+                // $('#home-location .btn-help').css({'visibility': 'visible'})
+                // $('#home-location p').removeClass('invisible')
+                // $('#home-location p').addClass('visible')
+                // $('#home-location p').addClass('animate__animated animate__fadeInRight')
+                // $('#home-location h2').removeClass('invisible')
+                // $('#home-location h2').addClass('visible')
+                // $('#home-location h2').addClass('animate__animated animate__fadeInLeft')
+
+                // $('#home-location .btn-help').addClass('animate__animated animate__fadeInLeft')
+                // alert('hi')
+            //     // prompt('100')
+            // }
     //         if (scrollTop > 500){
     //             $('#about-vision .left-content').removeClass('invisible')
     //             $('#about-vision .left-content').addClass('visible')
@@ -116,8 +117,8 @@ $(function(){
     //         //     $('.main-footer').addClass('animate__animated animate__fadeInTop')
     //         // }
 
-    //     }
-    // })
+        }
+    })
 
     $('.menu-btn').on({
         mouseover: function(){

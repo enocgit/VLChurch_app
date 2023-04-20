@@ -8,7 +8,9 @@
 </li>
 {% endblock %} {% block content %}
 
-<section class="bg-hero text-center text-white bg-no-repeat bg-cover bg-center">
+<section
+  class="bg-[url('/static/images/hero-bg.jpg')] text-center text-white bg-no-repeat bg-cover bg-center" id="hero"
+>
   <div class="container py-[5rem] w-[80vw] sm:w-[52vw] mx-auto">
     <h1
       class="text-[4rem] sm:text-[7rem] pb-5 leading-tight smp2:leading-[6rem] sm:leading-[8rem] font-bold"
@@ -157,7 +159,9 @@
             alt="{{ leader.title }} {{leader.member.first_name}}{{ leader.member.last_name }}"
           />
           {% endif %}
-          <h5 class="mb-1 text-xl font-medium text-gray-900 dark:text-white">
+          <h5
+            class="mb-1 text-xl text-center px-4 font-medium text-gray-900 dark:text-white"
+          >
             {% if leader.title %}{{ leader.title }}{% endif %}
             {{leader.member.first_name}} {{ leader.member.last_name }}
           </h5>

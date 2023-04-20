@@ -1,7 +1,7 @@
-{% load static %}
+{% load static %} {% load static tailwind_tags %}
 
 <!DOCTYPE html>
-<html lang="en" class="scroll-smooth">
+<html lang="en" class="scroll-smooth overflow-x-hidden">
   <head>
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
@@ -27,19 +27,19 @@
       href="{% static 'stylesheet/style.css' %}"
       type="text/css"
     />
-    <link
+    <!-- <link
       rel="stylesheet"
       href="{% static 'stylesheet/dist/output.css' %}"
       type="text/css"
-    />
-    <link
+    /> -->
+    <!-- <link
       rel="stylesheet"
       href="https://fonts.googleapis.com/css?family=ABeeZee"
-    />
-    <link
+    /> -->
+    <!-- <link
       rel="stylesheet"
       href="https://fonts.googleapis.com/css?family=Alegreya+Sans+SC"
-    />
+    /> -->
     <link
       rel="stylesheet"
       href="https://fonts.googleapis.com/css?family=Akaya+Kanadaka"
@@ -52,18 +52,20 @@
       rel="stylesheet"
       href="https://fonts.googleapis.com/css?family=Actor"
     />
-    <link
+    <!-- <link
       rel="stylesheet"
       href="https://fonts.googleapis.com/css?family=Inter"
-    />
-    <link
+    /> -->
+    <!-- <link
       rel="stylesheet"
       href="https://fonts.googleapis.com/css?family=Advent Pro"
-    />
+    /> -->
     <link
       rel="stylesheet"
       href="https://fonts.googleapis.com/css?family=Lobster"
     />
+    {% tailwind_css %}
+
     <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet" />
 
     <!-- <link rel="stylesheet" href="{% static 'bootstrap/font/bootstrap-icons.css' %}"> -->
@@ -81,7 +83,11 @@
       {% block title %}Victorious Living Church International{% endblock %}
     </title>
   </head>
-  <body style="font-family: Abhaya Libre, serif" class="">
+  <body
+    style="font-family: Abhaya Libre, serif"
+    class="overflow-x-hidden"
+    data-collapse-collapse="navbar-dropdown"
+  >
     <!-- <header class="py-4 shadow">
       <div class="container d-flex justify-content-between">
         <div class="">
@@ -144,18 +150,16 @@
     <!-- header -->
     <header class="bg-white py-10 shadow-md shadow-gray-400">
       <div
-        class="container flex flex-col sm:flex-row justify-between items-center w-[90vw] xl:w-[80vw] min-h-[15vh] sm:min-h-[initial] mx-auto"
+        class="flex flex-col md2:flex-row gap-y-5 gap-x-16 items-center justify-center w-[90vw] xl:w-[80vw] min-h-[15vh] sm:min-h-[initial] mx-auto"
       >
-        <div>
-          <h1 class="text-3xl sm:text-4xl tracking font-bold text-neutral-700">
-            Victorious Living Church International
-          </h1>
-        </div>
-        <div class="sm:w-[35vw] lg:flex lg:w-[30vw] justify-between">
-          <!-- social icons -->
-          <div
-            class="mb-4 lg:mb-0 flex w-[40vw] sm:w-[20vw] md:w-[15vw] justify-between text-neutral-700"
-          >
+        <h1 class="text-3xl sm:text-4xl tracking font-bold text-neutral-700">
+          Victorious Living Church International
+        </h1>
+        <!-- social icons -->
+        <div
+          class="mb-4 lg:mb-0 flex flex-col sm:flex-row md2:flex-col lg2:flex-row md2:ml-auto text-neutral-700 items-center gap-x-[4.8rem] gap-y-2"
+        >
+          <div class="flex items-center gap-8 lg2:gap-12">
             <i
               class="bi-whatsapp hover:cursor-pointer cursor-pointer text-[2rem]"
               title="WhatsApp"
@@ -170,32 +174,32 @@
             ></i>
           </div>
           <!-- call us button -->
-          <div>
-            <a href="{% url 'homepage:contact' %}">
-              <button
-                class="text-center border-[1px] hover:border-[#EABE7C] border-[#8a8989] py-2 px-10 rounded-xl"
-              >
-                Contact Us
-              </button>
-            </a>
-          </div>
+          <a href="{% url 'homepage:contact' %}" class="">
+            <button
+              class="text-center border-[1px] hover:border-[#EABE7C] border-[#8a8989] py-2 px-10 rounded-xl"
+            >
+              Contact Us
+            </button>
+          </a>
         </div>
       </div>
     </header>
+    
     <!-- nav -->
-
     <nav
       class="sticky shadow-lg z-20 top-0 px-2 bg-white border-gray-200 dark:bg-gray-900 dark:border-gray-700 mt-3"
     >
       <div
         class="container flex flex-wrap items-center justify-start md:justify-center mx-auto"
       >
+      <!-- Hamburger button -->
         <button
           data-collapse-toggle="navbar-dropdown"
           type="button"
           class="inline-flex items-center p-2 ml-3 text-sm text-gray-500 rounded-lg md:hidden hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-gray-200 dark:text-gray-400 dark:hover:bg-gray-700 dark:focus:ring-gray-600"
           aria-controls="navbar-dropdown"
           aria-expanded="false"
+          id="hamburger"
         >
           <span class="sr-only">Open main menu</span>
           <svg
@@ -214,7 +218,7 @@
         </button>
         <div class="hidden w-full md:block md:w-auto" id="navbar-dropdown">
           <ul
-            class="flex flex-col p-4 mt-4 border border-gray-100 rounded-lg bg-gray-50 md:flex-row md:space-x-8 md:mt-0 md:text-sm md:font-medium md:border-0 md:bg-white dark:bg-gray-800 md:dark:bg-gray-900 dark:border-gray-700"
+            class="flex flex-col md:flex-row p-4 mt-4 border border-gray-100 rounded-lg bg-gray-50  md:space-x-8 md:mt-0 md:text-sm md:font-medium md:border-0 md:bg-white dark:bg-gray-800 md:dark:bg-gray-900 dark:border-gray-700"
           >
             <li>
               <a
@@ -346,47 +350,211 @@
 
     {% block content %} {% endblock %}
 
-    <!-- <footer class="p-5 main-footer text-white ">
-      <div class="d-flex justify-content-between">
-        <div>
-          <h2>Victorious Living Church International</h2>
-        </div>
-        <div>
-          <i class="bi-whatsapp fs-3"></i>
-            <i class="bi-facebook fs-3"></i>
-            <i class="bi-instagram fs-3"></i>
-        </div>
-      </div>
-        <p class="text-center mt-5">Copyright &copy; 2022</p>
-    </footer> -->
-
-    <footer class="py-[5rem] mt-16 bg-[#462D1A] text-white relative z-10">
-      <div
-        class="container w-[80vw] mx-auto flex flex-col min-h-[45vh] sm:min-h-[30vh] justify-between"
-      >
+    <!-- Footer -->
+    <footer class="text-left py-10 bg-[#462D1A] sm:pt-16 lg:pt-24">
+      <div class="px-10 mx-auto sm:px-14 lg:px-16 max-w-7xl">
         <div
-          class="flex flex-col lg:flex-row justify-between min-h-[30vh] sm:min-h-[20vh] lg:min-h-[initial]"
+          class="grid grid-cols-2 gap-x-5 gap-y-12 md:grid-cols-3 md:gap-x-12"
         >
-          <h3 class="text-3xl sm:text-4xl font-bold">
-            Victorious Living Church International
-          </h3>
-          <div class="flex w-[50vw] sm:w-[20vw] justify-between">
-            <i
-              class="bi-whatsapp hover:cursor-pointer cursor-pointer text-[2rem]"
-              title="WhatsApp"
-            ></i>
-            <i
-              class="bi-facebook hover:cursor-pointer cursor-pointer text-[2rem]"
-              title="Facebook"
-            ></i>
-            <i
-              class="bi-instagram hover:cursor-pointer cursor-pointer text-[2rem]"
-              title="Instagram"
-            ></i>
+          <!-- Organization -->
+          <div class="col-span-2 mspp:col-span-1">
+            <p class="text-base text-gray-400">Organization</p>
+
+            <ul class="mt-8 space-y-4">
+              <li>
+                <a
+                  href="#"
+                  title=""
+                  class="text-base text-white transition-all duration-200 hover:text-opacity-80 focus:text-opacity-80"
+                >
+                  About
+                </a>
+              </li>
+              <li>
+                <a
+                  href="#"
+                  title=""
+                  class="text-base text-white transition-all duration-200 hover:text-opacity-80 focus:text-opacity-80"
+                >
+                  Leaders
+                </a>
+              </li>
+            </ul>
+          </div>
+
+          <!-- Help -->
+          <div class="col-span-2 mspp:col-span-1">
+            <p class="text-base text-gray-400">Help</p>
+
+            <ul class="mt-8 space-y-4">
+              <li>
+                <a
+                  href="#"
+                  title=""
+                  class="text-base text-white transition-all duration-200 hover:text-opacity-80 focus:text-opacity-80"
+                >
+                  Location
+                </a>
+              </li>
+              <li>
+                <a
+                  href="#"
+                  title=""
+                  class="text-base text-white transition-all duration-200 hover:text-opacity-80 focus:text-opacity-80"
+                >
+                  Online Giving
+                </a>
+              </li>
+              <li>
+                <a
+                  href="#"
+                  title=""
+                  class="text-base text-white transition-all duration-200 hover:text-opacity-80 focus:text-opacity-80"
+                >
+                  Prayer Request
+                </a>
+              </li>
+            </ul>
+          </div>
+
+          <!-- Quick Links -->
+          <div class="col-span-2 md:col-span-1">
+            <p class="text-base text-gray-400">Quick Links</p>
+
+            <ul class="mt-8 space-y-4">
+              <li>
+                <a
+                  href="#"
+                  title=""
+                  class="text-base text-white transition-all duration-200 hover:text-opacity-80 focus:text-opacity-80"
+                >
+                  Fellowship Groups
+                </a>
+              </li>
+              <li>
+                <a
+                  href="#"
+                  title=""
+                  class="text-base text-white transition-all duration-200 hover:text-opacity-80 focus:text-opacity-80"
+                >
+                  Upcoming Programmes
+                </a>
+              </li>
+              <li>
+                <a
+                  href="#"
+                  title=""
+                  class="text-base text-white transition-all duration-200 hover:text-opacity-80 focus:text-opacity-80"
+                >
+                  Chat
+                </a>
+              </li>
+              <li>
+                <a
+                  href="#"
+                  title=""
+                  class="text-base text-white transition-all duration-200 hover:text-opacity-80 focus:text-opacity-80"
+                >
+                  Gallery
+                </a>
+              </li>
+            </ul>
           </div>
         </div>
-        <div class="self-center">
-          <p class="text-xl">Copyright &copy; {{ current_year }}</p>
+
+        <hr class="mt-16 mb-10 border-gray-400" />
+
+        <div class="flex flex-wrap items-center justify-between">
+          <!-- <img
+            class="h-8 auto md:order-1"
+            src="https://cdn.rareblocks.xyz/collection/celebration/images/logo-alt.svg"
+            alt=""
+          /> -->
+          <h1 class="md:order-1 text-white text-xl font-semibold">
+            Victorious Living Church International
+          </h1>
+          <!-- Social media presence -->
+          <ul class="flex items-center space-x-3 md:order-3">
+            <!-- twitter -->
+            <li>
+              <a
+                href="#"
+                title=""
+                class="flex items-center justify-center text-white transition-all duration-200 bg-transparent border border-gray-400 rounded-full w-7 h-7 focus:bg-blue-600 hover:bg-blue-600 hover:border-blue-600 focus:border-blue-600"
+              >
+                <svg
+                  class="w-4 h-4"
+                  xmlns="http://www.w3.org/2000/svg"
+                  viewBox="0 0 24 24"
+                  fill="currentColor"
+                >
+                  <path
+                    d="M19.633 7.997c.013.175.013.349.013.523 0 5.325-4.053 11.461-11.46 11.461-2.282 0-4.402-.661-6.186-1.809.324.037.636.05.973.05a8.07 8.07 0 0 0 5.001-1.721 4.036 4.036 0 0 1-3.767-2.793c.249.037.499.062.761.062.361 0 .724-.05 1.061-.137a4.027 4.027 0 0 1-3.23-3.953v-.05c.537.299 1.16.486 1.82.511a4.022 4.022 0 0 1-1.796-3.354c0-.748.199-1.434.548-2.032a11.457 11.457 0 0 0 8.306 4.215c-.062-.3-.1-.611-.1-.923a4.026 4.026 0 0 1 4.028-4.028c1.16 0 2.207.486 2.943 1.272a7.957 7.957 0 0 0 2.556-.973 4.02 4.02 0 0 1-1.771 2.22 8.073 8.073 0 0 0 2.319-.624 8.645 8.645 0 0 1-2.019 2.083z"
+                  ></path>
+                </svg>
+              </a>
+            </li>
+
+            <!-- facebook -->
+            <li>
+              <a
+                href="#"
+                title=""
+                class="flex items-center justify-center text-white transition-all duration-200 bg-transparent border border-gray-400 rounded-full w-7 h-7 focus:bg-blue-600 hover:bg-blue-600 hover:border-blue-600 focus:border-blue-600"
+              >
+                <svg
+                  class="w-4 h-4"
+                  xmlns="http://www.w3.org/2000/svg"
+                  viewBox="0 0 24 24"
+                  fill="currentColor"
+                >
+                  <path
+                    d="M13.397 20.997v-8.196h2.765l.411-3.209h-3.176V7.548c0-.926.258-1.56 1.587-1.56h1.684V3.127A22.336 22.336 0 0 0 14.201 3c-2.444 0-4.122 1.492-4.122 4.231v2.355H7.332v3.209h2.753v8.202h3.312z"
+                  ></path>
+                </svg>
+              </a>
+            </li>
+
+            <!-- instagram -->
+            <li>
+              <a
+                href="#"
+                title=""
+                class="flex items-center justify-center text-white transition-all duration-200 bg-transparent border border-gray-400 rounded-full w-7 h-7 focus:bg-blue-600 hover:bg-blue-600 hover:border-blue-600 focus:border-blue-600"
+              >
+                <svg
+                  class="w-4 h-4"
+                  xmlns="http://www.w3.org/2000/svg"
+                  viewBox="0 0 24 24"
+                  fill="currentColor"
+                >
+                  <path
+                    d="M11.999 7.377a4.623 4.623 0 1 0 0 9.248 4.623 4.623 0 0 0 0-9.248zm0 7.627a3.004 3.004 0 1 1 0-6.008 3.004 3.004 0 0 1 0 6.008z"
+                  ></path>
+                  <circle cx="16.806" cy="7.207" r="1.078"></circle>
+                  <path
+                    d="M20.533 6.111A4.605 4.605 0 0 0 17.9 3.479a6.606 6.606 0 0 0-2.186-.42c-.963-.042-1.268-.054-3.71-.054s-2.755 0-3.71.054a6.554 6.554 0 0 0-2.184.42 4.6 4.6 0 0 0-2.633 2.632 6.585 6.585 0 0 0-.419 2.186c-.043.962-.056 1.267-.056 3.71 0 2.442 0 2.753.056 3.71.015.748.156 1.486.419 2.187a4.61 4.61 0 0 0 2.634 2.632 6.584 6.584 0 0 0 2.185.45c.963.042 1.268.055 3.71.055s2.755 0 3.71-.055a6.615 6.615 0 0 0 2.186-.419 4.613 4.613 0 0 0 2.633-2.633c.263-.7.404-1.438.419-2.186.043-.962.056-1.267.056-3.71s0-2.753-.056-3.71a6.581 6.581 0 0 0-.421-2.217zm-1.218 9.532a5.043 5.043 0 0 1-.311 1.688 2.987 2.987 0 0 1-1.712 1.711 4.985 4.985 0 0 1-1.67.311c-.95.044-1.218.055-3.654.055-2.438 0-2.687 0-3.655-.055a4.96 4.96 0 0 1-1.669-.311 2.985 2.985 0 0 1-1.719-1.711 5.08 5.08 0 0 1-.311-1.669c-.043-.95-.053-1.218-.053-3.654 0-2.437 0-2.686.053-3.655a5.038 5.038 0 0 1 .311-1.687c.305-.789.93-1.41 1.719-1.712a5.01 5.01 0 0 1 1.669-.311c.951-.043 1.218-.055 3.655-.055s2.687 0 3.654.055a4.96 4.96 0 0 1 1.67.311 2.991 2.991 0 0 1 1.712 1.712 5.08 5.08 0 0 1 .311 1.669c.043.951.054 1.218.054 3.655 0 2.436 0 2.698-.043 3.654h-.011z"
+                  ></path>
+                </svg>
+              </a>
+            </li>
+
+            <li>
+              <a
+                href="#"
+                title=""
+                class="flex items-center justify-center text-white transition-all duration-200 bg-transparent border border-gray-400 rounded-full w-7 h-7 focus:bg-blue-600 hover:bg-blue-600 hover:border-blue-600 focus:border-blue-600"
+              >
+                <i class="bi-whatsapp"></i>
+              </a>
+            </li>
+          </ul>
+
+          <p
+            class="w-full mt-8 text-sm text-center text-gray-400 md:mt-0 md:w-auto md:order-2"
+          >
+            © Copyright 2023, All Rights Reserved.
+          </p>
         </div>
       </div>
     </footer>
