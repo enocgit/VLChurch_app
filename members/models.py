@@ -1,6 +1,5 @@
 from django.db import models
 from django.contrib.auth.models import AbstractUser
-from django_fields import DefaultStaticImageField
 # from fellowships.models import Fellowship
 
 
