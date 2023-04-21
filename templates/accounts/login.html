@@ -14,17 +14,15 @@
     </li>
 {% endblock %}
 {% block content %}
-    <section id="login">
-        <div class="container mt-5 login-form">
-            <form method="post">
+    <section id="login" class="py-16">
+        <div class="container mt-5 login-form flex items-center justify-center">
+            <form method="post" class="flex flex-col" id="login-form">
                 {% csrf_token %}
                 <div>
-
                     {{ form.username.label }}
                     {{ form.username }}
                 </div>
                 <div class="mt-4">
-
                     {{ form.password.label }}
                     {{ form.password }}
                 </div>

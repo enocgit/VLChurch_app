@@ -20,26 +20,11 @@
       rel="stylesheet"
       href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.3.0/font/bootstrap-icons.css"
     />
-    <!-- <link rel="stylesheet" href="{% static 'quill/dist/quill.snow.css' %}" type="text/css"> -->
-
     <link
       rel="stylesheet"
       href="{% static 'stylesheet/style.css' %}"
       type="text/css"
     />
-    <!-- <link
-      rel="stylesheet"
-      href="{% static 'stylesheet/dist/output.css' %}"
-      type="text/css"
-    /> -->
-    <!-- <link
-      rel="stylesheet"
-      href="https://fonts.googleapis.com/css?family=ABeeZee"
-    /> -->
-    <!-- <link
-      rel="stylesheet"
-      href="https://fonts.googleapis.com/css?family=Alegreya+Sans+SC"
-    /> -->
     <link
       rel="stylesheet"
       href="https://fonts.googleapis.com/css?family=Akaya+Kanadaka"
@@ -52,14 +37,6 @@
       rel="stylesheet"
       href="https://fonts.googleapis.com/css?family=Actor"
     />
-    <!-- <link
-      rel="stylesheet"
-      href="https://fonts.googleapis.com/css?family=Inter"
-    /> -->
-    <!-- <link
-      rel="stylesheet"
-      href="https://fonts.googleapis.com/css?family=Advent Pro"
-    /> -->
     <link
       rel="stylesheet"
       href="https://fonts.googleapis.com/css?family=Lobster"
@@ -68,17 +45,12 @@
 
     <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet" />
 
-    <!-- <link rel="stylesheet" href="{% static 'bootstrap/font/bootstrap-icons.css' %}"> -->
-    <!-- <script src="{% static 'bootstrap/dist/js/bootstrap.bundle.min.js' %}"></script> -->
     <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
 
     <script src="{% static 'bootstrap-icons/font/bootstrap-icons.css' %}"></script>
     <script src="{% static 'jquery/dist/jquery.min.js' %}"></script>
-    <!-- <script src="{% static 'quill/dist/quill.min.js' %}"></script> -->
     <script src="{% static 'javascript/main.js' %}" async></script>
-    <!-- <script src="https://cdn.quilljs.com/1.3.6/quill.js"></script> -->
 
-    <!-- <script src="https://cdn.jsdelivr.net/npm/jquery@3.6.0/dist/jquery.min.js" integrity="sha384-J0oG+zTk1GWr/A7V+jI6J/yVuWh2Q3zqVuIj+Uz7JxNx6s1+jCKPOm+W8yv9J9j+" crossorigin="anonymous"></script> -->
     <title>
       {% block title %}Victorious Living Church International{% endblock %}
     </title>
@@ -400,7 +372,7 @@
       <div
         class="flex flex-col md2:flex-row gap-y-5 gap-x-16 items-center justify-center w-[90vw] xl:w-[80vw] min-h-[15vh] sm:min-h-[initial] mx-auto"
       >
-        <h1 class="text-3xl sm:text-3xl tracking font-bold text-neutral-700">
+        <h1 class="text-3xl sm:text-3xl tracking font-bold text-neutral-700 text-center">
           Victorious Living Church International
         </h1>
         <!-- social icons -->
@@ -557,7 +529,7 @@
                   </li>
                   <li class="text-lg">
                     <a
-                      href="#"
+                      href="{% url 'chats:chat-list' %}"
                       class="block px-4 py-2 hover:bg-[#462D1A] hover:text-white dark:hover:bg-gray-600 dark:hover:text-white"
                       >Chat</a
                     >
@@ -696,7 +668,7 @@
               </li>
               <li>
                 <a
-                  href="#"
+                  href="{% url 'chats:chat-list' %}"
                   title=""
                   class="text-base text-white transition-all duration-200 hover:text-opacity-80 focus:text-opacity-80"
                 >
@@ -778,7 +750,7 @@
               <a
                 href="#"
                 title=""
-                class="flex items-center justify-center text-white transition-all duration-200 bg-transparent border border-gray-400 rounded-full w-7 h-7 focus:bg-yellow-500 hover:bg-yellow-500 hover:border-yebg-yellow-500 focus:border-yellow-500"
+                class="flex items-center justify-center text-white transition-all duration-200 bg-transparent border border-gray-400 rounded-full w-7 h-7 focus:bg-yellow-500 hover:bg-yellow-500 hover:border-yellow-500 bg-yellow-500 focus:border-yellow-500"
               >
                 <svg
                   class="w-4 h-4"

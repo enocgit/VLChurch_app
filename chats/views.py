@@ -23,23 +23,23 @@ from .forms import CommentForm
         
 #         return context
     
-# class ChatList(ListView):
-#     model = Chat
-#     template_name = 'chats/chat_list.html'
-#     context_object_name = 'chats'
+class ChatList(ListView):
+    model = Chat
+    template_name = 'chats/chat_list.html'
+    context_object_name = 'chats'
 
-#     def get(self, request, *args, **kwargs):
-#         # Get the chat ID from the cookie
-#         chat_id = request.COOKIES.get('chat_id')
+    def get(self, request, *args, **kwargs):
+        # Get the chat ID from the cookie
+        chat_id = request.COOKIES.get('chat_id')
         
-#         # If a chat ID is stored in the cookie, redirect the user to the detail view of that chat
-#         if chat_id:
-#             return redirect(reverse('chats:chat-detail', kwargs={'pk': chat_id}))
+        # If a chat ID is stored in the cookie, redirect the user to the detail view of that chat
+        if chat_id:
+            return redirect(reverse('chats:chat-detail', kwargs={'pk': chat_id}))
 
 #         # Otherwise, display the chat list as usual
 #         return super().get(request, *args, **kwargs)
 
-class ChatDetail(FormView):
+class ChatDetail(LoginRequiredMixin, FormView):
     # fields = ('message')
     form_class = CommentForm
     model = Chat
@@ -67,7 +67,7 @@ class ChatDetail(FormView):
             comment.chat = get_object_or_404(Chat, pk=self.kwargs['pk'])
             comment.save()
 
-            return redirect('chats:chat-list')
+            return redirect('chats:chat-detail', pk=self.kwargs['pk'])
         return self.form_invalid(form)
 
-    
+
