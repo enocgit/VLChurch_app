@@ -18,3 +18,6 @@ class Member(AbstractUser):  # members inheriting from AbstractUser model
     def __str__(self):
         return f'{self.first_name} {self.last_name}'
         # return self.username
+
+    class Meta:
+        ordering = ['first_name']

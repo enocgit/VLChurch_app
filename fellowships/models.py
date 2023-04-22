@@ -9,6 +9,8 @@ class Fellowship(models.Model):
     def __str__(self):
         return self.name
 
+    class Meta:
+       ordering = ['name']
 # music_group
 
 
@@ -17,3 +19,6 @@ class MusicGroup(models.Model):
 
     def __str__(self):
         return self.name
+    
+    class Meta:
+        ordering = ['name']

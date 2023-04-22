@@ -39,4 +39,4 @@ class SundayRecap(models.Model):
     date = models.DateField(auto_now=False)
     
     def __str__(self):
-        return f'{self.date}'
+        return f'{self.date} Recap'

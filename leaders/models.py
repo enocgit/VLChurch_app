@@ -9,6 +9,9 @@ class LeaderTitle(models.Model):
     def __str__(self):
         return self.name
     
+    class Meta:
+       ordering = ['name']
+    
 # leaders
 class Leader(models.Model):
     # member = models.ForeignKey(Member, verbose_name='name', null=True, blank=True, on_delete=models.CASCADE)
@@ -20,3 +23,6 @@ class Leader(models.Model):
 
     def __str__(self):
         return f'{self.member.first_name} {self.member.last_name}'
+    
+    class Meta:
+        ordering = ['member']

@@ -43,6 +43,9 @@ class Chat(models.Model):
     def __str__(self):
         return self.name
     
+    class Meta:
+       ordering = ['name']
+    
 # comment
 class Comment(models.Model):
     message = RichTextField(default='', null=True, blank=True)
@@ -52,3 +55,6 @@ class Comment(models.Model):
     
     def __str__(self):
        return strip_tags(self.message)
+    
+    class Meta:
+       ordering = ['chat']

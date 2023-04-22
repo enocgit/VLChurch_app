@@ -11,6 +11,9 @@ class Guest(models.Model):
 
     def __str__(self):
         return self.name
+    
+    class Meta:
+       ordering = ['name']
 
 # programmes
 
@@ -26,3 +29,6 @@ class Programme(models.Model):
 
     def __str__(self):
         return self.name
+
+    class Meta:
+       ordering = ['name']
