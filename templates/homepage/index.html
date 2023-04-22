@@ -26,32 +26,35 @@
     </p>
   </div>
 </section>
-<section class="py-[8rem] bg-gray-100" id="home-location">
-  <div class="container w-[80vw] lg:w-[40vw] mx-auto xl:ml-[45rem]">
-    <h2
-      class="text-4xl font-bold leading-[initial] sm:leading-loose mb-7"
-      data-aos="fade-right"
-      data-aos-duration="2000"
-    >
-      Our Location
-    </h2>
-    <p class="text-lg mb-7" data-aos="fade-left" data-aos-duration="2000">
-      We are located in <span class="font-bold text-yellow-800">Kasoa, Otta-City.</span> Our doors are always open to visitors.
-    </p>
-    <a href="">
-      <button class="bg-black py-2 px-12 text-xl text-white rounded-lg">
-        Get help
-      </button>
-    </a>
+<section class="py-[8rem] px-10 sm:px-20 lg:px-32 bg-gray-100" id="home-location">
+  <div class="mx-auto flex flex-col-reverse gap-y-10 md:gap-y-0 md:flex-row gap-x-20 xl:gap-x-36 items-start md:items-center">
+    <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d7941.8814463275!2d-0.44040948118039003!3d5.575782350473663!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0xfdfbaedda8d54f7%3A0xd48e16c6c340829a!2sKasoa!5e0!3m2!1sen!2sgh!4v1682190284323!5m2!1sen!2sgh" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade" class="border-4 border-white rounded-lg w-[14rem] h-[10rem] smpp:w-[28rem]  smpp:h-[14rem] md:w-[34rem] md:h-[20rem]"></iframe>
+    <div class="flex flex-col gap-4">
+      <h2
+        class="text-4xl font-bold leading-[initial] sm:leading-loose"
+        data-aos="fade-right"
+        data-aos-duration="2000"
+      >
+        Our Location
+      </h2>
+      <p class="text-lg" data-aos="fade-left" data-aos-duration="2000">
+        We are located in <span class="font-bold text-yellow-800">Kasoa, Otta-City.</span> Our doors are always open to visitors.
+      </p>
+      <a href="">
+        <button class="bg-black py-2 px-12 text-xl text-white rounded-lg">
+          Get help
+        </button>
+      </a>
+    </div>
   </div>
 </section>
 <!-- Online Giving -->
-<section class="py-[6rem]" id="home-giving">
+<section class="py-[6rem] px-10 sm:px-20 lg:px-32" id="home-giving">
   <div
-    class="container flex md:flex-row flex-col justify-between md:items-center w-[80vw] mx-auto"
+    class="mx-auto flex flex-col md:flex-row gap-x-20 xl:gap-x-36 items-start md:items-center"
   >
     <div
-      class="lg:mr-[9rem] flex flex-col justify-between gap-4"
+      class="flex flex-col gap-4"
     >
       <h2
         class="text-4xl font-bold"
@@ -91,42 +94,42 @@
   </div>
 </section>
 <!-- Prayer Request Submission -->
-<section class="pb-[6rem] sm:py-[6rem]" id="home-prayer">
+<section class="py-[6rem] px-10 sm:px-20 lg:px-32" id="home-giving">
   <div
-    class="container flex lg:flex-row-reverse flex-col-reverse justify-between lg:items-center w-[80vw] mx-auto"
+    class="mx-auto flex flex-col md:flex-row-reverse gap-x-20 xl:gap-x-36 items-start md:items-center"
   >
     <div
-      class="flex flex-col justify-between gap-4 mt-12 lg:mt-0 right-content"
+      class="flex flex-col gap-4"
     >
       <h2
         class="text-4xl font-bold"
         data-aos="fade-up"
-        data-aos-duration="2000"
+        data-aos-duration="1400"
       >
         Prayer Request Submission
       </h2>
       <p class="text-lg" data-aos="fade-up" data-aos-duration="2000">
         If you have a prayer request, please submit it here and we will pray for you.
       </p>
-      <a href="" class="">
+      <a href="#" class="">
         <button
           class="bg-[#462D1A] text-white py-2 px-12 rounded-lg text-xl"
           data-aos="fade-up"
-          data-aos-duration="2000"
+          data-aos-duration="3000"
         >
           Request
         </button>
       </a>
     </div>
     <div
-      class="lg:mr-[9rem] shrink-0 mt-16 lg:mt-0 left-content"
+      class="shrink-0 mt-16 lg:mt-0"
       data-aos="fade-right"
       data-aos-duration="2000"
     >
       <img
         src="{% static 'images/prayer-request-img.jpg' %}"
         alt=""
-        class="lg:w-[45vw]"
+        class="md:w-[45vw]"
       />
     </div>
   </div>

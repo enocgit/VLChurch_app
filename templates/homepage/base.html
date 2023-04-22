@@ -60,7 +60,7 @@
   </head>
   <body
     style="font-family: Abhaya Libre, serif"
-    class="overflow-x-hidden"
+    class=""
     data-collapse-collapse="navbar-dropdown"
   >
     <!-- Payment modal -->
@@ -370,6 +370,7 @@
         </div>
       </div>
     </div>
+    
     <!-- header -->
     <header class="bg-white py-10 shadow-md shadow-gray-400">
       <div
@@ -410,7 +411,7 @@
 
     <!-- nav -->
     <nav
-      class="sticky shadow-lg z-20 top-0 px-2 bg-white border-gray-200 dark:bg-gray-900 dark:border-gray-700 mt-3"
+      class="sticky top-0 shadow-lg z-20 px-2 bg-white border-gray-200 dark:bg-gray-900 dark:border-gray-700 mt-3" id="main-nav"
     >
       <div
         class="container flex flex-wrap items-center justify-start md:justify-center mx-auto"
@@ -440,135 +441,135 @@
           </svg>
         </button>
         <div class="hidden w-full md:block md:w-auto" id="navbar-dropdown">
-          <ul
-            class="flex flex-col md:flex-row p-4 mt-4 border border-gray-100 rounded-lg bg-gray-50 md:space-x-8 md:mt-0 md:text-sm md:font-medium md:border-0 md:bg-white dark:bg-gray-800 md:dark:bg-gray-900 dark:border-gray-700"
-          >
-            <li>
+            <div class="lg:flex"> <!-- Will be tweaked in the future -->
               <a
                 href=""
-                class="font-bold text-gray-600 sm:text-[initial] text-sm sm:text-lg absolute left-[7rem] sm:left-[10rem] md:left-12 top-4 sm:top-4 lg:top-[initial] invisible"
+                class="font-bold text-gray-600 sm:text-[initial] text-sm sm:text-lg left-[7rem] sm:left-[10rem] md:left-12 top-4 sm:top-4 lg:top-[initial] hidden "
                 id="brand-sub"
                 >Victorious Living Church International</a
               >
-            </li>
-            {% block nav_home %}
-
-            <li class="text-lg md:pl-[18rem] lg:pl-[initial]">
-              <a
-                href="{% url 'homepage:homepage' %}"
-                class="block py-2 pl-3 pr-4 text-gray-700 rounded hover:bg-gray-100 md:hover:bg-transparent md:border-0 md:hover:text-[#462D1A] md:p-0 dark:text-gray-400 md:dark:hover:text-white dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent"
-                >Home</a
+              <ul
+                class="flex flex-col md:flex-row p-4 mt-4 border border-gray-100 rounded-lg bg-gray-50 md:space-x-8 md:mt-0 md:text-sm md:font-medium md:border-0 md:bg-white dark:bg-gray-800 md:dark:bg-gray-900 dark:border-gray-700"
               >
-            </li>
-            {% endblock %} {% block nav_about %}
-
-            <li class="text-lg">
-              <a
-                href="{% url 'homepage:about' %}"
-                class="block py-2 pl-3 pr-4 text-gray-700 rounded hover:bg-gray-100 md:hover:bg-transparent md:border-0 md:hover:text-[#462D1A] md:p-0 dark:text-gray-400 md:dark:hover:text-white dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent"
-                >About</a
-              >
-            </li>
-            {% endblock %} {% block nav_service %}
-
-            <li class="text-lg">
-              <a
-                href="{% url 'service:service-list' %}"
-                class="block py-2 pl-3 pr-4 text-gray-700 rounded hover:bg-gray-100 md:hover:bg-transparent md:border-0 md:hover:text-[#462D1A] md:p-0 dark:text-gray-400 md:dark:hover:text-white dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent"
-                >Sunday Service</a
-              >
-            </li>
-            {% endblock %}
-            <li class="text-lg">
-              <button
-                id="dropdownNavbarLink"
-                data-dropdown-toggle="dropdownNavbar"
-                class="flex items-center justify-between w-full py-2 pl-3 pr-4 font-medium text-gray-700 rounded hover:bg-gray-100 md:hover:bg-transparent md:border-0 md:hover:text-[#462D1A] md:p-0 md:w-auto dark:text-gray-400 dark:hover:text-white dark:focus:text-white dark:border-gray-700 dark:hover:bg-gray-700 md:dark:hover:bg-transparent"
-              >
-                More
-                <svg
-                  class="w-5 h-5 ml-1"
-                  aria-hidden="true"
-                  fill="currentColor"
-                  viewBox="0 0 20 20"
-                  xmlns="http://www.w3.org/2000/svg"
-                >
-                  <path
-                    fill-rule="evenodd"
-                    d="M5.293 7.293a1 1 0 011.414 0L10 10.586l3.293-3.293a1 1 0 111.414 1.414l-4 4a1 1 0 01-1.414 0l-4-4a1 1 0 010-1.414z"
-                    clip-rule="evenodd"
-                  ></path>
-                </svg>
-              </button>
-              <!-- Dropdown menu -->
-              <div
-                id="dropdownNavbar"
-                class="z-10 hidden font-normal bg-white divide-y divide-gray-100 rounded shadow w-52 dark:bg-gray-700 dark:divide-gray-600"
-              >
-                <ul
-                  class="py-1 text-sm text-gray-700 dark:text-gray-400"
-                  aria-labelledby="dropdownLargeButton"
-                >
-                  <li class="text-lg">
-                    <a
-                      href="/#leaders"
-                      class="block px-4 py-2 hover:bg-[#462D1A] hover:text-white dark:hover:bg-gray-600 dark:hover:text-white"
-                      >Leaders</a
-                    >
-                  </li>
-                  <li class="text-lg">
-                    <a
-                      href="{% url 'fellowships:fellowships-list' %}"
-                      class="block px-4 py-2 hover:bg-[#462D1A] hover:text-white dark:hover:bg-gray-600 dark:hover:text-white"
-                      >Fellowship Groups</a
-                    >
-                  </li>
-                  <li class="text-lg">
-                    <a
-                      href="{% url 'programmes:programmes-list' %}"
-                      class="block px-4 py-2 hover:bg-[#462D1A] hover:text-white dark:hover:bg-gray-600 dark:hover:text-white"
-                      >Upcoming Programmes</a
-                    >
-                  </li>
-                  <li class="text-lg">
-                    <a
-                      href="{% url 'chats:chat-list' %}"
-                      class="block px-4 py-2 hover:bg-[#462D1A] hover:text-white dark:hover:bg-gray-600 dark:hover:text-white"
-                      >Chat</a
-                    >
-                  </li>
-                  <li class="text-lg">
-                    <a
-                      href="#"
-                      class="block px-4 py-2 hover:bg-[#462D1A] hover:text-white dark:hover:bg-gray-600 dark:hover:text-white"
-                      >Gallery</a
-                    >
-                  </li>
-                  <li
-                    class="text-lg"
-                    data-tooltip-target="tooltip-bottom"
-                    data-tooltip-placement="bottom"
+                {% block nav_home %}
+    
+                <li class="text-lg md:pl-[18rem] lg:pl-[initial]">
+                  <a
+                    href="{% url 'homepage:homepage' %}"
+                    class="block py-2 pl-3 pr-4 text-gray-700 rounded hover:bg-gray-100 md:hover:bg-transparent md:border-0 md:hover:text-[#462D1A] md:p-0 dark:text-gray-400 md:dark:hover:text-white dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent"
+                    >Home</a
                   >
-                    <a
-                      href="#"
-                      class="bg-[#d41132] text-orange-300 hover:text-[#d41132] block px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white"
-                      data-modal-target="crypto-modal"
-                      data-modal-toggle="crypto-modal"
-                      >Give</a
+                </li>
+                {% endblock %} {% block nav_about %}
+    
+                <li class="text-lg">
+                  <a
+                    href="{% url 'homepage:about' %}"
+                    class="block py-2 pl-3 pr-4 text-gray-700 rounded hover:bg-gray-100 md:hover:bg-transparent md:border-0 md:hover:text-[#462D1A] md:p-0 dark:text-gray-400 md:dark:hover:text-white dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent"
+                    >About</a
+                  >
+                </li>
+                {% endblock %} {% block nav_service %}
+    
+                <li class="text-lg">
+                  <a
+                    href="{% url 'service:service-list' %}"
+                    class="block py-2 pl-3 pr-4 text-gray-700 rounded hover:bg-gray-100 md:hover:bg-transparent md:border-0 md:hover:text-[#462D1A] md:p-0 dark:text-gray-400 md:dark:hover:text-white dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent"
+                    >Sunday Service</a
+                  >
+                </li>
+                {% endblock %}
+                <li class="text-lg">
+                  <button
+                    id="dropdownNavbarLink"
+                    data-dropdown-toggle="dropdownNavbar"
+                    class="flex items-center justify-between w-full py-2 pl-3 pr-4 font-medium text-gray-700 rounded hover:bg-gray-100 md:hover:bg-transparent md:border-0 md:hover:text-[#462D1A] md:p-0 md:w-auto dark:text-gray-400 dark:hover:text-white dark:focus:text-white dark:border-gray-700 dark:hover:bg-gray-700 md:dark:hover:bg-transparent"
+                  >
+                    More
+                    <svg
+                      class="w-5 h-5 ml-1"
+                      aria-hidden="true"
+                      fill="currentColor"
+                      viewBox="0 0 20 20"
+                      xmlns="http://www.w3.org/2000/svg"
                     >
-                    <div
-                      id="tooltip-bottom"
-                      role="tooltip"
-                      class="absolute z-10 invisible inline-block px-3 py-2 text-[0.9rem] font-medium text-[#d41132] bg-white rounded-lg shadow-sm opacity-0 tooltip dark:bg-gray-700"
+                      <path
+                        fill-rule="evenodd"
+                        d="M5.293 7.293a1 1 0 011.414 0L10 10.586l3.293-3.293a1 1 0 111.414 1.414l-4 4a1 1 0 01-1.414 0l-4-4a1 1 0 010-1.414z"
+                        clip-rule="evenodd"
+                      ></path>
+                    </svg>
+                  </button>
+                  <!-- Dropdown menu -->
+                  <div
+                    id="dropdownNavbar"
+                    class="z-10 hidden font-normal bg-white divide-y divide-gray-100 rounded shadow w-52 dark:bg-gray-700 dark:divide-gray-600"
+                  >
+                    <ul
+                      class="py-1 text-sm text-gray-700 dark:text-gray-400"
+                      aria-labelledby="dropdownLargeButton"
                     >
-                      Tithe, Offering, or Donation
-                      <div class="tooltip-arrow" data-popper-arrow></div>
-                    </div>
-                  </li>
-                </ul>
-              </div>
-            </li>
-          </ul>
+                      <li class="text-lg">
+                        <a
+                          href="/#leaders"
+                          class="block px-4 py-2 hover:bg-[#462D1A] hover:text-white dark:hover:bg-gray-600 dark:hover:text-white"
+                          >Leaders</a
+                        >
+                      </li>
+                      <li class="text-lg">
+                        <a
+                          href="{% url 'fellowships:fellowships-list' %}"
+                          class="block px-4 py-2 hover:bg-[#462D1A] hover:text-white dark:hover:bg-gray-600 dark:hover:text-white"
+                          >Fellowship Groups</a
+                        >
+                      </li>
+                      <li class="text-lg">
+                        <a
+                          href="{% url 'programmes:programmes-list' %}"
+                          class="block px-4 py-2 hover:bg-[#462D1A] hover:text-white dark:hover:bg-gray-600 dark:hover:text-white"
+                          >Upcoming Programmes</a
+                        >
+                      </li>
+                      <li class="text-lg">
+                        <a
+                          href="{% url 'chats:chat-list' %}"
+                          class="block px-4 py-2 hover:bg-[#462D1A] hover:text-white dark:hover:bg-gray-600 dark:hover:text-white"
+                          >Chat</a
+                        >
+                      </li>
+                      <li class="text-lg">
+                        <a
+                          href="#"
+                          class="block px-4 py-2 hover:bg-[#462D1A] hover:text-white dark:hover:bg-gray-600 dark:hover:text-white"
+                          >Gallery</a
+                        >
+                      </li>
+                      <li
+                        class="text-lg"
+                        data-tooltip-target="tooltip-bottom"
+                        data-tooltip-placement="bottom"
+                      >
+                        <a
+                          href="#"
+                          class="bg-[#d41132] text-orange-300 hover:text-[#d41132] block px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white"
+                          data-modal-target="crypto-modal"
+                          data-modal-toggle="crypto-modal"
+                          >Give</a
+                        >
+                        <div
+                          id="tooltip-bottom"
+                          role="tooltip"
+                          class="absolute z-10 invisible inline-block px-3 py-2 text-[0.9rem] font-medium text-[#d41132] bg-white rounded-lg shadow-sm opacity-0 tooltip dark:bg-gray-700"
+                        >
+                          Tithe, Offering, or Donation
+                          <div class="tooltip-arrow" data-popper-arrow></div>
+                        </div>
+                      </li>
+                    </ul>
+                  </div>
+                </li>
+              </ul>
+            </div>
         </div>
       </div>
     </nav>

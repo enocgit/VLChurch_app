@@ -6,6 +6,22 @@ $(function(){
     $(window).on({
         scroll: function(){
             let scrollTop = $(window).scrollTop()
+            // if (scrollTop >= 178) {
+            //     $('#brand-sub').removeClass('invisible')
+            // }
+            // else {
+            //     $('#brand-sub').addClass('invisible')
+            // }
+            // console.log(scrollTop)
+            // if (scrollTop >= 121){
+            //     $('#main-nav').addClass('fixed')
+            //     $('#main-nav').addClass('w-full')
+            //     // $('#main-nav').addClass('mt-40')
+            // }
+            // else {
+            //     $('#main-nav').removeClass('fixed')
+            //     $('#main-nav').addClass('mt-3')
+            // }
         }
     })
 
