@@ -1,7 +1,8 @@
 from django.shortcuts import render
 from django.shortcuts import redirect
 from django.urls import reverse_lazy
-from django.contrib.auth.views import LoginView, PasswordChangeView
+from django.contrib.auth.views import LoginView, PasswordChangeView, PasswordChangeDoneView
+from django.contrib.auth.forms import PasswordChangeForm
 from django.contrib.auth.mixins import LoginRequiredMixin
 from django.contrib.auth import get_user_model
 from .forms import LoginForm
@@ -10,7 +11,8 @@ from .forms import CustomPasswordChangeForm
 class Login(LoginView):
     model = get_user_model()
     template_name = 'accounts/login.html'
-    fields = '__all__'
+    # fields = '__all__'
+    form_class = LoginForm
     # authentication_form = LoginForm
     
     # success_url = reverse_lazy('chats:chat-list')
@@ -26,5 +28,8 @@ class PasswordChange(PasswordChangeView):
     success_url = reverse_lazy('accounts:password-change-done')
     form_class = CustomPasswordChangeForm
 
-    def password_sucess(request):
-        return render(request, 'accounts/password_change_done.html')
+class PasswordChangeDone(PasswordChangeDoneView):
+    template_name = 'accounts/password_change_done.html'
+
+    # def password_sucess(request):
+    #     return render(request, 'accounts/password_change_done.html')

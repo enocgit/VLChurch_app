@@ -173,7 +173,7 @@ NPM_BIN_PATH = '/usr/bin/npm'
 
 # LOGIN_REDIRECT_URL = 'chats:chat-list'
 
-LOGOUT_REDIRECT_URL = 'homepage:homepage'
+LOGOUT_REDIRECT_URL = 'accounts:login'
 
 JAZZMIN_SETTINGS = {
     "site_title": "VLC International",

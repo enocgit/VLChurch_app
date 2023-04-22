@@ -9,8 +9,8 @@ app_name = 'accounts'
 urlpatterns = [
     path('login/', Login.as_view(), name='login'),
     path('logout/', LogoutView.as_view(), name='logout'),
-    path('password-change/', PasswordChange.as_view(), name='password-change'),
-    path('password-change/done', PasswordChangeDoneView.as_view(template_name='password_change_done.html'), name='password-change-done'),
+    path('password/change/', PasswordChange.as_view(), name='password-change'),
+    path('password/change/done', PasswordChangeDone.as_view(), name='password-change-done'),
     # path('password-reset/', PasswordResetView.as_view(
     #     template_name='accounts/password_reset.html',
     #     success_url='password-reset-done/',
