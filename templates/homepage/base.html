@@ -1,5 +1,6 @@
 {% load static %} {% load static tailwind_tags %}
 
+
 <!DOCTYPE html>
 <html lang="en" class="scroll-smooth overflow-x-hidden">
   <head>
@@ -7,14 +8,15 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link
-      rel="stylesheet"
-      href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"
+    rel="stylesheet"
+    href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"
     />
     <!-- <link rel="stylesheet" href="{% static 'bootstrap/dist/css/bootstrap.min.css' %}" type="text/css"> -->
     <link
-      rel="stylesheet"
-      href="https://unpkg.com/flowbite@1.6.0/dist/flowbite.min.css"
+    rel="stylesheet"
+    href="https://unpkg.com/flowbite@1.6.0/dist/flowbite.min.css"
     />
+    
 
     <link
       rel="stylesheet"
@@ -24,14 +26,14 @@
       rel="stylesheet"
       href="{% static 'stylesheet/style.css' %}"
       type="text/css"
-    />
-    <link
+      />
+      <link
       rel="stylesheet"
       href="https://fonts.googleapis.com/css?family=Akaya+Kanadaka"
     />
     <link
-      rel="stylesheet"
-      href="https://fonts.googleapis.com/css?family=Abhaya+Libre:regular,bold"
+    rel="stylesheet"
+    href="https://fonts.googleapis.com/css?family=Abhaya+Libre:regular,bold"
     />
     <link
       rel="stylesheet"
@@ -40,18 +42,19 @@
     <link
       rel="stylesheet"
       href="https://fonts.googleapis.com/css?family=Lobster"
-    />
-    {% tailwind_css %}
+      />
+      
+      <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet" />
+      {% tailwind_css %}
 
-    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet" />
-
-    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
-
-    <script src="{% static 'bootstrap-icons/font/bootstrap-icons.css' %}"></script>
-    <script src="{% static 'jquery/dist/jquery.min.js' %}"></script>
-    <script src="{% static 'javascript/main.js' %}" async></script>
-
-    <title>
+      
+      <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+      
+      <script src="{% static 'bootstrap-icons/font/bootstrap-icons.css' %}"></script>
+      <script src="{% static 'jquery/dist/jquery.min.js' %}"></script>
+      <script src="{% static 'javascript/main.js' %}" async></script>
+      
+      <title>
       {% block title %}Victorious Living Church International{% endblock %}
     </title>
   </head>
@@ -116,11 +119,11 @@
                   aria-expanded="true"
                   aria-controls="accordion-collapse-body-1"
                 >
-                  <span class="flex gap-x-4 items-center">
+                  <span class="flex gap-x-4 items-center flex-col smpl:flex-row">
                     <img
                       src="{% static 'images/mtn-momo-logo.png' %}"
                       alt=""
-                      class="w-10"
+                      class="self-start w-10"
                     />
                     <span> MTN Mobile Money </span>
                   </span>
@@ -161,11 +164,11 @@
                   aria-expanded="true"
                   aria-controls="accordion-collapse-body-2"
                 >
-                  <span class="flex gap-x-4 items-center">
+                  <span class="flex gap-x-4 items-center flex-col smpl:flex-row">
                     <img
                       src="{% static 'images/vodafone-cash.png' %}"
                       alt=""
-                      class="w-10"
+                      class="self-start w-10"
                     />
                     <span> Vodafone Cash</span>
                   </span>
@@ -208,11 +211,11 @@
                   aria-expanded="true"
                   aria-controls="accordion-collapse-body-3"
                 >
-                  <span class="flex gap-x-4 items-center">
+                  <span class="flex gap-x-4 items-center flex-col smpl:flex-row">
                     <img
                       src="{% static 'images/airtel-tigo.png' %}"
                       alt=""
-                      class="w-10"
+                      class="self-start w-10"
                     />
                     <span> Tigo Cash</span>
                   </span>
@@ -253,11 +256,11 @@
                   aria-expanded="true"
                   aria-controls="accordion-collapse-body-4"
                 >
-                  <span class="flex gap-x-4 items-center">
+                  <span class="flex gap-x-4 items-center flex-col smpl:flex-row">
                     <img
                       src="{% static 'images/airtel-money.png' %}"
                       alt=""
-                      class="w-10"
+                      class="self-start w-10"
                     />
                     <span> Airtel Money</span>
                   </span>
@@ -300,11 +303,11 @@
                   aria-expanded="true"
                   aria-controls="accordion-collapse-body-5"
                 >
-                  <span class="flex gap-x-4 items-center">
+                  <span class="flex gap-x-4 items-center flex-col smpl:flex-row">
                     <img
                       src="{% static 'images/credit-cards.png' %}"
                       alt=""
-                      class="w-10"
+                      class="self-start w-10"
                     />
                     <span> Credit Card</span>
                   </span>
@@ -750,7 +753,7 @@
               <a
                 href="#"
                 title=""
-                class="flex items-center justify-center text-white transition-all duration-200 bg-transparent border border-gray-400 rounded-full w-7 h-7 focus:bg-yellow-500 hover:bg-yellow-500 hover:border-yellow-500 bg-yellow-500 focus:border-yellow-500"
+                class="flex items-center justify-center text-white transition-all duration-200 bg-transparent border border-gray-400 rounded-full w-7 h-7 focus:bg-yellow-500 hover:bg-yellow-500 hover:border-yellow-500 focus:border-yellow-500"
               >
                 <svg
                   class="w-4 h-4"

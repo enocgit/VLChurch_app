@@ -13,7 +13,7 @@ class Member(AbstractUser):  # members inheriting from AbstractUser model
     birthday = models.DateField(null=True, blank=True)
     # fellowship = models.ForeignKey(Fellowship, null=True, blank=True, on_delete=models.SET_NULL)
     fellowship = models.ManyToManyField(
-        'fellowships.Fellowship', verbose_name='fellowship group', null=True, blank=True)
+        'fellowships.Fellowship', verbose_name='fellowship group', blank=True)
 
     def __str__(self):
         return f'{self.first_name} {self.last_name}'

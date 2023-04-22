@@ -23,7 +23,7 @@ class SundayService(models.Model):
     datetime = models.DateTimeField('date & time', auto_now=False, null=True, blank=True)
     music_group = models.ForeignKey(MusicGroup, null=True, blank=True, on_delete=models.SET_NULL)
     venue = models.CharField(max_length=255, default='Victorious Living Church International, Kasoa')
-    guests = models.ManyToManyField('programmes.Guest', verbose_name='Invited Guests', null=True, blank=True)
+    guests = models.ManyToManyField('programmes.Guest', verbose_name='Invited Guests', blank=True)
     image = models.ImageField('background image', upload_to='static/uploads', height_field=None, width_field=None, max_length=None, null=True, blank=True, default='static/images/sunday_service_bg.jpg')
     
 # class Service(models.Model):

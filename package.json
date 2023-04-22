@@ -15,7 +15,6 @@
     "jquery": "^3.6.3"
   },
   "dependencies": {
-    "aos": "^2.3.4",
-    "tailwindcss-override": "^0.1.0"
+    "aos": "^2.3.4"
   }
 }

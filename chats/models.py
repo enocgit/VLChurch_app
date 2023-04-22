@@ -20,7 +20,7 @@ class Quiz(models.Model):
     question = models.TextField()
     answer = models.TextField(null=True, blank=True)
     question_by = models.ForeignKey(Member, verbose_name="Question by", on_delete=models.CASCADE, null=True)
-    winner = models.ManyToManyField('Winner', verbose_name='select winner(s)', null=True, blank=True)
+    winner = models.ManyToManyField('Winner', verbose_name='select winner(s)', blank=True)
     display_winner = models.BooleanField('display winner', default=False)
     
     def __str__(self):

@@ -33,48 +33,39 @@ module.exports = {
         /* JS 1: Ignore any JavaScript in node_modules folder. */
         // '!../../**/node_modules',
         /* JS 2: Process all JavaScript files in the project. */
-        '../../**/*.js',
+        // '../../**/*.js',
 
         /**
          * Python: If you use Tailwind CSS classes in Python, uncomment the following line
          * and make sure the pattern below matches your project structure.
          */
-        '../../**/*.py'
+        // '../../**/*.py'
     ],
     theme: {
-        extend: {
-          backgroundImage: {
-            'hero': "url('/static/images/hero-bg.jpg')",
-            'footer-texture': "url('/img/footer-texture.png')",
-          }
-        },
+        extend: {},
         screens: {
-          'mspp': '310px',
-          'smpl': '424px',
-          'smp2': '462px',
-          'smpp': '529px',
-          'sm': '640px',
-          // 'smpp': '767px',
-          'md': '768px',
-          'md2': '900px',
-          'mdpl': '942px',
-          'lg': '1024px',
-          'lg2': '1184px',
-          'xl': '1280px',
-          '2xl': '1536px',
-        },
-        fontFamily: {
-          'fantasy': ['"Akaya Kanadaka"', 'fantasy'],
-          'serif': ['"Abhaya Libre"', 'serif'],
-          'sans': ['Actor', 'sans-serif'],
-          'sans-head': ['Inter', 'sans-serif'],
-          'cursive': ['Lobster', 'cursive']
-        },
-        // textColor: {
-        //   'primary-brown': '#462D1A',
-        // }
-    
-      },
+            'mspp': '310px',
+            'smpl': '424px',
+            'smp2': '462px',
+            'smpp': '529px',
+            'sm': '640px',
+            // 'smpp': '767px',
+            'md': '768px',
+            'md2': '900px',
+            'mdpl': '942px',
+            'lg': '1024px',
+            'lg2': '1184px',
+            'xl': '1280px',
+            '2xl': '1536px',
+          },
+          fontFamily: {
+            'fantasy': ['"Akaya Kanadaka"', 'fantasy'],
+            'serif': ['"Abhaya Libre"', 'serif'],
+            'sans': ['Actor', 'sans-serif'],
+            'sans-head': ['Inter', 'sans-serif'],
+            'cursive': ['Lobster', 'cursive']
+          },
+    },
     plugins: [
         /**
          * '@tailwindcss/forms' is the forms plugin that provides a minimal styling
@@ -85,7 +76,5 @@ module.exports = {
         require('@tailwindcss/typography'),
         require('@tailwindcss/line-clamp'),
         require('@tailwindcss/aspect-ratio'),
-        require('flowbite/plugin'),
-        require('tailwindcss-override')
     ],
 }

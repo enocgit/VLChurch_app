@@ -22,7 +22,7 @@ class Programme(models.Model):
     datetime = models.DateTimeField('date & time', auto_now=False)
     venue = models.CharField(max_length=255, null=True, blank=True,
                              default='Victorious Living Church International, Kasoa')
-    guests = models.ManyToManyField('Guest', null=True, blank=True)
+    guests = models.ManyToManyField('Guest', blank=True)
 
     def __str__(self):
         return self.name
