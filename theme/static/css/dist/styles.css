@@ -923,6 +923,14 @@ select {
   bottom: 9rem;
 }
 
+.left-5 {
+  left: 1.25rem;
+}
+
+.left-10 {
+  left: 2.5rem;
+}
+
 .z-10 {
   z-index: 10;
 }
@@ -1652,6 +1660,11 @@ select {
   border-top-right-radius: 0.75rem;
 }
 
+.rounded-r-full {
+  border-top-right-radius: 9999px;
+  border-bottom-right-radius: 9999px;
+}
+
 .rounded-bl-\[60\%\] {
   border-bottom-left-radius: 60%;
 }
@@ -1666,6 +1679,14 @@ select {
 
 .rounded-tr-\[20\%\] {
   border-top-right-radius: 20%;
+}
+
+.rounded-tr-full {
+  border-top-right-radius: 9999px;
+}
+
+.rounded-br-full {
+  border-bottom-right-radius: 9999px;
 }
 
 .border {
@@ -2330,6 +2351,22 @@ select {
 
 .opacity-0 {
   opacity: 0;
+}
+
+.opacity-90 {
+  opacity: 0.9;
+}
+
+.opacity-20 {
+  opacity: 0.2;
+}
+
+.opacity-80 {
+  opacity: 0.8;
+}
+
+.opacity-95 {
+  opacity: 0.95;
 }
 
 .shadow {
