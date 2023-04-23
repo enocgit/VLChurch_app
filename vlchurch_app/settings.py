@@ -33,7 +33,7 @@ environ.Env.read_env()
 SECRET_KEY = env('SECRET_KEY')
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
+DEBUG = False
 
 ALLOWED_HOSTS = ['*']
 
@@ -62,8 +62,6 @@ INSTALLED_APPS = [
     'tailwind',
     'theme',
     'django_browser_reload',
-    # 'django_fields'
-
 ]
 
 MIDDLEWARE = [
@@ -101,17 +99,17 @@ WSGI_APPLICATION = 'vlchurch_app.wsgi.application'
 # Database
 # https://docs.djangoproject.com/en/4.1/ref/settings/#databases
 
-DATABASES = {
-    'default': {
-        'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': BASE_DIR / 'db.sqlite3',
-    }
-}
-
 # DATABASES = {
-#     # 'default': dj_database_url.parse(os.environ.get('DATABASE_URL'))
-#     'default': dj_database_url.parse(env('DATABASE_URL'))
+#     'default': {
+#         'ENGINE': 'django.db.backends.sqlite3',
+#         'NAME': BASE_DIR / 'db.sqlite3',
+#     }
 # }
+
+DATABASES = {
+    # 'default': dj_database_url.parse(os.environ.get('DATABASE_URL'))
+    'default': dj_database_url.parse(env('DATABASE_URL'))
+}
 
 
 # Password validation
@@ -179,4 +177,18 @@ JAZZMIN_SETTINGS = {
     "site_title": "VLC International",
     "site_header": "VLC International",
     "site_brand": "VLC International"
+}
+
+
+CKEDITOR_CONFIGS = {
+    'default': {
+        'toolbar': 'Custom',
+        'width': '120%',
+        'height': '100%',
+        'toolbar_Custom': [
+            ['Styles', 'Format', 'Bold', 'Italic', 'Underline', 'Smiley', 'Undo', 'Redo',
+             'Link', 'Image', 'Text Color', 'Background Color'
+              ]
+        ]
+    }
 }

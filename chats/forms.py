@@ -5,6 +5,8 @@ from ckeditor.fields import RichTextField
 
 
 class CommentForm(models.ModelForm):
+
+    # message = forms.CharField(widget=forms.Textarea(attrs={'class': 'focus:border-[#3e535f] focus:ring-[#3e535f]',}))
     
     class Meta:
         model = Comment
@@ -12,10 +14,3 @@ class CommentForm(models.ModelForm):
         labels = {
             'message': ''
         }
-        # widgets = {
-        #     'message': forms.Textarea(attrs={
-        #         'class': 'form-control rounded-4 p-3',
-        #         'cols': '40', 'rows': '10',
-        #         # 'id': 'comment-field',
-        #      })
-        # }

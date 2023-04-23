@@ -27,6 +27,11 @@
       href="{% static 'stylesheet/style.css' %}"
       type="text/css"
       />
+    <link
+      rel="stylesheet"
+      href="{% static 'stylesheet/ckeditor.css' %}"
+      type="text/css"
+      />
       <link
       rel="stylesheet"
       href="https://fonts.googleapis.com/css?family=Akaya+Kanadaka"
@@ -441,10 +446,10 @@
           </svg>
         </button>
         <div class="hidden w-full md:block md:w-auto" id="navbar-dropdown">
-            <div class="lg:flex"> <!-- Will be tweaked in the future -->
+            <div class=""> <!-- Will be tweaked in the future -->
               <a
                 href=""
-                class="font-bold text-gray-600 sm:text-[initial] text-sm sm:text-lg left-[7rem] sm:left-[10rem] md:left-12 top-4 sm:top-4 lg:top-[initial] hidden "
+                class="font-bold text-gray-600 sm:text-[initial] text-sm sm:text-lg left-[7rem] sm:left-[10rem] md:left-12 top-4 sm:top-4 lg:top-[initial] hidden"
                 id="brand-sub"
                 >Victorious Living Church International</a
               >
@@ -453,7 +458,7 @@
               >
                 {% block nav_home %}
     
-                <li class="text-lg md:pl-[18rem] lg:pl-[initial]">
+                <li class="text-lg">
                   <a
                     href="{% url 'homepage:homepage' %}"
                     class="block py-2 pl-3 pr-4 text-gray-700 rounded hover:bg-gray-100 md:hover:bg-transparent md:border-0 md:hover:text-[#462D1A] md:p-0 dark:text-gray-400 md:dark:hover:text-white dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent"

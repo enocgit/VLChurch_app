@@ -17,16 +17,16 @@ Chats
                 <h2 class="text-gray-800 text-lg font-medium">{{ chat.name }}</h2>
             </div>
             <div class="flex items-center ml-auto gap-2">
-                <a href="{% url 'accounts:logout' %}" class="mr-8 text-neutral-600 text-xs">Logout</a>
+                <a href="{% url 'accounts:logout' %}" class="mr-8 text-neutral-600 text-xs hidden sm:block">Logout</a>
                 {% if request.user.picture %}
                 <img src="{{ request.user.picture.url }}" alt="" class="w-10 h-10 rounded-full">
                 {% else %}
                 <img src="{% static 'images/no-image.png' %}" alt="" class="w-10 h-10 rounded-full">
                 {% endif %}
                 {% if request.user.leader %}
-                    <p class="text-gray-800 block">{{ request.user.leader.title }} {{ request.user }}</p>
+                    <p class="text-gray-800 hidden sm:block">{{ request.user.leader.title }} {{ request.user }}</p>
                 {% else %}
-                    <p class="text-gray-800 block">{{ request.user }}</p>
+                    <p class="text-gray-800 hidden sm:block">{{ request.user }}</p>
                 {% endif %}
             </div>
           </div>
@@ -36,8 +36,8 @@ Chats
             {% if chat.comment_set.all %}
                 
                 {% for comment in chat.comment_set.all %}
-                <div class="flex w-6/12 mx-auto p-6 border rounded-lg mt-4">
-                    <div class="flex items-start mb-4">
+                <div class="flex w-9/12 sm:w-8/12 lg:w-6/12 mx-auto p-6 border rounded-lg mt-4">
+                    <div class="flex flex-col smpl:flex-row items-start mb-4">
                         {% if comment.user.picture %}
                         <img src="{{ comment.user.picture.url }}" alt="User avatar" class="w-10 h-10 rounded-full mr-4">
                         {% else %}
@@ -53,7 +53,7 @@ Chats
                             {% endif %}
                             <p class="ml-2 text-xs text-gray-500">{{ comment.datetime | naturaltime }}</p>
                         </div>
-                        <p class="text-sm text-gray-800">{{ comment.message | safe }}</p>
+                        <p class="text-sm text-gray-800 mt-2 smpl:mt-0">{{ comment.message | safe }}</p>
                         </div>
                     </div>
                 </div>
@@ -79,11 +79,13 @@ Chats
         <form method="post" class="w-6/12 mx-auto mt-10">
             {% csrf_token %}
             {{ form.media }}
-            {{ form.as_p }}
-            <a href="">
-                <button class="bg-blue-500 text-white rounded-lg py-2 px-4">Post Message</button>
-            </a>
-        </form>
+            <!-- <link rel="stylesheet" type="text/css" href="{% static 'css/ckeditor.css' %}"> -->
+
+            <div class="ml-[-2rem] smpl:ml-[-4.5rem] lg:ml-[-1rem]">
+              {{ form.as_p }}
+              <input type="submit" value="Post Message" class="bg-blue-500 text-white rounded-lg py-2 px-4">
+            </div>
+            </form>
     </section>
 
 
@@ -100,6 +102,7 @@ Chats
           <i class="bi bi-x text-xl"></i>
         </button>
       </div>
+      <a href="{% url 'accounts:logout' %}" class="text-right mr-8 text-neutral-600 text-xs sm:hidden block">Logout</a>
       <hr class="border-gray-300 my-2">
       {% if chats %}
         <ul class="px-4">
