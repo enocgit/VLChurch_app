@@ -22,6 +22,9 @@ class Quiz(models.Model):
     question_by = models.ForeignKey(Member, verbose_name="Question by", on_delete=models.SET_NULL, null=True)
     winner = models.ManyToManyField('Winner', verbose_name='select winner(s)', blank=True)
     display_winner = models.BooleanField('display winner', default=False)
+
+    class Meta:
+        verbose_name_plural = 'Quizzes'
     
     def __str__(self):
         return self.question
@@ -30,6 +33,9 @@ class Quiz(models.Model):
 # carousel images
 class CarouselImg(models.Model):
     image = models.ImageField(upload_to='images', height_field=None, width_field=None, max_length=None)
+
+    class Meta:
+        verbose_name_plural = 'Carousel Images'
 
     def __str__(self):
         return f'{self.image}'

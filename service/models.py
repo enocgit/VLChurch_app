@@ -30,6 +30,9 @@ class SundayService(models.Model):
 #     teacher = models.CharField(max_length=255, null=True, blank=True)
 #     preacher = models.CharField(max_length=255, null=True, blank=True)
 
+    class Meta:
+        verbose_name_plural = 'Sunday service'
+
     def __str__(self):
         return f'{self.datetime.date()} Sunday Church Service'
 
