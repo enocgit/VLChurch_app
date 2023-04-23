@@ -959,16 +959,6 @@ select {
   margin-bottom: 1.25rem;
 }
 
-.mx-32 {
-  margin-left: 8rem;
-  margin-right: 8rem;
-}
-
-.mx-60 {
-  margin-left: 15rem;
-  margin-right: 15rem;
-}
-
 .mb-1 {
   margin-bottom: 0.25rem;
 }
@@ -1035,6 +1025,10 @@ select {
 
 .ml-5 {
   margin-left: 1.25rem;
+}
+
+.ml-\[-2rem\] {
+  margin-left: -2rem;
 }
 
 .ml-auto {
@@ -1104,26 +1098,6 @@ select {
 
 .mt-8 {
   margin-top: 2rem;
-}
-
-.ml-96 {
-  margin-left: 24rem;
-}
-
-.ml-\[-2rem\] {
-  margin-left: -2rem;
-}
-
-.ml-\[-5rem\] {
-  margin-left: -5rem;
-}
-
-.ml-\[-4\.5rem\] {
-  margin-left: -4.5rem;
-}
-
-.ml-\[-1rem\] {
-  margin-left: -1rem;
 }
 
 .block {
@@ -2947,16 +2921,16 @@ select {
 }
 
 @media (min-width: 424px) {
-  .smpl\:mt-10 {
-    margin-top: 2.5rem;
+  .smpl\:ml-\[-4\.5rem\] {
+    margin-left: -4.5rem;
   }
 
   .smpl\:mt-0 {
     margin-top: 0px;
   }
 
-  .smpl\:ml-\[-4\.5rem\] {
-    margin-left: -4.5rem;
+  .smpl\:mt-10 {
+    margin-top: 2.5rem;
   }
 
   .smpl\:w-3\/12 {
@@ -3083,6 +3057,10 @@ select {
     width: 50%;
   }
 
+  .sm\:w-8\/12 {
+    width: 66.666667%;
+  }
+
   .sm\:w-9\/12 {
     width: 75%;
   }
@@ -3105,10 +3083,6 @@ select {
 
   .sm\:w-\[65vw\] {
     width: 65vw;
-  }
-
-  .sm\:w-8\/12 {
-    width: 66.666667%;
   }
 
   .sm\:grid-cols-2 {
@@ -3252,10 +3226,6 @@ select {
     width: 33.333333%;
   }
 
-  .md\:w-6\/12 {
-    width: 50%;
-  }
-
   .md\:w-8\/12 {
     width: 66.666667%;
   }
@@ -3342,10 +3312,6 @@ select {
 
   .md\:p-0 {
     padding: 0px;
-  }
-
-  .md\:pl-\[18rem\] {
-    padding-left: 18rem;
   }
 
   .md\:text-\[7rem\] {
@@ -3453,6 +3419,10 @@ select {
     margin-bottom: 0px;
   }
 
+  .lg\:ml-\[-1rem\] {
+    margin-left: -1rem;
+  }
+
   .lg\:ml-\[50rem\] {
     margin-left: 50rem;
   }
@@ -3465,14 +3435,6 @@ select {
     margin-top: 0px;
   }
 
-  .lg\:ml-\[-1rem\] {
-    margin-left: -1rem;
-  }
-
-  .lg\:flex {
-    display: flex;
-  }
-
   .lg\:w-3\/12 {
     width: 25%;
   }
@@ -3481,16 +3443,16 @@ select {
     width: 41.666667%;
   }
 
+  .lg\:w-6\/12 {
+    width: 50%;
+  }
+
   .lg\:w-\[50rem\] {
     width: 50rem;
   }
 
   .lg\:w-\[65vw\] {
     width: 65vw;
-  }
-
-  .lg\:w-6\/12 {
-    width: 50%;
   }
 
   .lg\:grid-cols-3 {
@@ -3505,10 +3467,6 @@ select {
   .lg\:px-32 {
     padding-left: 8rem;
     padding-right: 8rem;
-  }
-
-  .lg\:pl-\[initial\] {
-    padding-left: initial;
   }
 
   .lg\:pt-24 {
