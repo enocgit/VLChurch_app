@@ -9,7 +9,7 @@ from django.utils.html import escape, strip_tags
 
 # winner
 class Winner(models.Model):
-    member = models.ForeignKey(Member, verbose_name='name', on_delete=models.CASCADE, null=True, blank=True)
+    member = models.ForeignKey(Member, verbose_name='name', on_delete=models.SET_NULL, null=True, blank=True)
     # wins = models.IntegerField()
     
     def __str__(self):
@@ -19,7 +19,7 @@ class Winner(models.Model):
 class Quiz(models.Model):
     question = models.TextField()
     answer = models.TextField(null=True, blank=True)
-    question_by = models.ForeignKey(Member, verbose_name="Question by", on_delete=models.CASCADE, null=True)
+    question_by = models.ForeignKey(Member, verbose_name="Question by", on_delete=models.SET_NULL, null=True)
     winner = models.ManyToManyField('Winner', verbose_name='select winner(s)', blank=True)
     display_winner = models.BooleanField('display winner', default=False)
     
@@ -29,7 +29,7 @@ class Quiz(models.Model):
 
 # carousel images
 class CarouselImg(models.Model):
-    image = models.ImageField(upload_to='static/uploads', height_field=None, width_field=None, max_length=None)
+    image = models.ImageField(upload_to='images', height_field=None, width_field=None, max_length=None)
 
     def __str__(self):
         return f'{self.image}'
@@ -49,9 +49,9 @@ class Chat(models.Model):
 # comment
 class Comment(models.Model):
     message = RichTextField(default='', null=True, blank=True)
-    user = models.ForeignKey(get_user_model(), verbose_name='member', on_delete=models.CASCADE, null=True, blank=True)
+    user = models.ForeignKey(get_user_model(), verbose_name='member', on_delete=models.SET_NULL, null=True, blank=True)
     datetime = models.DateTimeField('date & time', auto_now=True)
-    chat = models.ForeignKey('Chat', on_delete=models.CASCADE, null=True, blank=True)
+    chat = models.ForeignKey('Chat', on_delete=models.SET_NULL, null=True, blank=True)
     
     def __str__(self):
        return strip_tags(self.message)

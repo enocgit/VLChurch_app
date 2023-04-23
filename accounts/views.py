@@ -7,6 +7,7 @@ from django.contrib.auth.mixins import LoginRequiredMixin
 from django.contrib.auth import get_user_model
 from .forms import LoginForm
 from .forms import CustomPasswordChangeForm
+from chats.models import Chat
 
 class Login(LoginView):
     model = get_user_model()
@@ -20,7 +21,11 @@ class Login(LoginView):
     def get_success_url(self):
         # return redirect('chats:chat-detail')
         chat_id = self.request.COOKIES.get('chat_id')
-        return reverse_lazy('chats:chat-detail', kwargs={'pk': chat_id})
+        if chat_id:
+            return reverse_lazy('chats:chat-detail', kwargs={'pk': chat_id})
+        else:
+            general_chat = Chat.objects.get(name="general")
+            return reverse_lazy('chats:chat-detail', kwargs={'pk': general_chat})
 
 
 class PasswordChange(PasswordChangeView):

@@ -12,10 +12,8 @@ class HomePage(ListView):
     # context_data = {'current_year': timezone.datetime.now().year}
     
     
-
-    
     def get_context_data(self):
-        leaderModel = Leader.objects.all()
+        leaderModel = Leader.objects.all().order_by('id')
         carouselModel = CarouselImg.objects.all()
         context = super().get_context_data()
         context['leaders'] = leaderModel

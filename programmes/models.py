@@ -19,7 +19,7 @@ class Guest(models.Model):
 
 
 class Programme(models.Model):
-    image = models.ImageField('background image', upload_to='static/uploads', height_field=None, width_field=None,
+    image = models.ImageField('background image', upload_to='images', height_field=None, width_field=None,
                               max_length=None, null=True, blank=True, default='static/images/programme_default.jpg')
     name = models.CharField('programme', max_length=255)
     datetime = models.DateTimeField('date & time', auto_now=False)
