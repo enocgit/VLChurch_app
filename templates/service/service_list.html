@@ -85,7 +85,7 @@
                                 {% if service.teacher2.picture %}    
                                 <img src="{{ service.teacher2.picture.url }}" alt="" class="mt-2 rounded-full w-[140px] h-[140px]">
                                 {% else %}
-                                <img src="{% static 'images/no-image.png' %}" alt="" class="mt-2 rounded-full w-[140px] h-[140px]">
+                                <img src="{% static 'images/no_image.png' %}" alt="" class="mt-2 rounded-full w-[140px] h-[140px]">
                                 {% endif %}
                                 <small class="text-center pt-2 text-white text-[1rem]">{{ service.teacher2.name }}</small>
                                 {% elif service.teacher %}
@@ -93,7 +93,7 @@
                                 {% if service.teacher.picture %}    
                                 <img src="{{ service.teacher.picture.url }}" alt="" class="mt-2 rounded-full w-[140px] h-[140px]" />
                                 {% else %}
-                                <img src="{% static 'images/no-image.png' %}" alt="" class="mt-2 rounded-full w-[140px] h-[140px]" />
+                                <img src="{% static 'images/no_image.png' %}" alt="" class="mt-2 rounded-full w-[140px] h-[140px]" />
                                 {% endif %}
 
                                 <small class="text-center pt-2 text-white text-[1rem]">
@@ -114,14 +114,14 @@
                                 {% if service.preacher2.picture %}
                                 <img src="{{ service.preacher2.picture.url }}" alt="" class="mt-2 rounded-full w-[140px] h-[140px]">
                                 {% else %}
-                                <img src="{% static 'images/no-image.png' %}" alt="" class="mt-2 rounded-full w-[140px] h-[140px]">
+                                <img src="{% static 'images/no_image.png' %}" alt="" class="mt-2 rounded-full w-[140px] h-[140px]">
                                 {% endif %}
                                 <small class="text-center pt-2 text-white text-[1rem]">{{ service.preacher2.name }}</small>
                                 {% elif service.preacher %}
                                 {% if service.preacher.picture %}
                                 <img src="{{ service.preacher.picture.url }}" alt="" class="mt-2 rounded-full w-[140px] h-[140px]">
                                 {% else %}
-                                <img src="{% static 'images/no-image.png' %}" alt="" class="mt-2 rounded-full w-[140px] h-[140px]">
+                                <img src="{% static 'images/no_image.png' %}" alt="" class="mt-2 rounded-full w-[140px] h-[140px]">
                                 {% endif %}
                                 <small class="text-center pt-2 text-white text-[1rem]">
                                     {% if service.preacher.leader %}
@@ -153,7 +153,7 @@
                                         {% if guest.picture %}
                                         <img src="{{ guest.picture.url }}" alt="{{ guest.name }}" class="mt-2 rounded-full w-[90px] h-[90px]">
                                         {% else %}
-                                        <img src="{% static 'images/no-image.png' %}" alt="{{ guest.name }}" class="mt-2 rounded-full w-[90px] h-[90px]">
+                                        <img src="{% static 'images/no_image.png' %}" alt="{{ guest.name }}" class="mt-2 rounded-full w-[90px] h-[90px]">
                                         {% endif %}
                                         <small class="text-center pt-2 text-white text-[0.9rem]">{{ guest.name }}</small>
                                     </div>
