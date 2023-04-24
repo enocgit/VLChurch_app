@@ -63,7 +63,7 @@ INSTALLED_APPS = [
     'tailwind',
     'theme',
     # 'django_fields',
-    'django_browser_reload',
+    # 'django_browser_reload',
 ]
 
 MIDDLEWARE = [
@@ -75,7 +75,7 @@ MIDDLEWARE = [
     'django.contrib.auth.middleware.AuthenticationMiddleware',
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
-    "django_browser_reload.middleware.BrowserReloadMiddleware",
+    # "django_browser_reload.middleware.BrowserReloadMiddleware",
 ]
 
 ROOT_URLCONF = 'vlchurch_app.urls'
@@ -153,9 +153,9 @@ USE_TZ = True
 # Static files setup for Development
 # STATIC_URL = '/static/'
 # STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')
-# # STATICFILES_DIRS = [BASE_DIR/'static']
+# STATICFILES_DIRS = [BASE_DIR/'static']
 
-# AWS S3 BUCKET SETUP FOR STATIC AND MEDIA
+# # AWS S3 BUCKET SETUP FOR STATIC AND MEDIA
 AWS_ACCESS_KEY_ID = env('AWS_ACCESS_KEY_ID')
 AWS_SECRET_ACCESS_KEY = env('AWS_SECRET_ACCESS_KEY')
 AWS_STORAGE_BUCKET_NAME = env('AWS_STORAGE_BUCKET_NAME')

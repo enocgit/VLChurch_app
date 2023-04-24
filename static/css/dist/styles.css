@@ -1015,10 +1015,6 @@ select {
   margin-left: 0.5rem;
 }
 
-.ml-20 {
-  margin-left: 5rem;
-}
-
 .ml-3 {
   margin-left: 0.75rem;
 }
@@ -1406,10 +1402,6 @@ select {
   resize: both;
 }
 
-.list-disc {
-  list-style-type: disc;
-}
-
 .grid-cols-1 {
   grid-template-columns: repeat(1, minmax(0, 1fr));
 }
@@ -1786,8 +1778,8 @@ select {
   background-color: rgb(255 255 255 / var(--tw-bg-opacity));
 }
 
-.bg-\[url\(\'\/static\/images\/about\.jpg\'\)\] {
-  background-image: url('/static/images/about.jpg');
+.bg-\[url\(\'\/static\/images\/banner_contact\.jpg\'\)\] {
+  background-image: url('/static/images/banner_contact.jpg');
 }
 
 .bg-\[url\(\'\/static\/images\/contact_banner\.jpg\'\)\] {
