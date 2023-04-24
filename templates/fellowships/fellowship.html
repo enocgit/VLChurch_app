@@ -1,4 +1,5 @@
-{% extends 'homepage/base.html' %} {% block title %} Fellowship Groups
+{% extends 'homepage/base.html' %} {% load static %}
+{% block title %} Fellowship Groups
 {%endblock %} {% block active %}
 <li class="nav-item">
   <a class="nav-link" href="{% url 'homepage:homepage' %}" aria-current="page"
@@ -14,8 +15,7 @@
 {% endblock %} {% block content %}
 
 <section
-  class="bg-no-repeat bg-cover bg-center pt-[15rem]"
-  style="background-image: url('/static/images/music_bg.jpg')"
+  class="bg-[url('/static/images/music_bg.jpg')] bg-no-repeat bg-cover bg-center pt-[15rem]" style="background-image: url('/static/images/music_bg.jpg')"
 >
   <div
     class="h-[15rem] w-64 smpl:w-[25rem] sm:w-[35rem] md:w-[40rem] lg:w-[50rem] bg-white py-[2rem] rounded-tr-full rounded-br-full mb-16 opacity-95" data-aos="slide-right"
@@ -52,9 +52,8 @@
 </section>
 <!-- Men Fellowship -->
 <section
-  class="bg-no-repeat bg-cover bg-center py-[12rem] font-sans"
-  id="men-fellow"
-  style="background-image: url('/static/images/men_fellowship_bg.jpg')"
+  class="bg-[url('/static/images/contact_banner.jpg')] bg-no-repeat bg-cover bg-center py-[12rem] font-sans"
+  id="men-fellow" style="background-image: url('/static/images/men_fellowship_bg.jpg');"
 >
   <div
     class="bg-white w-10/12 md:w-8/12 lg:w-5/12 mx-auto text-center pt-[6rem] pb-[4rem] px-8" data-aos="zoom-out-up"
@@ -81,9 +80,8 @@
 </section>
 <!-- Women fellowship -->
 <section
-  class="bg-no-repeat bg-cover bg-center py-[12rem] font-cursive"
-  id="women-fellow"
-  style="background-image: url('/static/images/women_fellowship_bg.jpg')"
+  class="bg-[url('/static/images/women_fellowship_bg.jpg')] bg-no-repeat bg-cover bg-center py-[12rem] font-cursive"
+  id="women-fellow" style="background-image: url('/static/images/women_fellowship_bg.jpg');"
 >
   <div class="w-8/12 smpl:w-3/12 2xl:w-2/12 mx-auto">
     <h1 class="text-white text-4xl mspp:text-6xl" data-aos="flip-down"
