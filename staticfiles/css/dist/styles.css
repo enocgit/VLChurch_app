@@ -1368,6 +1368,10 @@ select {
   flex-shrink: 0;
 }
 
+.grow {
+  flex-grow: 1;
+}
+
 .border-collapse {
   border-collapse: collapse;
 }
@@ -1774,6 +1778,10 @@ select {
   background-color: rgb(255 255 255 / var(--tw-bg-opacity));
 }
 
+.bg-\[url\(\'\/static\/images\/banner_contact\.jpg\'\)\] {
+  background-image: url('/static/images/banner_contact.jpg');
+}
+
 .bg-\[url\(\'\/static\/images\/contact_banner\.jpg\'\)\] {
   background-image: url('/static/images/contact_banner.jpg');
 }
@@ -1782,12 +1790,16 @@ select {
   background-image: url('/static/images/contact_side.jpg');
 }
 
-.bg-\[url\(\'\/static\/images\/hero-bg\.jpg\'\)\] {
-  background-image: url('/static/images/hero-bg.jpg');
+.bg-\[url\(\'\/static\/images\/hero_bg\.jpg\'\)\] {
+  background-image: url('/static/images/hero_bg.jpg');
 }
 
 .bg-\[url\(\'\/static\/images\/sunday_service_bg\.jpg\'\)\] {
   background-image: url('/static/images/sunday_service_bg.jpg');
+}
+
+.bg-\[url\(\'\/static\/images\/about_img\.jpg\'\)\] {
+  background-image: url('/static/images/about_img.jpg');
 }
 
 .bg-cover {
@@ -2473,6 +2485,10 @@ select {
   end: next;
 }
 
+.\[first_non_space\:last_non_space\] {
+  first_non_space: last non space;
+}
+
 .\[i\:j\] {
   i: j;
 }
@@ -2507,6 +2523,10 @@ select {
 
 .\[left\:right\] {
   left: right;
+}
+
+.\[length_byte_size\:bytes_end\] {
+  length_byte_size: bytes end;
 }
 
 .\[line_offset\:end_line\] {
@@ -2567,6 +2587,10 @@ select {
 
 .\[prev_end\:start\] {
   prev_end: start;
+}
+
+.\[r_start\:r_stop\] {
+  r_start: r stop;
 }
 
 .\[server\:main\] {

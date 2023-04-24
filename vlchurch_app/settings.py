@@ -102,17 +102,17 @@ WSGI_APPLICATION = 'vlchurch_app.wsgi.application'
 # Database
 # https://docs.djangoproject.com/en/4.1/ref/settings/#databases
 
-# DATABASES = {
-#     'default': {
-#         'ENGINE': 'django.db.backends.sqlite3',
-#         'NAME': BASE_DIR / 'db.sqlite3',
-#     }
-# }
-
 DATABASES = {
-    # 'default': dj_database_url.parse(os.environ.get('DATABASE_URL'))
-    'default': dj_database_url.parse(env('DATABASE_URL'))
+    'default': {
+        'ENGINE': 'django.db.backends.sqlite3',
+        'NAME': BASE_DIR / 'db.sqlite3',
+    }
 }
+
+# DATABASES = {
+#     # 'default': dj_database_url.parse(os.environ.get('DATABASE_URL'))
+#     'default': dj_database_url.parse(env('DATABASE_URL'))
+# }
 
 
 # Password validation
@@ -153,7 +153,7 @@ USE_TZ = True
 # Static files setup for Development
 # STATIC_URL = '/static/'
 # STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')
-# STATICFILES_DIRS = [BASE_DIR/'static']
+# # STATICFILES_DIRS = [BASE_DIR/'static']
 
 # AWS S3 BUCKET SETUP FOR STATIC AND MEDIA
 AWS_ACCESS_KEY_ID = env('AWS_ACCESS_KEY_ID')
