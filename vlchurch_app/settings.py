@@ -24,9 +24,7 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 
 # SECURITY WARNING: keep the secret key used in production secret!
 # SECRET_KEY = 'django-insecure-29no%^g9flp8gx(_e=8&+@+p$_k3wrelhzk8u#=c7o=$rk#2+q'
-env = environ.Env(
-    DEBUG=(bool, False)
-)
+env = environ.Env()
 
 environ.Env.read_env() 
 
@@ -64,6 +62,7 @@ INSTALLED_APPS = [
     'ckeditor',
     'tailwind',
     'theme',
+    # 'django_fields',
     'django_browser_reload',
 ]
 

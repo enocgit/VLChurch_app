@@ -37,8 +37,9 @@ class ChatList(ListView):
             return redirect(reverse('chats:chat-detail', kwargs={'pk': chat_id}))
 
         # Otherwise, display the chat list as usual
-        general_chat = Chat.objects.get(name="general")
-        return redirect(reverse('chats:chat-detail', kwargs={'pk': general_chat}))
+        else:
+            general_chat_id = Chat.objects.get(name="General").pk
+            return redirect(reverse('chats:chat-detail', kwargs={'pk': general_chat_id}))
         # return super().get(request, *args, **kwargs)
 
 class ChatDetail(LoginRequiredMixin, FormView):

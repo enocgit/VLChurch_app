@@ -24,8 +24,8 @@ class Login(LoginView):
         if chat_id:
             return reverse_lazy('chats:chat-detail', kwargs={'pk': chat_id})
         else:
-            general_chat = Chat.objects.get(name="general")
-            return reverse_lazy('chats:chat-detail', kwargs={'pk': general_chat})
+            general_chat_id = Chat.objects.get(name="General").pk
+            return reverse_lazy('chats:chat-detail', kwargs={'pk': general_chat_id})
 
 
 class PasswordChange(PasswordChangeView):
