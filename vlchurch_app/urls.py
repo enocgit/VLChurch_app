@@ -28,7 +28,7 @@ urlpatterns = [
     path('accounts/', include('accounts.urls')),
     path('chats/', include('chats.urls', namespace='chats')),
     path('gallery/', include('gallery.urls', namespace='gallery')),
-    # path("__reload__/", include("django_browser_reload.urls")),
+    path("__reload__/", include("django_browser_reload.urls")),
 ]
 
 

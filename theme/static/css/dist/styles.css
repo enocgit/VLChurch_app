@@ -891,6 +891,10 @@ select {
   top: 20rem;
 }
 
+.left-5 {
+  left: 1.25rem;
+}
+
 .isolate {
   isolation: isolate;
 }
@@ -1033,6 +1037,10 @@ select {
 
 .ml-\[-2rem\] {
   margin-left: -2rem;
+}
+
+.ml-\[10rem\] {
+  margin-left: 10rem;
 }
 
 .ml-auto {
@@ -1344,6 +1352,10 @@ select {
   width: 100%;
 }
 
+.w-3\/12 {
+  width: 25%;
+}
+
 .max-w-7xl {
   max-width: 80rem;
 }
@@ -1554,6 +1566,10 @@ select {
   align-self: flex-start;
 }
 
+.justify-self-end {
+  justify-self: end;
+}
+
 .overflow-y-auto {
   overflow-y: auto;
 }
@@ -1707,6 +1723,11 @@ select {
   border-color: rgb(255 255 255 / var(--tw-border-opacity));
 }
 
+.border-red-600 {
+  --tw-border-opacity: 1;
+  border-color: rgb(220 38 38 / var(--tw-border-opacity));
+}
+
 .bg-\[\#462D1A\] {
   --tw-bg-opacity: 1;
   background-color: rgb(70 45 26 / var(--tw-bg-opacity));
@@ -1802,8 +1823,8 @@ select {
   background-image: url('/static/images/hero_bg.jpg');
 }
 
-.bg-\[url\(\'\/static\/images\/men_fellowship_bg\.jpg\'\)\] {
-  background-image: url('/static/images/men_fellowship_bg.jpg');
+.bg-\[url\(\'\/static\/images\/music_bg\.jpg\'\)\] {
+  background-image: url('/static/images/music_bg.jpg');
 }
 
 .bg-\[url\(\'\/static\/images\/sunday_service_bg\.jpg\'\)\] {
@@ -2290,6 +2311,11 @@ select {
   color: rgb(22 163 74 / var(--tw-text-opacity));
 }
 
+.text-neutral-400 {
+  --tw-text-opacity: 1;
+  color: rgb(163 163 163 / var(--tw-text-opacity));
+}
+
 .text-neutral-600 {
   --tw-text-opacity: 1;
   color: rgb(82 82 82 / var(--tw-text-opacity));
@@ -2333,6 +2359,16 @@ select {
 .text-yellow-800 {
   --tw-text-opacity: 1;
   color: rgb(133 77 14 / var(--tw-text-opacity));
+}
+
+.text-green-400 {
+  --tw-text-opacity: 1;
+  color: rgb(74 222 128 / var(--tw-text-opacity));
+}
+
+.text-blue-400 {
+  --tw-text-opacity: 1;
+  color: rgb(96 165 250 / var(--tw-text-opacity));
 }
 
 .underline {

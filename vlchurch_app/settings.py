@@ -26,14 +26,14 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 # SECRET_KEY = 'django-insecure-29no%^g9flp8gx(_e=8&+@+p$_k3wrelhzk8u#=c7o=$rk#2+q'
 env = environ.Env()
 
-environ.Env.read_env() 
+environ.Env.read_env()
 
 # SECRET_KEY = 'django-insecure-29no%^g9flp8gx(_e=8&+@+p$_k3wrelhzk8u#=c7o=$rk#2+q'
 
 SECRET_KEY = env('SECRET_KEY')
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
+DEBUG = False
 
 ALLOWED_HOSTS = ['*']
 
@@ -43,13 +43,13 @@ ALLOWED_HOSTS = ['*']
 INSTALLED_APPS = [
     'jazzmin',
     # "whitenoise.runserver_nostatic",
+    'django.contrib.humanize',
     'django.contrib.admin',
     'django.contrib.auth',
     'django.contrib.contenttypes',
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
-    'django.contrib.humanize',
     'chats',
     'homepage',
     'fellowships',
@@ -63,7 +63,7 @@ INSTALLED_APPS = [
     'tailwind',
     'theme',
     # 'django_fields',
-    # 'django_browser_reload',
+    'django_browser_reload',
 ]
 
 MIDDLEWARE = [
@@ -75,7 +75,7 @@ MIDDLEWARE = [
     'django.contrib.auth.middleware.AuthenticationMiddleware',
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
-    # "django_browser_reload.middleware.BrowserReloadMiddleware",
+    "django_browser_reload.middleware.BrowserReloadMiddleware",
 ]
 
 ROOT_URLCONF = 'vlchurch_app.urls'
@@ -102,17 +102,17 @@ WSGI_APPLICATION = 'vlchurch_app.wsgi.application'
 # Database
 # https://docs.djangoproject.com/en/4.1/ref/settings/#databases
 
-# DATABASES = {
-#     'default': {
-#         'ENGINE': 'django.db.backends.sqlite3',
-#         'NAME': BASE_DIR / 'db.sqlite3',
-#     }
-# }
-
 DATABASES = {
-    # 'default': dj_database_url.parse(os.environ.get('DATABASE_URL'))
-    'default': dj_database_url.parse(env('DATABASE_URL'))
+    'default': {
+        'ENGINE': 'django.db.backends.sqlite3',
+        'NAME': BASE_DIR / 'db.sqlite3',
+    }
 }
+
+# DATABASES = {
+#     # 'default': dj_database_url.parse(os.environ.get('DATABASE_URL'))
+#     'default': dj_database_url.parse(env('DATABASE_URL'))
+# }
 
 
 # Password validation
@@ -175,7 +175,6 @@ STATICFILES_DIRS = [
 ]
 
 
-
 # Media config for Development
 # MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
 # MEDIA_URL = '/media/'
@@ -214,7 +213,7 @@ CKEDITOR_CONFIGS = {
         'toolbar_Custom': [
             ['Styles', 'Format', 'Bold', 'Italic', 'Underline', 'Smiley', 'Undo', 'Redo',
              'Link', 'Image', 'Text Color', 'Background Color'
-              ]
+             ]
         ]
     }
 }

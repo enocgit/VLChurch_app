@@ -1,6 +1,6 @@
 from django.shortcuts import render, get_object_or_404, redirect
 from django.urls import reverse, reverse_lazy
-from django.views.generic import View, ListView, DetailView, FormView, CreateView
+from django.views.generic import View, ListView, DetailView, FormView, CreateView, UpdateView
 from django.contrib.auth.mixins import LoginRequiredMixin
 from chats.models import Chat, Comment
 from .forms import CommentForm
@@ -74,3 +74,9 @@ class ChatDetail(LoginRequiredMixin, FormView):
         return self.form_invalid(form)
 
 
+class CommentUpdate(UpdateView):
+    model = Comment
+    template_name = 'chats/update_comment.html'
+    context_object_name = 'comment'
+    fields = ('message',)
+    success_url = reverse_lazy('chats:chat-detail', pk=1)
