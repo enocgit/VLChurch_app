@@ -2,6 +2,11 @@ $(function(){
 
     document.documentElement.style.setProperty('--animate-duration', '1.5s');
 
+    $('.edit-btn').css({'visibility': 'hidden'})
+
+        $('.message-bubble').on('hover', () => {
+            alert('hovered')
+        })
 
     $(window).on({
         scroll: function(){
