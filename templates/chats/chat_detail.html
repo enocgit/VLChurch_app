@@ -37,7 +37,7 @@ Chats
             {% if chat.comment_set.all %}
                 
                 {% for comment in chat.comment_set.all %}
-                <div class="flex w-9/12 sm:w-8/12 lg:w-6/12 mx-auto p-6 border rounded-lg mt-4" class="message-bubble">
+                <div class="flex w-9/12 sm:w-8/12 lg:w-6/12 mx-auto p-6 border rounded-lg mt-4 message-bubble">
                     <div class="flex flex-col smpl:flex-row items-start">
                         {% if comment.user.picture %}
                         <img src="{{ comment.user.picture.url }}" alt="User avatar" class="w-10 h-10 rounded-full mr-4">
@@ -54,7 +54,7 @@ Chats
                             <p class="ml-2 text-xs text-gray-500">{{ comment.datetime | naturalday }}</p>
                             {% if comment.user == request.user %}
                             <a href="">
-                              <i class="bi-pencil-square text-gray-400 text-xs relative left-5" class="edit-btn"></i>
+                              <i class="bi-pencil-square text-gray-400 text-xs relative left-5 edit-btn invisible"></i>
                             </a>
                             {% endif %}
                         </div>

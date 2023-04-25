@@ -1,13 +1,15 @@
 $(function(){
 
-    document.documentElement.style.setProperty('--animate-duration', '1.5s');
-
-    $('.edit-btn').css({'visibility': 'hidden'})
-
-        $('.message-bubble').on('hover', () => {
-            alert('hovered')
-        })
-
+    document.documentElement.style.setProperty('--animate-duration', '1.5s');    
+ 
+    $('.message-bubble').on('mouseenter', function() {
+        // $('.edit-btn').hide()
+        $(this).find('.edit-btn').removeClass('invisible')
+    })
+    $('.message-bubble').on('mouseleave', function() {
+        // $('.edit-btn').hide()
+        $(this).find('.edit-btn').addClass('invisible')
+    })
     $(window).on({
         scroll: function(){
             let scrollTop = $(window).scrollTop()
