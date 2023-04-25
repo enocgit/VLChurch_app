@@ -1802,6 +1802,18 @@ select {
   background-image: url('/static/images/about_img.jpg');
 }
 
+.bg-\[url\(\'\/static\/images\/music_bg\.jpg\'\)\] {
+  background-image: url('/static/images/music_bg.jpg');
+}
+
+.bg-\[url\(\'\/static\/images\/men_fellowship_bg\.jpg\'\)\] {
+  background-image: url('/static/images/men_fellowship_bg.jpg');
+}
+
+.bg-\[url\(\'\/static\/images\/women_fellowship_bg\.jpg\'\)\] {
+  background-image: url('/static/images/women_fellowship_bg.jpg');
+}
+
 .bg-cover {
   background-size: cover;
 }
