@@ -4,4 +4,4 @@ class Gallery(models.Model):
     picture = models.ImageField(upload_to='images')
 
     class Meta:
-        verbose_name_plural = 'Gelleries'
+        verbose_name_plural = 'Galleries'

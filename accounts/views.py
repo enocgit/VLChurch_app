@@ -8,6 +8,7 @@ from django.contrib.auth import get_user_model
 from .forms import LoginForm
 from .forms import CustomPasswordChangeForm
 from chats.models import Chat
+import datetime
 
 class Login(LoginView):
     model = get_user_model()
@@ -30,7 +31,11 @@ class Login(LoginView):
     def form_invalid(self, form):
         messages.error(self.request, 'Username or password is incorrect.', extra_tags='login-error')
         return redirect(reverse('accounts:login'))
-
+    
+    def get_context_data(self, **kwargs):
+       context = super().get_context_data(**kwargs)
+       context['current_year'] = datetime.date.today().year
+       return context
 
 class PasswordChange(PasswordChangeView):
     template_name = 'accounts/password_change.html'
@@ -40,9 +45,19 @@ class PasswordChange(PasswordChangeView):
     def form_invalid(self, form):
         messages.error(self.request, "The passwords don't match.")
         return redirect(reverse('accounts:password-change'))
+    
+    def get_context_data(self, **kwargs):
+       context = super().get_context_data(**kwargs)
+       context['current_year'] = datetime.date.today().year
+       return context
 
 class PasswordChangeDone(PasswordChangeDoneView):
     template_name = 'accounts/password_change_done.html'
+
+    def get_context_data(self, **kwargs):
+       context = super().get_context_data(**kwargs)
+       context['current_year'] = datetime.date.today().year
+       return context
 
     # def password_sucess(request):
     #     return render(request, 'accounts/password_change_done.html')

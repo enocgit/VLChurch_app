@@ -1,5 +1,6 @@
 from django.db import models
 from django_fields import DefaultStaticImageField
+import os
 
 
 # guests
@@ -22,8 +23,9 @@ class Guest(models.Model):
 
 
 class Programme(models.Model):
-    image = models.ImageField('background image', upload_to='images', height_field=None, width_field=None,
-                              max_length=None, null=True, blank=True, default='static/images/programme_default.jpg')
+    # image = DefaultStaticImageField('background image', upload_to='images', height_field=None, width_field=None,
+    #                           max_length=None, null=True, blank=True, default_image_path='images/programme_default.jpg')
+    image = models.ManyToManyField('ProgrammeBackgroundImgs', blank=True, verbose_name='Background image')
     name = models.CharField('programme', max_length=255)
     datetime = models.DateTimeField('date & time', auto_now=False)
     venue = models.CharField(max_length=255, null=True, blank=True,
@@ -34,4 +36,16 @@ class Programme(models.Model):
         return self.name
 
     class Meta:
-       ordering = ['name']
+       ordering = ['datetime']
+
+
+class ProgrammeBackgroundImgs(models.Model):
+    image = models.ImageField('Programme Background Image')
+
+    def __str__(self):
+        # return self.image.url
+        return os.path.basename(self.image.name)
+    
+
+    class Meta:
+        verbose_name_plural = 'Programme Background Images'

@@ -1,9 +1,11 @@
+from typing import Any, Dict
 from django.shortcuts import render, get_object_or_404, redirect
 from django.urls import reverse, reverse_lazy
 from django.views.generic import View, ListView, DetailView, FormView, CreateView, UpdateView, DeleteView
 from django.contrib.auth.mixins import LoginRequiredMixin
 from chats.models import Chat, Comment
 from .forms import CommentForm
+import datetime
 
 # class ChatList(LoginRequiredMixin, ListView):
 #     model = Chat
@@ -58,6 +60,7 @@ class ChatDetail(LoginRequiredMixin, FormView):
         context = super().get_context_data(**kwargs)
         context['chat'] = get_object_or_404(Chat, pk=self.kwargs['pk'])
         context['chats'] = Chat.objects.all()
+        context['current_year'] = datetime.date.today().year
         
         return context
     
@@ -86,6 +89,11 @@ class UpdateComment(UpdateView):
         self.object.editted = True
         form.save()
         return response
+    
+    def get_context_data(self, **kwargs):
+        context = super().get_context_data(**kwargs)
+        context['current_year'] = datetime.date.today().year
+        return context
 
 
 class DeleteComment(DeleteView):
@@ -97,4 +105,5 @@ class DeleteComment(DeleteView):
     def get_context_data(self, **kwargs):
         context = super().get_context_data(**kwargs)
         context['delete_action_url'] = reverse_lazy('chats:delete-comment', self.kwargs['pk'])
+        context['current_year'] = datetime.date.today().year
         return context

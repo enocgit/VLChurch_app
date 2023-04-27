@@ -18,7 +18,7 @@ class HomePage(ListView):
         context = super().get_context_data()
         context['leaders'] = leaderModel
         context['celebrated_members'] = check_birthday()
-        context['current_year'] = timezone.datetime.now().year
+        context['current_year'] = datetime.date.today().year
         
         return context
 
@@ -28,11 +28,11 @@ class HomePage(ListView):
 
 # about page
 def view_about_page(request):
-    return render(request, 'about.html')
+    return render(request, 'about.html', context={'current_year': datetime.date.today().year})
 
 # contact page
 def view_contact_page(request):
-    return render(request, 'contact.html')
+    return render(request, 'contact.html', context={'current_year': datetime.date.today().year})
 
 
 
@@ -61,6 +61,8 @@ class BirthdayCelebration(ListView):
     def get_context_data(self, **kwargs):
         context = super().get_context_data(**kwargs)
         context['celebrated_members'] = check_birthday()
+        context['current_year'] = datetime.date.today().year
+
         return context
 
 # print('TIME OUTSIDE:', datetime.date(1999, 7, 15))
