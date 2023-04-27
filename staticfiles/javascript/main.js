@@ -58,4 +58,32 @@ $(function(){
     $('.login-form input[type="text"]').addClass('form-control')
     $('.login-form input[type="password"]').addClass('form-control')
     $('.login-form label').addClass('form-label')
+
+    const balloonImgs = [
+        'balloon-red.svg',
+        'balloon2-red.svg',
+        'balloon2-yellow.svg',
+        'balloon-yellow.svg',
+        'balloon-green.svg',
+        'balloon2-green.svg',
+    ]
+    
+    for (let i = 0; i < 30; i++){
+        let randomImg = Math.floor(Math.random() * balloonImgs.length)
+        // create element
+        let balloonImgElement = $(`<img src="/static/images/${balloonImgs[randomImg]}" class="w-20 absolute balloon z-20" />`)
+
+        $('#balloon-container').append(balloonImgElement)
+    }
+
+
+    $('.balloon').each(function() {
+        let randomTop = Math.floor(Math.random() * 50)
+        let randomRight = Math.floor(Math.random() *100)
+        $(this).css({'top': randomTop + 'rem', 'right': randomRight + 'rem'})
+    })
+
+
+    // bd link
+    
 })

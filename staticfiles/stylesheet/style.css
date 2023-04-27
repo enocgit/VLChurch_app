@@ -12,3 +12,38 @@
   --animate-duration: 800ms;
   --animate-delay: 5s;
 } */
+
+.balloon {
+  animation-name: slide-down-fade;
+  animation-duration: 8s;
+  animation-fill-mode: forwards;
+}
+
+#bd-link {
+  animation-name: popup-down;
+  animation-duration: 7s;
+  animation-iteration-count: infinite;
+  animation-fill-mode: forwards;
+  animation-timing-function: cubic-bezier(0.075, 0.82, 0.165, 1);
+}
+
+
+
+@keyframes slide-down-fade {
+  
+  to {
+    top: 20rem;
+    opacity: 0;
+  }
+}
+
+@keyframes popup-down {
+  to {
+    /* scale: 1.05; */
+    font-size: 1.200rem;
+  }
+  from {
+    /* scale: 0.95; */
+    font-size: 1.025rem;
+  }
+}
