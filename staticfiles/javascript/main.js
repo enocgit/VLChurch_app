@@ -1,13 +1,18 @@
 $(function(){
 
-    document.documentElement.style.setProperty('--animate-duration', '1.5s');
-
-    $('.edit-btn').css('display', 'none')
-
-        // $('.message-bubble').on('hover', () => {
-        //     $('.edit-btn').
-        // })
-
+    document.documentElement.style.setProperty('--animate-duration', '1.5s');    
+ 
+    $('.message-bubble').on('mouseenter', function() {
+        // $('.edit-btn').hide()
+        $(this).find('.edit-btn').removeClass('invisible')
+        $(this).find('.delete-btn').removeClass('invisible')
+    })
+    $('.message-bubble').on('mouseleave', function() {
+        // $('.edit-btn').hide()
+        $(this).find('.edit-btn').addClass('invisible')
+        $(this).find('.delete-btn').addClass('invisible')
+    })
+    
     $(window).on({
         scroll: function(){
             let scrollTop = $(window).scrollTop()

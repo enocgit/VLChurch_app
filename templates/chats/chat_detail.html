@@ -1,72 +1,156 @@
-{% extends 'homepage/base.html' %}
-{% load static %}
-{% load humanize %}
-{% block title %}
-Chats
-{% endblock %}
+{% extends 'homepage/base.html' %} {% load static %} {% load humanize %} 
+{% block title %} Chats {% endblock %} {% block content %}
 
-{% block content %}
+<!-- Edit modal -->
 
+<!-- <div
+  id="delete-popup-modal"
+  tabindex="-1"
+  class="fixed top-0 left-0 right-0 z-50 hidden p-4 overflow-x-hidden overflow-y-auto md:inset-0 h-[calc(100%-1rem)] max-h-full"
+>
+  <div class="relative w-full max-w-md max-h-full">
+    <div class="relative bg-white rounded-lg shadow dark:bg-gray-700">
+      <button
+        type="button"
+        class="absolute top-3 right-2.5 text-gray-400 bg-transparent hover:bg-gray-200 hover:text-gray-900 rounded-lg text-sm p-1.5 ml-auto inline-flex items-center dark:hover:bg-gray-800 dark:hover:text-white"
+        data-modal-hide="delete-popup-modal"
+      >
+        <svg
+          aria-hidden="true"
+          class="w-5 h-5"
+          fill="currentColor"
+          viewBox="0 0 20 20"
+          xmlns="http://www.w3.org/2000/svg"
+        >
+          <path
+            fill-rule="evenodd"
+            d="M4.293 4.293a1 1 0 011.414 0L10 8.586l4.293-4.293a1 1 0 111.414 1.414L11.414 10l4.293 4.293a1 1 0 01-1.414 1.414L10 11.414l-4.293 4.293a1 1 0 01-1.414-1.414L8.586 10 4.293 5.707a1 1 0 010-1.414z"
+            clip-rule="evenodd"
+          ></path>
+        </svg>
+        <span class="sr-only">Close modal</span>
+      </button>
+      <div class="p-6 text-center">
+        <form method="post"> 
+          {% csrf_token %}
+          <h3 class="mb-5 text-lg font-normal text-gray-500 dark:text-gray-400">
+            Are you sure you want to delete this message: "{{ comment }}"?
+          </h3>
+          <button
+            type="button"
+            class="text-white bg-red-600 hover:bg-red-800 focus:ring-4 focus:outline-none focus:ring-red-300 dark:focus:ring-red-800 font-medium rounded-lg text-sm inline-flex items-center px-5 py-2.5 text-center mr-2"
+          >
+            Delete
+          </button>
+        </form>
+      </div>
+    </div>
+  </div>
+</div> -->
 
+<section class="font-sans">
+  <div class="flex items-center bg-gray-100 py-2 px-4 mb-4">
+    <div class="flex items-center gap-2">
+      <!-- drawer init and toggle -->
+      <i
+        data-drawer-target="drawer-example"
+        data-drawer-show="drawer-example"
+        aria-controls="drawer-example"
+        class="bi-chevron-right text-sm hover:cursor-pointer text-gray-800 left-4"
+      ></i>
+      <i class="bi-chat-fill text-3xl text-gray-400 ml-5"></i>
+      <h2 class="text-gray-800 text-lg font-medium">{{ chat.name }}</h2>
+    </div>
+    <div class="flex items-center ml-auto gap-2">
+      <a
+        href="{% url 'accounts:logout' %}"
+        class="mr-8 text-neutral-600 text-xs hidden sm:block"
+        >Logout</a
+      >
+      {% if request.user.picture %}
+      <img
+        src="{{ request.user.picture.url }}"
+        alt=""
+        class="w-10 h-10 rounded-full"
+      />
+      {% else %}
+      <img
+        src="{% static 'images/no-image.png' %}"
+        alt=""
+        class="w-10 h-10 rounded-full"
+      />
+      {% endif %} {% if request.user.leader %}
+      <p class="text-gray-800 hidden sm:block">
+        {{ request.user.leader.title }} {{ request.user }}
+      </p>
+      {% else %}
+      <p class="text-gray-800 hidden sm:block">{{ request.user }}</p>
+      {% endif %}
+    </div>
+  </div>
 
-    <section class="font-sans">
-        <div class="flex items-center bg-gray-100 py-2 px-4 mb-4">
-            <div class="flex items-center gap-2">
-                            <!-- drawer init and toggle -->
-                <i data-drawer-target="drawer-example" data-drawer-show="drawer-example" aria-controls="drawer-example" class="bi-text-left text-3xl hover:cursor-pointer text-gray-400" style="left: 1rem"></i>
-                <i class="bi-chat-fill text-3xl text-gray-400 ml-5"></i>
-                <h2 class="text-gray-800 text-lg font-medium">{{ chat.name }}</h2>
-            </div>
-            <div class="flex items-center ml-auto gap-2">
-                <a href="{% url 'accounts:logout' %}" class="mr-8 text-neutral-600 text-xs hidden sm:block">Logout</a>
-                {% if request.user.picture %}
-                <img src="{{ request.user.picture.url }}" alt="" class="w-10 h-10 rounded-full">
-                {% else %}
-                <img src="{% static 'images/no-image.png' %}" alt="" class="w-10 h-10 rounded-full">
-                {% endif %}
-                {% if request.user.leader %}
-                    <p class="text-gray-800 hidden sm:block">{{ request.user.leader.title }} {{ request.user }}</p>
-                {% else %}
-                    <p class="text-gray-800 hidden sm:block">{{ request.user }}</p>
-                {% endif %}
-            </div>
-          </div>
-
-        <div class="">
-            <!-- Comments -->
-            {% if chat.comment_set.all %}
-                
-                {% for comment in chat.comment_set.all %}
-                <div class="flex w-9/12 sm:w-8/12 lg:w-6/12 mx-auto p-6 border rounded-lg mt-4 message-bubble">
-                    <div class="flex flex-col smpl:flex-row items-start">
-                        {% if comment.user.picture %}
-                        <img src="{{ comment.user.picture.url }}" alt="User avatar" class="w-10 h-10 rounded-full mr-4">
-                        {% else %}
-                        <img src="{% static 'images/no-image.png' %}" alt="User avatar" class="w-10 h-10 rounded-full mr-4">
-                        {% endif %}
-                        <div>
-                        <div class="flex items-center mb-1 w-12/12">
-                            {% if comment.user.leader %}
-                                <h3 class="text-sm font-semibold text-gray-900">{{comment.user.leader.title}} {{ comment.user }}</h3>
-                                {% else %}
-                                <h3 class="text-sm font-semibold text-gray-900">{{ comment.user }}</h3>
-                            {% endif %}
-                            <p class="ml-2 text-xs text-gray-500">{{ comment.datetime | naturalday }}</p>
-                            {% if comment.user == request.user %}
-                            <a href="">
-                              <i class="bi-pencil-square text-gray-400 text-xs relative left-5 edit-btn invisible"></i>
-                            </a>
-                            {% endif %}
-                        </div>
-                        <p class="text-sm text-gray-800 mt-2 smpl:mt-0">{{ comment.message | safe }}</p>
-                        </div>
-                    </div>
-                </div>
-                {% endfor %}
+  <div class="">
+    <!-- Comments -->
+    {% if chat.comment_set.all %} {% for comment in chat.comment_set.all %}
+    <div
+      class="flex w-9/12 sm:w-8/12 lg:w-6/12 mx-auto p-6 border rounded-lg mt-4 message-bubble"
+    >
+      <div class="flex flex-col smpl:flex-row items-start">
+        {% if comment.user.picture %}
+        <img
+          src="{{ comment.user.picture.url }}"
+          alt="User avatar"
+          class="w-10 h-10 rounded-full mr-4"
+        />
+        {% else %}
+        <img
+          src="{% static 'images/no-image.png' %}"
+          alt="User avatar"
+          class="w-10 h-10 rounded-full mr-4"
+        />
+        {% endif %}
+        <div>
+          <div class="flex items-center mb-1 w-12/12">
+            {% if comment.user.leader %}
+            <h3 class="text-sm font-semibold text-gray-900">
+              {{comment.user.leader.title}} {{ comment.user }}
+            </h3>
             {% else %}
-                <p class="p-8">No posts have been made yet.</p>
+            <h3 class="text-sm font-semibold text-gray-900">
+              {{ comment.user }}
+            </h3>
             {% endif %}
-            <!-- <div class="flex w-6/12 mx-auto p-6 border rounded-lg mt-4">
+            <p class="ml-2 text-xs text-gray-500">
+              {{ comment.datetime | naturaltime }}
+            </p>
+            {% if comment.editted %}
+            <small class="text-gray-400 text-[0.6rem] ml-2">(editted)</small>
+            {% endif %}
+            {% if comment.user == request.user %}
+            <a href="{% url 'chats:update-comment' comment.pk %}">
+              <i
+                class="bi-pencil-square text-gray-400 text-xs relative left-5 edit-btn invisible"
+                title="edit"
+              ></i>
+            </a>
+            <a href="{% url 'chats:delete-comment' comment.pk %}">
+              <i
+                class="bi-trash text-gray-400 text-xs relative left-7 delete-btn invisible"
+                title="delete"
+              ></i>
+            </a>
+            {% endif %}
+          </div>
+          <p class="text-sm text-gray-800 mt-2 smpl:mt-0">
+            {{ comment.message | safe }}
+          </p>
+        </div>
+      </div>
+    </div>
+    {% endfor %} {% else %}
+    <p class="p-8">No posts have been made yet.</p>
+    {% endif %}
+    <!-- <div class="flex w-6/12 mx-auto p-6 border rounded-lg mt-4">
                 <div class="flex items-start mb-4">
                     <img src="https://www.placebear.com/70/70" alt="User avatar" class="w-10 h-10 rounded-full mr-4">
                     <div>
@@ -78,57 +162,71 @@ Chats
                     </div>
                   </div>
             </div> -->
-        </div>
-        
-
-        <form method="post" class="w-6/12 mx-auto mt-10">
-            {% csrf_token %}
-            {{ form.media }}
-            <!-- <link rel="stylesheet" type="text/css" href="{% static 'css/ckeditor.css' %}"> -->
-
-            <div class="ml-[-2rem] smpl:ml-[-4.5rem] lg:ml-[-1rem]">
-              {{ form.as_p }}
-              <input type="submit" value="Post Message" class="bg-blue-500 text-white rounded-lg py-2 px-4">
-            </div>
-            </form>
-    </section>
-
-
-    <!-- Drawer -->
-
-
- 
- <!-- drawer component -->
- <div id="drawer-example" class="fixed top-0 left-0 z-40 h-screen overflow-y-auto font-sans transition-transform -translate-x-full bg-white text-gray-800 w-80 shadow-lg" tabindex="-1" aria-labelledby="drawer-label">
-    <div class="py-8">
-      <div class="px-4 mb-4">
-        <h3 class="text-lg font-bold text-gray-800">Chats</h3>
-        <button class="text-gray-800 hover:text-gray-600 focus:outline-none" data-drawer-hide="drawer-example">
-          <i class="bi bi-x text-xl"></i>
-        </button>
-      </div>
-      <a href="{% url 'accounts:logout' %}" class="text-right mr-8 text-neutral-600 text-xs sm:hidden block">Logout</a>
-      <hr class="border-gray-300 my-2">
-      {% if chats %}
-        <ul class="px-4">
-          {% for chat in chats %}   
-            <a href="{% url 'chats:chat-detail' chat.pk %}">
-              <li class="flex items-center py-2 pl-2 pr-4 rounded-md hover:bg-gray-100">
-                <div class="flex-shrink-0 h-10 w-10 rounded-full bg-gray-200 flex items-center justify-center">
-                    <i class="bi-chat-fill text-3xl text-gray-400"></i>
-                </div>
-                <div class="ml-3">
-                  <p  class="text-sm font-medium text-gray-800">{{ chat.name }}</p>
-                </div>
-              </li>
-            </a>
-          {% endfor %}
-        </ul>
-      {% else %}
-        <p class="px-4 text-gray-600">No chats available.</p>
-      {% endif %}
-    </div>
   </div>
-  
- 
+
+  <form method="post" class="w-6/12 mx-auto mt-10">
+    {% csrf_token %} {{ form.media }}
+    <!-- <link rel="stylesheet" type="text/css" href="{% static 'css/ckeditor.css' %}"> -->
+
+    <div class="ml-[-2rem] smpl:ml-[-4.5rem] lg:ml-[-1rem]">
+      {{ form.as_p }}
+      <input
+        type="submit"
+        value="Post Message"
+        class="bg-blue-500 hover:cursor-pointer text-white rounded-lg py-2 px-4"
+      />
+    </div>
+  </form>
+</section>
+
+<!-- Drawer -->
+
+<!-- drawer component -->
+<div
+  id="drawer-example"
+  class="fixed top-0 left-0 z-40 h-screen overflow-y-auto font-sans transition-transform -translate-x-full bg-white text-gray-800 w-80 shadow-lg"
+  tabindex="-1"
+  aria-labelledby="drawer-label"
+>
+  <div class="py-8">
+    <div class="px-4 mb-4">
+      <h3 class="text-lg font-bold text-gray-800">Chats</h3>
+      <button
+        class="text-gray-800 hover:text-gray-600 focus:outline-none"
+        data-drawer-hide="drawer-example"
+      >
+        <i class="bi bi-x text-xl"></i>
+      </button>
+    </div>
+    <a
+      href="{% url 'accounts:logout' %}"
+      class="text-right mr-8 text-neutral-600 text-xs sm:hidden block"
+      >Logout</a
+    >
+    <hr class="border-gray-300 my-2" />
+    {% if chats %}
+    <ul class="px-4">
+      {% for chat in chats %}
+      <a href="{% url 'chats:chat-detail' chat.pk %}">
+        <li
+          class="flex items-center py-2 pl-2 pr-4 rounded-md hover:bg-gray-100"
+        >
+          <div
+            class="flex-shrink-0 h-10 w-10 rounded-full bg-gray-200 flex items-center justify-center"
+          >
+            <i class="bi-chat-fill text-3xl text-gray-400"></i>
+          </div>
+          <div class="ml-3">
+            <p class="text-sm font-medium text-gray-800">{{ chat.name }}</p>
+          </div>
+        </li>
+      </a>
+      {% endfor %}
+    </ul>
+    {% else %}
+    <p class="px-4 text-gray-600">No chats available.</p>
+    {% endif %}
+  </div>
+</div>
+
 {% endblock %}

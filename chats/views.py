@@ -1,6 +1,6 @@
 from django.shortcuts import render, get_object_or_404, redirect
 from django.urls import reverse, reverse_lazy
-from django.views.generic import View, ListView, DetailView, FormView, CreateView, UpdateView
+from django.views.generic import View, ListView, DetailView, FormView, CreateView, UpdateView, DeleteView
 from django.contrib.auth.mixins import LoginRequiredMixin
 from chats.models import Chat, Comment
 from .forms import CommentForm
@@ -74,9 +74,27 @@ class ChatDetail(LoginRequiredMixin, FormView):
         return self.form_invalid(form)
 
 
-class CommentUpdate(UpdateView):
+class UpdateComment(UpdateView):
     model = Comment
-    template_name = 'chats/update_comment.html'
+    template_name = 'chats/update-comment.html'
     context_object_name = 'comment'
     fields = ('message',)
-    success_url = reverse_lazy('chats:chat-detail', pk=1)
+    success_url = reverse_lazy('chats:chat-list')
+
+    def form_valid(self, form):
+        response = super().form_valid(form)
+        self.object.editted = True
+        form.save()
+        return response
+
+
+class DeleteComment(DeleteView):
+    model = Comment
+    template_name = 'chats/confirm-comment-delete.html'
+    context_object_name = 'comment'
+    success_url = reverse_lazy('chats:chat-list')
+
+    def get_context_data(self, **kwargs):
+        context = super().get_context_data(**kwargs)
+        context['delete_action_url'] = reverse_lazy('chats:delete-comment', self.kwargs['pk'])
+        return context

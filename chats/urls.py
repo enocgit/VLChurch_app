@@ -6,5 +6,6 @@ app_name = 'chats'
 urlpatterns = [
     path('', ChatList.as_view(), name='chat-list'),
     path('<int:pk>/', ChatDetail.as_view(), name='chat-detail'),
-    path('update/<int:pk>/', CommentUpdate.as_view(), name='comment-update'),
+    path('comments/<int:pk>/update', UpdateComment.as_view(), name='update-comment'),
+    path('comments/<int:pk>/delete', DeleteComment.as_view(), name='delete-comment')
 ]

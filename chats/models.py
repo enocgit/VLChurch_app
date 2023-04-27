@@ -57,6 +57,7 @@ class Comment(models.Model):
     message = RichTextField(default='', null=True, blank=True)
     user = models.ForeignKey(get_user_model(), verbose_name='member', on_delete=models.SET_NULL, null=True, blank=True)
     datetime = models.DateTimeField('date & time', auto_now=True)
+    editted = models.BooleanField(default=False)
     chat = models.ForeignKey('Chat', on_delete=models.SET_NULL, null=True, blank=True)
     
     def __str__(self):
