@@ -64,4 +64,4 @@ class Comment(models.Model):
        return strip_tags(self.message)
     
     class Meta:
-       ordering = ['chat']
+       ordering = ['-datetime']
