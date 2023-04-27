@@ -44,6 +44,7 @@ module.exports = {
     theme: {
         extend: {},
         screens: {
+            'mspp2': '290px',
             'mspp': '310px',
             'smpl': '424px',
             'smp2': '462px',

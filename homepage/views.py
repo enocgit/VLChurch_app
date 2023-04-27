@@ -3,6 +3,7 @@ from django.views.generic import ListView, View
 from leaders.models import *
 from chats.models import CarouselImg
 from django.utils import timezone
+import datetime
 
 # homepage
 class HomePage(ListView):
@@ -26,13 +27,37 @@ class HomePage(ListView):
     #     context = self.get_context_data()
     #     return self.render_to_response(context)
 
+# about page
 def view_about_page(request):
     return render(request, 'about.html')
 
+# contact page
 def view_contact_page(request):
     return render(request, 'contact.html')
 
+
+
+# Bithday display algorithm
+members = Member.objects.all()
+today = datetime.date.today()
+celebrated_members = []
+
+
+class BirthdayCelebration(ListView):
+    model = Member
+    template_name = 'birthday.html'
+    # context_object_name = 'celebrated_members'
     
-    
-# def view_homepage(request):
-#     return render(request, 'homepage/index.html')
+    for member in members:
+        if member.birthday:
+                birthday = member.birthday
+                if (birthday.month == today.month) and ((birthday.day - today.day >= -2) and (birthday.day - today.day <= 2)):
+                        #  print(f'{member.first_name} {member.last_name}  will be celebrated. {birthday}')
+                            celebrated_members.append(member)
+
+    def get_context_data(self, **kwargs):
+        context = super().get_context_data(**kwargs)
+        context['celebrated_members'] = celebrated_members
+        return context
+
+# print('TIME OUTSIDE:', datetime.date(1999, 7, 15))

@@ -10,5 +10,6 @@ urlpatterns = [
     path('', HomePage.as_view(), name='homepage'),
     path('about/', view_about_page, name='about'),
     path('contact/', view_contact_page, name='contact'),
+    path('birthday-celebration/', BirthdayCelebration.as_view(), name='birthday'),
 ]
 

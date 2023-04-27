@@ -12,3 +12,17 @@
   --animate-duration: 800ms;
   --animate-delay: 5s;
 } */
+
+.balloon {
+  animation-name: slide-down-fade;
+  animation-duration: 8s;
+  animation-fill-mode: forwards;
+}
+
+@keyframes slide-down-fade {
+  
+  to {
+    top: 20rem;
+    opacity: 0;
+  }
+}
