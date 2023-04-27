@@ -15,6 +15,13 @@
 {% endblock %}
 {% block content %}
     <section id="login" class="pb-16 pt-5">
+        <div class="flex items-center justify-center text-red-600">
+            {% if messages %}
+                {% for message in messages %}
+                    <small>{{ message }}</small>
+                {% endfor %}
+            {% endif %}
+        </div>
         <div class="container mt-5 login-form flex items-center justify-center">
             <form method="post" class="flex flex-col px-10 smpl:px-20" id="login-form">
                 {% csrf_token %}

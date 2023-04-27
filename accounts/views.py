@@ -1,9 +1,9 @@
 from django.shortcuts import render
 from django.shortcuts import redirect
-from django.urls import reverse_lazy
+from django.urls import reverse_lazy, reverse
 from django.contrib.auth.views import LoginView, PasswordChangeView, PasswordChangeDoneView
-from django.contrib.auth.forms import PasswordChangeForm
-from django.contrib.auth.mixins import LoginRequiredMixin
+# from django.contrib.messages.views import 
+from django.contrib import messages
 from django.contrib.auth import get_user_model
 from .forms import LoginForm
 from .forms import CustomPasswordChangeForm
@@ -26,12 +26,20 @@ class Login(LoginView):
         else:
             general_chat_id = Chat.objects.get(name="General").pk
             return reverse_lazy('chats:chat-detail', kwargs={'pk': general_chat_id})
+        
+    def form_invalid(self, form):
+        messages.error(self.request, 'Username or password is incorrect.', extra_tags='login-error')
+        return redirect(reverse('accounts:login'))
 
 
 class PasswordChange(PasswordChangeView):
     template_name = 'accounts/password_change.html'
     success_url = reverse_lazy('accounts:password-change-done')
     form_class = CustomPasswordChangeForm
+
+    def form_invalid(self, form):
+        messages.error(self.request, "The passwords don't match.")
+        return redirect(reverse('accounts:password-change'))
 
 class PasswordChangeDone(PasswordChangeDoneView):
     template_name = 'accounts/password_change_done.html'
