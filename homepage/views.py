@@ -13,7 +13,7 @@ class HomePage(ListView):
     
     
     def get_context_data(self):
-        leaderModel = Leader.objects.all().order_by('id')
+        leaderModel = Leader.objects.all().order_by('ref')
         carouselModel = CarouselImg.objects.all()
         context = super().get_context_data()
         context['leaders'] = leaderModel

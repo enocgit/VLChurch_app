@@ -20,6 +20,7 @@ class Leader(models.Model):
     title = models.ForeignKey(LeaderTitle, null=True, blank=True, on_delete=models.SET_NULL)
     position = models.CharField(max_length=50, null=True, blank=True)
     # birthday = models.DateField(auto_now=False, auto_now_add=False, null=True, blank=True)
+    ref = models.CharField(max_length=1, default='D', null=False, blank=False)
 
     def __str__(self):
         return f'{self.member.first_name} {self.member.last_name}'
