@@ -15,10 +15,9 @@ class HomePage(ListView):
     
     def get_context_data(self):
         leaderModel = Leader.objects.all().order_by('ref')
-        carouselModel = CarouselImg.objects.all()
         context = super().get_context_data()
         context['leaders'] = leaderModel
-        context['carouselImgs'] = carouselModel
+        context['celebrated_members'] = check_birthday()
         context['current_year'] = timezone.datetime.now().year
         
         return context
@@ -37,17 +36,12 @@ def view_contact_page(request):
 
 
 
-# Bithday display algorithm
-members = Member.objects.all()
-today = datetime.date.today()
-celebrated_members = []
+# Bithday display function
+def check_birthday():
+    members = Member.objects.all()
+    today = datetime.date.today()
+    celebrated_members = []
 
-
-class BirthdayCelebration(ListView):
-    model = Member
-    template_name = 'birthday.html'
-    # context_object_name = 'celebrated_members'
-    
     for member in members:
         if member.birthday:
                 birthday = member.birthday
@@ -55,9 +49,18 @@ class BirthdayCelebration(ListView):
                         #  print(f'{member.first_name} {member.last_name}  will be celebrated. {birthday}')
                             celebrated_members.append(member)
 
+    return celebrated_members
+
+
+class BirthdayCelebration(ListView):
+    model = Member
+    template_name = 'birthday.html'
+    # context_object_name = 'celebrated_members'
+    
+
     def get_context_data(self, **kwargs):
         context = super().get_context_data(**kwargs)
-        context['celebrated_members'] = celebrated_members
+        context['celebrated_members'] = check_birthday()
         return context
 
 # print('TIME OUTSIDE:', datetime.date(1999, 7, 15))

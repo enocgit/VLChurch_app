@@ -82,4 +82,8 @@ $(function(){
         let randomRight = Math.floor(Math.random() *100)
         $(this).css({'top': randomTop + 'rem', 'right': randomRight + 'rem'})
     })
+
+
+    // bd link
+    
 })

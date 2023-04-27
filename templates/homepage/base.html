@@ -553,6 +553,15 @@
                           >Gallery</a
                         >
                       </li>
+                      {% if celebrated_members %}  
+                        <li class="text-lg" id="bd-link">
+                          <a
+                            href="{% url 'homepage:birthday' %}"
+                            class="block px-4 py-2 hover:bg-[#462D1A] hover:text-white dark:hover:bg-gray-600 dark:hover:text-white"
+                            >Birthday Celebration <img src="{% static 'images/birthday-cone.png' %}" alt="" class="w-5" > </a
+                          >
+                        </li>
+                      {% endif %}
                       <li
                         class="text-lg"
                         data-tooltip-target="tooltip-bottom"
