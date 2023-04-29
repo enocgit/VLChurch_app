@@ -189,6 +189,7 @@ STATICFILES_DIRS = [
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
+# Tailwind setup
 TAILWIND_APP_NAME = 'theme'
 
 INTERNAL_IPS = [
