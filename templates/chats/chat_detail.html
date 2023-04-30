@@ -109,8 +109,8 @@
           class="w-10 h-10 rounded-full mr-4"
         />
         {% endif %}
-        <div>
-          <div class="flex items-center mb-1 w-12/12">
+        <div class="w-full">
+          <div class="flex flex-col smpl:flex-row smpl:items-center mb-1 w-12/12">
             {% if comment.user.leader %}
             <h3 class="text-sm font-semibold text-gray-900">
               {{comment.user.leader.title}} {{ comment.user }}
@@ -120,28 +120,31 @@
               {{ comment.user }}
             </h3>
             {% endif %}
-            <p class="ml-2 text-xs text-gray-500">
-              {{ comment.datetime | naturaltime }}
-            </p>
-            {% if comment.editted %}
-            <small class="text-gray-400 text-[0.6rem] ml-2">(editted)</small>
-            {% endif %}
-            {% if comment.user == request.user %}
-            <a href="{% url 'chats:update-comment' comment.pk %}">
-              <i
-                class="bi-pencil-square text-gray-400 text-xs relative left-5 edit-btn invisible"
-                title="edit"
-              ></i>
-            </a>
-            <a href="{% url 'chats:delete-comment' comment.pk %}">
-              <i
-                class="bi-trash text-gray-400 text-xs relative left-7 delete-btn invisible"
-                title="delete"
-              ></i>
-            </a>
-            {% endif %}
+            <div class="flex items-center">
+
+              <p class="smpl:ml-2 text-xs text-gray-500">
+                {{ comment.datetime | naturalday }}
+              </p>
+              {% if comment.editted %}
+              <small class="text-gray-400 text-[0.6rem] ml-2 italic">(editted)</small>
+              {% endif %}
+              {% if comment.user == request.user %}
+              <a href="{% url 'chats:update-comment' comment.pk %}">
+                <i
+                  class="bi-pencil-square text-gray-400 text-xs relative left-5 edit-btn invisible"
+                  title="edit"
+                ></i>
+              </a>
+              <a href="{% url 'chats:delete-comment' comment.pk %}">
+                <i
+                  class="bi-trash text-gray-400 text-xs relative left-7 delete-btn invisible"
+                  title="delete"
+                ></i>
+              </a>
+              {% endif %}
+            </div>
           </div>
-          <p class="text-sm text-gray-800 mt-2 smpl:mt-0">
+          <p class="mt-2 smpl:mt-0">
             {{ comment.message | safe }}
           </p>
         </div>

@@ -1,7 +1,6 @@
 from django.shortcuts import render
 from django.views.generic import ListView
 from .models import *
-import datetime
 
 # 
 class ServiceList(ListView):
@@ -20,7 +19,6 @@ class ServiceList(ListView):
         recap = SundayRecap.objects.last()
         context['service'] = service
         context['recap'] = recap
-        context['current_year'] = datetime.date.today().year
         return context
         
     # def get_context_data(self, *args):
