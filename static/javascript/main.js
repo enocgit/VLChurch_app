@@ -82,4 +82,12 @@ $(function(){
         let randomRight = Math.floor(Math.random() *100)
         $(this).css({'top': randomTop + 'rem', 'right': randomRight + 'rem'})
     })    
+
+
+//     let scrollAmount = $('.leader-card').outerWidth(true); // Calculate the width of each item including margin
+//     setInterval(scrollItems, 3000); // Scroll every 3000ms
+
+//   function scrollItems() {
+//     $('#leaders-scroll-area').animate({scrollLeft: "+=" + scrollAmount}, 500);
+//   }
 })

@@ -150,24 +150,25 @@
       Our Cherished Leaders
     </h2>
     {% if leaders %}
-    <div class="mt-12 grid sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-3 gap-8">
+    <div class="mt-12 flex flex-nowrap overflow-x-scroll gap-8 z-50" id="leaders-scroll-area">
       {% for leader in leaders %}
       <div
-        class="w-full max-w-sm bg-white border border-gray-200 rounded-lg shadow-md dark:bg-gray-800 dark:border-gray-700 leader-card"
+        class="flex-shrink-0 flex-grow-0 bg-white border border-gray-200 rounded-lg shadow-md dark:bg-gray-800 dark:border-gray-700 leader-card"
         data-aos="fade-up"
         data-aos-duration="2000"
+        style="flex-basis: 300px;"
       >
         <div class="flex justify-end px-4 pt-4"></div>
         <div class="flex flex-col items-center pb-10">
           {% if leader.member.picture %}
           <img
-            class="w-24 h-24 mb-3 rounded-full shadow-lg"
+            class="w-24 h-24 object-cover mb-3 rounded-full shadow-lg"
             src="{{ leader.member.picture.url }}"
             alt="{{ leader.title }} {{leader.member.first_name}}{{ leader.member.last_name }}"
           />
           {% else %}
           <img
-            class="w-24 h-24 mb-3 rounded-full shadow-lg"
+            class="w-24 h-24 object-cover mb-3 rounded-full shadow-lg"
             src="{% static 'images/no_image.png' %}"
             alt="{{ leader.title }} {{leader.member.first_name}}{{ leader.member.last_name }}"
           />

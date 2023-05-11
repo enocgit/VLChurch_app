@@ -2,19 +2,22 @@
 {% load static %}
 {% load humanize %}
 {% block title %}
-    Sunday Service
+Sunday Service
 {% endblock %}
 
 {% block nav_service %}
 <li class="text-lg">
-    <a href="{% url 'homepage:about' %}" class="block py-2 pl-3 pr-4 text-white md:text-gray-700 rounded hover:bg-gray-100 md:hover:bg-transparent md:border-0 md:hover:text-[#462D1A] md:p-0 dark:text-gray-400 md:dark:hover:text-white dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent md:overline md:decoration-[#EABE7C] bg-[#462D1A] md:bg-[initial]">Sunday Service</a>
-    </li>
+    <a href="{% url 'homepage:about' %}"
+        class="block py-2 pl-3 pr-4 text-white md:text-gray-700 rounded hover:bg-gray-100 md:hover:bg-transparent md:border-0 md:hover:text-[#462D1A] md:p-0 dark:text-gray-400 md:dark:hover:text-white dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent md:overline md:decoration-[#EABE7C] bg-[#462D1A] md:bg-[initial]">Sunday
+        Service</a>
+</li>
 {% endblock %}
 {% block content %}
-    
 
-    <!-- Default Modal -->
-<div id="medium-modal" tabindex="-1" class="font-sans fixed top-0 left-0 right-0 z-50 hidden w-full p-4 overflow-x-hidden overflow-y-visible h-modal" >
+
+<!-- Default Modal -->
+<div id="medium-modal" tabindex="-1"
+    class="font-sans fixed top-0 left-0 right-0 z-50 hidden w-full p-4 overflow-x-hidden overflow-y-visible h-modal">
     <div class="relative w-full h-full max-w-lg">
         <!-- Modal content -->
         <div class="relative bg-white rounded-lg shadow dark:bg-gray-700">
@@ -23,9 +26,16 @@
                 <h3 class="text-xl font-medium text-neutral-700 dark:text-white">
                     Previous Sunday Recap
                 </h3>
-                <button type="button" class="text-gray-400 bg-transparent hover:bg-gray-200 hover:text-gray-900 rounded-lg text-sm p-1.5 ml-auto inline-flex items-center dark:hover:bg-gray-600 dark:hover:text-white" data-modal-hide="medium-modal">
-                    <svg aria-hidden="true" class="w-5 h-5" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" d="M4.293 4.293a1 1 0 011.414 0L10 8.586l4.293-4.293a1 1 0 111.414 1.414L11.414 10l4.293 4.293a1 1 0 01-1.414 1.414L10 11.414l-4.293 4.293a1 1 0 01-1.414-1.414L8.586 10 4.293 5.707a1 1 0 010-1.414z" clip-rule="evenodd"></path></svg>
-                    <span class="sr-only">Close modal</span> 
+                <button type="button"
+                    class="text-gray-400 bg-transparent hover:bg-gray-200 hover:text-gray-900 rounded-lg text-sm p-1.5 ml-auto inline-flex items-center dark:hover:bg-gray-600 dark:hover:text-white"
+                    data-modal-hide="medium-modal">
+                    <svg aria-hidden="true" class="w-5 h-5" fill="currentColor" viewBox="0 0 20 20"
+                        xmlns="http://www.w3.org/2000/svg">
+                        <path fill-rule="evenodd"
+                            d="M4.293 4.293a1 1 0 011.414 0L10 8.586l4.293-4.293a1 1 0 111.414 1.414L11.414 10l4.293 4.293a1 1 0 01-1.414 1.414L10 11.414l-4.293 4.293a1 1 0 01-1.414-1.414L8.586 10 4.293 5.707a1 1 0 010-1.414z"
+                            clip-rule="evenodd"></path>
+                    </svg>
+                    <span class="sr-only">Close modal</span>
                 </button>
             </div>
             <!-- Modal body -->
@@ -40,131 +50,144 @@
     </div>
 </div>
 
-    <section class="bg-[url('/static/images/sunday_service_bg.jpg')] bg-no-repeat bg-cover py-[5rem]">
-        
-        <div class="w-[80vw] sm:w-[65vw] md:w-[80vw] lg:w-[65vw] mx-auto p-8 mdpl:p-[6rem] rounded-3xl relative" style="background-color: rgba(217, 217, 217, 0.2)">
-            
-            <span data-tooltip-target="tooltip-bottom" data-tooltip-placement="bottom" data-modal-target="medium-modal" data-modal-toggle="medium-modal" class="cursor-pointer absolute top-[-2rem] mdpl:top-8 right-2 mdpl:right-10 text-neutral-700 text-[0.875rem]"><i class="bi bi-archive-fill text-lg mr-2"></i>View Previous Sunday Recap</span>
-            {% if service %}
-                <h2 class="text-center mb-8 text-3xl text-[#462D1A] animate_animated animate__pulse block px-auto">Join us on Sunday</h2>
-                <!-- date -->
-                    <div class="md:flex md:flex-row md:justify-between mb-8">
-                    
-                        <div class="flex flex-col items-center smpl:items-start smpl:flex-row">
-                            <span class="text-center w-[7rem] shadow-xl bg-[#D9D9D9] py-2 px-8 inline-block text-lg rounded-lg text-red-900 font-bold " data-aos="fade-up"
-                            data-aos-duration="2000">Date:</span>
-                            <span class="pl-0 smpl:pl-4 text-lg mt-4">{{ service.datetime.date | date:"jS F, Y"}}</span>
-                        </div>
-                        <!-- time -->
-                        <div class="flex flex-col items-center smpl:items-start mt-5 md:mt-0 smpl:mt-10 smpl:flex-row">
-                            <span class="text-center w-[7rem] shadow-xl bg-[#D9D9D9] py-2 px-8 inline-block text-lg rounded-lg text-red-900 font-bold" data-aos="fade-down"
-                            data-aos-duration="2000">Time:</span>
-                            <span class="pl-0 smpl:pl-4 text-lg mt-4">{{ service.datetime.time }}</span>
-                        </div>
-                    </div>
+<section class="bg-[url('/static/images/sunday_service_bg.jpg')] bg-no-repeat bg-cover py-[5rem]">
 
-                    <hr class="w-1/2 mx-auto border-[#c2bfbf] mb-8">
-                    <!-- venue -->
-                    <div class="flex flex-col md:flex-row items-center smpl:items-start mb-8">
-                        <div class="">
-                            <span class="text-center w-[7rem] shadow-xl bg-[#D9D9D9] py-2 px-8 inline-block text-lg rounded-lg text-red-900 font-bold" data-aos="fade-up"
-                            data-aos-duration="2000">Venue:</span>
-                        </div>
-                        <div class="">
-                            <span class="mt-5 md:mt-0 text-center ml-0 md:ml-3 text-xl shadow-xl bg-[#462d1a] inline-block p-4 text-[#DFA207]">{{ service.venue }}</span>
-                        </div>
-                    </div>
+    <div class="w-[80vw] sm:w-[65vw] md:w-[80vw] lg:w-[65vw] mx-auto p-8 mdpl:p-[6rem] rounded-3xl relative"
+        style="background-color: rgba(217, 217, 217, 0.2)">
 
-                    <hr class="w-1/2 mx-auto border-[#9F9393] mb-8">
-                    <!-- preacher & teacher -->
-                    <div class="flex flex-col md:flex-row justify-between items-center w-9/12 mx-auto mb-8 mt-2 sm:mt-0">
-                        <div class="flex flex-col items-center">
-                            <span class="text-center w-[7rem] shadow-xl bg-[#9e958e] py-2 inline-block text-lg rounded-lg text-white font-bold" data-aos="fade-left"
-                            data-aos-duration="2000">Teacher:</span>
-                            {% if service.teacher2 %}
-                                {% if service.teacher2.picture %}    
-                                <img src="{{ service.teacher2.picture.url }}" alt="" class="mt-2 rounded-full w-[140px] h-[140px]">
-                                {% else %}
-                                <img src="{% static 'images/no_image.png' %}" alt="" class="mt-2 rounded-full w-[140px] h-[140px]">
-                                {% endif %}
-                                <small class="text-center pt-2 text-white text-[1rem]">{{ service.teacher2.name }}</small>
-                                {% elif service.teacher %}
-                                
-                                {% if service.teacher.picture %}    
-                                <img src="{{ service.teacher.picture.url }}" alt="" class="mt-2 rounded-full w-[140px] h-[140px]" />
-                                {% else %}
-                                <img src="{% static 'images/no_image.png' %}" alt="" class="mt-2 rounded-full w-[140px] h-[140px]" />
-                                {% endif %}
+        <span data-tooltip-target="tooltip-bottom" data-tooltip-placement="bottom" data-modal-target="medium-modal"
+            data-modal-toggle="medium-modal"
+            class="cursor-pointer absolute top-[-2rem] mdpl:top-8 right-2 mdpl:right-10 text-neutral-700 text-[0.875rem]"><i
+                class="bi bi-archive-fill text-lg mr-2"></i>View Previous Sunday Recap</span>
+        {% if service %}
+        <h2 class="text-center mb-8 text-3xl text-[#462D1A] animate_animated animate__pulse block px-auto">Join us on
+            Sunday</h2>
+        <!-- date -->
+        <div class="md:flex md:flex-row md:justify-between mb-8">
 
-                                <small class="text-center pt-2 text-white text-[1rem]">
-                                    {% if service.teacher.leader %}
-                                        {{service.teacher.leader.title}} {{service.teacher.first_name}} {{service.teacher.last_name}}
-                                    {% else %}
-                                        {{ service.teacher.first_name }} {{ service.teacher.last_name }}</small>
-                                    {% endif %}
-                            {% endif %}
-                        </div>
-                        <!-- <div class="h-[10rem] border-white w-[0.10rem] border-[1px] hidden sm:block">
+            <div class="flex flex-col items-center smpl:items-start smpl:flex-row">
+                <span
+                    class="text-center w-[7rem] shadow-xl bg-[#D9D9D9] py-2 px-8 inline-block text-lg rounded-lg text-red-900 font-bold "
+                    data-aos="fade-up" data-aos-duration="2000">Date:</span>
+                <span class="pl-0 smpl:pl-4 text-lg mt-4">{{ service.datetime.date | date:"jS F, Y"}}</span>
+            </div>
+            <!-- time -->
+            <div class="flex flex-col items-center smpl:items-start mt-5 md:mt-0 smpl:mt-10 smpl:flex-row">
+                <span
+                    class="text-center w-[7rem] shadow-xl bg-[#D9D9D9] py-2 px-8 inline-block text-lg rounded-lg text-red-900 font-bold"
+                    data-aos="fade-down" data-aos-duration="2000">Time:</span>
+                <span class="pl-0 smpl:pl-4 text-lg mt-4">{{ service.datetime.time }}</span>
+            </div>
+        </div>
+
+        <hr class="w-1/2 mx-auto border-[#c2bfbf] mb-8">
+        <!-- venue -->
+        <div class="flex flex-col md:flex-row items-center smpl:items-start mb-8">
+            <div class="">
+                <span
+                    class="text-center w-[7rem] shadow-xl bg-[#D9D9D9] py-2 px-8 inline-block text-lg rounded-lg text-red-900 font-bold"
+                    data-aos="fade-up" data-aos-duration="2000">Venue:</span>
+            </div>
+            <div class="">
+                <span
+                    class="mt-5 md:mt-0 text-center ml-0 md:ml-3 text-xl shadow-xl bg-[#462d1a] inline-block p-4 text-[#DFA207]">{{ service.venue }}</span>
+            </div>
+        </div>
+
+        <hr class="w-1/2 mx-auto border-[#9F9393] mb-8">
+        <!-- preacher & teacher -->
+        <div class="flex flex-col md:flex-row justify-between items-center w-9/12 mx-auto mb-8 mt-2 sm:mt-0">
+            <div class="flex flex-col items-center">
+                <span
+                    class="text-center w-[7rem] shadow-xl bg-[#9e958e] py-2 inline-block text-lg rounded-lg text-white font-bold"
+                    data-aos="fade-left" data-aos-duration="2000">Teacher:</span>
+                {% if service.teacher2 %}
+                {% if service.teacher2.picture %}
+                <img src="{{ service.teacher2.picture.url }}" alt="" class="mt-2 rounded-full w-[140px] h-[140px] object-cover">
+                {% else %}
+                <img src="{% static 'images/no_image.png' %}" alt="" class="mt-2 rounded-full w-[140px] h-[140px] object-cover">
+                {% endif %}
+                <small class="text-center pt-2 text-white text-[1rem]">{{ service.teacher2.name }}</small>
+                {% elif service.teacher %}
+
+                {% if service.teacher.picture %}
+                <img src="{{ service.teacher.picture.url }}" alt="" class="mt-2 rounded-full w-[140px] h-[140px] object-cover" />
+                {% else %}
+                <img src="{% static 'images/no_image.png' %}" alt="" class="mt-2 rounded-full w-[140px] h-[140px] object-cover" />
+                {% endif %}
+
+                <small class="text-center pt-2 text-white text-[1rem]">
+                    {% if service.teacher.leader %}
+                    {{service.teacher.leader.title}} {{service.teacher.first_name}} {{service.teacher.last_name}}
+                    {% else %}
+                    {{ service.teacher.first_name }} {{ service.teacher.last_name }}</small>
+                {% endif %}
+                {% endif %}
+            </div>
+            <!-- <div class="h-[10rem] border-white w-[0.10rem] border-[1px] hidden sm:block">
                             
                         </div> -->
-                        <div class="flex flex-col items-center mt-5 md:mt-0">
-                            <span class="text-center w-[7rem] shadow-xl bg-[#9e958e] py-2 inline-block text-lg rounded-lg text-white font-bold" data-aos="fade-left"
-                            data-aos-duration="2000">Preacher:</span>
-                            {% if service.preacher2 %}
-                                {% if service.preacher2.picture %}
-                                <img src="{{ service.preacher2.picture.url }}" alt="" class="mt-2 rounded-full w-[140px] h-[140px]">
-                                {% else %}
-                                <img src="{% static 'images/no_image.png' %}" alt="" class="mt-2 rounded-full w-[140px] h-[140px]">
-                                {% endif %}
-                                <small class="text-center pt-2 text-white text-[1rem]">{{ service.preacher2.name }}</small>
-                                {% elif service.preacher %}
-                                {% if service.preacher.picture %}
-                                <img src="{{ service.preacher.picture.url }}" alt="" class="mt-2 rounded-full w-[140px] h-[140px]">
-                                {% else %}
-                                <img src="{% static 'images/no_image.png' %}" alt="" class="mt-2 rounded-full w-[140px] h-[140px]">
-                                {% endif %}
-                                <small class="text-center pt-2 text-white text-[1rem]">
-                                    {% if service.preacher.leader %}
-                                        {{ service.preacher.leader.title }} {{service.preacher.first_name}} {{service.preacher.last_name}}
-                                    {% else %}
-                                        {{ service.preacher.first_name }} {{ service.preacher.last_name }}</small>
-                                    {% endif %}
-                            {% endif %}
-                        </div>
-                    </div>
-                    <hr class="w-1/2 mx-auto border-[#9F9393] mb-8">
-                    
-                    <div class="flex justify-between w-[20%] ml-5 mb-8">
-                        <img src="{% static 'images/🦆 icon _music 1_.svg' %}" alt="music" data-aos="flip-down"
-                        data-aos-duration="1000">
-                        <span class="pl-3 text-md text-[#DFA207]">{{ service.music_group.name }}</span>
-                    </div>
-                    <hr class="w-1/2 mx-auto border-[#9F9393] mb-8">
-                    <!-- guests -->
-                    {% if service.guests.all %}
-                        
-                        <div class="flex flex-col sm:flex-row justify-between items-center w-7/12 mb-8">
-                            <h3 class="ml-5 underline text-[#DFA207] text-lg">
-                                {% if service.guests.count > 1 %} Guests {% else %} Guest {% endif %}
-                            </h3>
-                            <div class="grid grid-cols-1 sm:grid-cols-2 gap-8">
-                                {% for guest in service.guests.all %}
-                                    <div class="flex flex-col items-center">
-                                        {% if guest.picture %}
-                                        <img src="{{ guest.picture.url }}" alt="{{ guest.name }}" class="mt-2 rounded-full w-[90px] h-[90px]">
-                                        {% else %}
-                                        <img src="{% static 'images/no_image.png' %}" alt="{{ guest.name }}" class="mt-2 rounded-full w-[90px] h-[90px]">
-                                        {% endif %}
-                                        <small class="text-center pt-2 text-white text-[0.9rem]">{{ guest.name }}</small>
-                                    </div>
-                                {% endfor %}
-                                
-                            </div>
-                        </div>
-                        <hr class="w-1/2 mx-auto border-[#9F9393] mb-8">
-                    {% endif %}
-                    
-            {% endif %}
+            <div class="flex flex-col items-center mt-5 md:mt-0">
+                <span
+                    class="text-center w-[7rem] shadow-xl bg-[#9e958e] py-2 inline-block text-lg rounded-lg text-white font-bold"
+                    data-aos="fade-left" data-aos-duration="2000">Preacher:</span>
+                {% if service.preacher2 %}
+                {% if service.preacher2.picture %}
+                <img src="{{ service.preacher2.picture.url }}" alt="" class="mt-2 rounded-full w-[140px] h-[140px] object-cover">
+                {% else %}
+                <img src="{% static 'images/no_image.png' %}" alt="" class="mt-2 rounded-full w-[140px] h-[140px] object-cover">
+                {% endif %}
+                <small class="text-center pt-2 text-white text-[1rem]">{{ service.preacher2.name }}</small>
+                {% elif service.preacher %}
+                {% if service.preacher.picture %}
+                <img src="{{ service.preacher.picture.url }}" alt="" class="mt-2 rounded-full w-[140px] h-[140px] object-cover">
+                {% else %}
+                <img src="{% static 'images/no_image.png' %}" alt="" class="mt-2 rounded-full w-[140px] h-[140px] object-cover">
+                {% endif %}
+                <small class="text-center pt-2 text-white text-[1rem]">
+                    {% if service.preacher.leader %}
+                    {{ service.preacher.leader.title }} {{service.preacher.first_name}} {{service.preacher.last_name}}
+                    {% else %}
+                    {{ service.preacher.first_name }} {{ service.preacher.last_name }}</small>
+                {% endif %}
+                {% endif %}
+            </div>
         </div>
-    </section>
+        <hr class="w-1/2 mx-auto border-[#9F9393] mb-8">
+
+        <div class="flex justify-between w-[20%] ml-5 mb-8">
+            <img src="{% static 'images/🦆 icon _music 1_.svg' %}" alt="music" data-aos="flip-down"
+                data-aos-duration="1000">
+            <span class="pl-3 text-md text-[#DFA207]">{{ service.music_group.name }}</span>
+        </div>
+        <hr class="w-1/2 mx-auto border-[#9F9393] mb-8">
+        <!-- guests -->
+        {% if service.guests.all %}
+
+        <div class="flex flex-col sm:flex-row justify-between items-center w-7/12 mb-8">
+            <h3 class="ml-5 underline text-[#DFA207] text-lg">
+                {% if service.guests.count > 1 %} Guests {% else %} Guest {% endif %}
+            </h3>
+            <div class="grid grid-cols-1 sm:grid-cols-2 gap-8">
+                {% for guest in service.guests.all %}
+                <div class="flex flex-col items-center">
+                    {% if guest.picture %}
+                    <img src="{{ guest.picture.url }}" alt="{{ guest.name }}"
+                        class="mt-2 rounded-full w-[90px] h-[90px]">
+                    {% else %}
+                    <img src="{% static 'images/no_image.png' %}" alt="{{ guest.name }}"
+                        class="mt-2 rounded-full w-[90px] h-[90px]">
+                    {% endif %}
+                    <small class="text-center pt-2 text-white text-[0.9rem]">{{ guest.name }}</small>
+                </div>
+                {% endfor %}
+
+            </div>
+        </div>
+        <hr class="w-1/2 mx-auto border-[#9F9393] mb-8">
+        {% endif %}
+
+        {% endif %}
+    </div>
+</section>
 {% endblock %}

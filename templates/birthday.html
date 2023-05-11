@@ -39,10 +39,10 @@
         <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
             {% for member in celebrated_members %}    
                 <div class="bg-white shadow-md rounded-md p-4 flex flex-col items-center">
-                <img src="{{ member.picture.url }}" alt="" class="w-32 h-32 object-cover  rounded-full">
-                <h3 class="text-lg font-bold mt-4">{{ member.first_name }} {{ member.last_name }}</h3>
-                <p class="text-gray-500">Happy Birthday!</p>
-                <small class="text-gray-400">({{ member.birthday | date:"F" }} {{ member.birthday.day }})</small>
+                    <img src="{{ member.picture.url }}" alt="" class="w-32 h-32 object-cover rounded-full">
+                    <h3 class="text-lg font-bold mt-4">{{ member.first_name }} {{ member.last_name }}</h3>
+                    <p class="text-gray-500">Happy Birthday!</p>
+                    <small class="text-gray-400">({{ member.birthday | date:"F" }} {{ member.birthday.day }})</small>
                 </div>
             {% endfor %}
         </div>
