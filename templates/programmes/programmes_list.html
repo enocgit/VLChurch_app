@@ -46,7 +46,7 @@
                             <div class="grid grid-cols-1 sm:grid-cols-2 mdpl:grid-cols-3 gap-4 w-7/12 mx-auto">
                                 {% for guest in programme.guests.all %}    
                                         <div class="flex flex-col items-center">
-                                            <img src="{{ guest.picture.url }}" alt="{{ guest.image.url }}" class="w-[90px] h-[90px] rounded-full">
+                                            <img src="{{ guest.picture.url }}" alt="{{ guest.image.url }}" class="w-[90px] h-[90px] object-cover rounded-full">
                                             <small class="text-white text-lg">{{ guest.name }}</small>
                                         </div>
                                         
