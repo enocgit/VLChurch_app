@@ -27,10 +27,13 @@
   animation-timing-function: cubic-bezier(0.075, 0.82, 0.165, 1);
 }
 
+#leaders-scroll-area::-webkit-scrollbar {
+  /* width: 0.5em;  width of the scrollbar */
+  display: none;
+}
 
 
 @keyframes slide-down-fade {
-  
   to {
     top: 20rem;
     opacity: 0;

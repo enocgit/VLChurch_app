@@ -1,5 +1,8 @@
 $(function(){
 
+    const viewRecap = document.getElementById('view-recap')
+    const recapId = viewRecap.dataset.recapId
+
     document.documentElement.style.setProperty('--animate-duration', '1.5s');    
  
     $('.message-bubble').on('mouseenter', function() {
@@ -83,6 +86,21 @@ $(function(){
         $(this).css({'top': randomTop + 'rem', 'right': randomRight + 'rem'})
     })    
 
+    $('#view-recap').on('click', () => {
+        $.ajax({
+            url: 'get-recap-id?recap_id=' + recapId,
+            method: 'GET',
+            // data: JSON.stringify({
+            //     'recap_id': recapId
+            // }),
+            success: function(){
+                console.log('SUCCESS!!!')
+            },
+            error: function(err){
+                console.log(err)
+            }
+        })
+    })
 
 //     let scrollAmount = $('.leader-card').outerWidth(true); // Calculate the width of each item including margin
 //     setInterval(scrollItems, 3000); // Scroll every 3000ms

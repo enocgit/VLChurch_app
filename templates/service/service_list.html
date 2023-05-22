@@ -15,8 +15,8 @@ Sunday Service
 {% block content %}
 
 
-<!-- Default Modal -->
-<div id="medium-modal" tabindex="-1"
+<!-- Recap Modal -->
+<div id="recap-modal" tabindex="-1"
     class="font-sans fixed top-0 left-0 right-0 z-50 hidden w-full p-4 overflow-x-hidden overflow-y-visible h-modal">
     <div class="relative w-full h-full max-w-lg">
         <!-- Modal content -->
@@ -28,7 +28,7 @@ Sunday Service
                 </h3>
                 <button type="button"
                     class="text-gray-400 bg-transparent hover:bg-gray-200 hover:text-gray-900 rounded-lg text-sm p-1.5 ml-auto inline-flex items-center dark:hover:bg-gray-600 dark:hover:text-white"
-                    data-modal-hide="medium-modal">
+                    data-modal-hide="recap-modal">
                     <svg aria-hidden="true" class="w-5 h-5" fill="currentColor" viewBox="0 0 20 20"
                         xmlns="http://www.w3.org/2000/svg">
                         <path fill-rule="evenodd"
@@ -43,8 +43,12 @@ Sunday Service
                 {{ recap.message | safe }}
             </div>
             <!-- Modal footer -->
-            <div class="flex items-center p-6 space-x-2 border-t border-gray-200 rounded-b dark:border-gray-600">
+            <div class="flex items-center justify-between p-6 space-x-2 border-t border-gray-200 rounded-b dark:border-gray-600">
                 <small class="text-gray-500">{{ recap.date | date:"jS F, Y" }}</small>
+                <div class="flex gap-2 items-center">
+                    <i class="bi bi-eye-fill"></i>
+                    <small id="views">{{recap.views}}</small>
+                </div>
             </div>
         </div>
     </div>
@@ -55,9 +59,9 @@ Sunday Service
     <div class="w-[80vw] sm:w-[65vw] md:w-[80vw] lg:w-[65vw] mx-auto p-8 mdpl:p-[6rem] rounded-3xl relative"
         style="background-color: rgba(217, 217, 217, 0.2)">
 
-        <span data-tooltip-target="tooltip-bottom" data-tooltip-placement="bottom" data-modal-target="medium-modal"
-            data-modal-toggle="medium-modal"
-            class="cursor-pointer absolute top-[-2rem] mdpl:top-8 right-2 mdpl:right-10 text-neutral-700 text-[0.875rem]"><i
+        <span data-tooltip-target="tooltip-bottom" data-tooltip-placement="bottom" data-modal-target="recap-modal"
+            data-modal-toggle="recap-modal" data-recap-id="{{recap.id}}"
+            class="cursor-pointer absolute top-[-2rem] mdpl:top-8 right-2 mdpl:right-10 text-neutral-700 text-[0.875rem]" id="view-recap"><i
                 class="bi bi-archive-fill text-lg mr-2"></i>View Previous Sunday Recap</span>
         {% if service %}
         <h2 class="text-center mb-8 text-3xl text-[#462D1A] animate_animated animate__pulse block px-auto">Join us on
