@@ -150,13 +150,12 @@
       Our Cherished Leaders
     </h2>
     {% if leaders %}
-    <div class="mt-12 flex flex-nowrap overflow-x-scroll gap-8" id="leaders-scroll-area">
+    <div class="mt-12 flex flex-nowrap overflow-x-scroll slider-parent" id="leaders-scroll-area">
       {% for leader in leaders %}
       <div
-        class="flex-shrink-0 flex-grow-0 bg-white rounded-lg dark:bg-gray-800 dark:border-gray-700 leader-card"
+        class="flex-shrink-0 flex-grow-0 bg-white rounded-lg dark:bg-gray-800 dark:border-gray-700 leader-card min-w-[220px]"
         data-aos="fade-up"
         data-aos-duration="2000"
-        style="flex-basis: 270px;"
       >
         <div class="flex justify-end px-4 pt-4"></div>
         <div class="flex flex-col items-center pb-10">
@@ -174,7 +173,7 @@
           />
           {% endif %}
           <h5
-            class="mb-1 text-xl text-center px-4 font-medium text-gray-900 dark:text-white"
+            class="mb-1 text-xl text-center font-medium text-gray-900 dark:text-white"
           >
             {% if leader.title %}{{ leader.title }}{% endif %}
             {{leader.member.first_name}} {{ leader.member.last_name }}

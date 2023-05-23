@@ -1,5 +1,39 @@
 $(function(){
 
+    $('.slider-parent').slick({
+        slidesToShow: 3,
+        slidesToScroll: 1,
+        autoplay: true,
+        autoplaySpeed: 2000,
+        centerMode: true,
+        arrows: false,
+        pauseOnHover: true,
+        adaptiveHeight: true,
+        responsive: [
+            {
+              breakpoint: 947,
+              settings: {
+                slidesToShow: 2,
+                slidesToScroll: 2,
+              }
+            },
+            {
+              breakpoint: 673,
+              settings: {
+                slidesToShow: 1,
+                slidesToScroll: 1,
+              }
+            },
+            {
+              breakpoint: 424,
+              settings: {
+                slidesToShow: 1,
+                slidesToScroll: 1,
+              }
+            },
+          ]
+    });
+      
     const viewRecap = document.getElementById('view-recap')
     const recapId = viewRecap.dataset.recapId
 
@@ -108,4 +142,6 @@ $(function(){
 //   function scrollItems() {
 //     $('#leaders-scroll-area').animate({scrollLeft: "+=" + scrollAmount}, 500);
 //   }
+
+
 })
